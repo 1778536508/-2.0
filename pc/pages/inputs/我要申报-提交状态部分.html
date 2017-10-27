@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我要申报-状态部分</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/inputs.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/laydate.js"></script>
+    <script src="assets/data/citys.js"></script>
+    <script src="assets/js/system.js"></script>
+    <script src="assets/js/inputs.js"></script>
+</head>
+l
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header fixed header_detail"></div>
+    <!--//End header-->
+
+    <div class="container ipt_base">
+            <div class="head">
+                <div class="hd">
+                    <div class="name">填写申报信息-李秀丽（土家银器传人）</div>
+                    <div class="handle">
+                        <a class="active" href="">保存</a>
+                        <a class="empty" href="">预览</a>
+                        <a class="empty" href="">提交</a>
+                        <a class="disabled" href="">提交</a>
+                    </div>
+                </div>
+            </div>
+            <!--//End project_name-->
+
+            <div class="hd">
+                <div class="slide">
+                    <div class="item">
+                        <div data-type="proBaseInfo" class="dt selected"><i class="icon selected"></i>基础信息</div>
+                    </div>
+                    <!--//End 基础信息-->
+                    <div class="item">
+                        <div class="dt selected"><i class="icon selected"></i>项目内容<em class="arrow"></em></div>
+                        <div class="dd">
+                            <ul>
+                                <li data-type="longField" class="selected"><i class="icon selected"></i><span>项目内容</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>传承谱系</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>历史渊源</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>主要价值</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>基本特征</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>濒危状况</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>保护措施</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--//End 传承人内容-->
+                    <div class="item">
+                        <div class="dt"><i class="icon selected"></i>项目实践<em class="arrow"></em></div>
+                        <div class="dd">
+                            <ul>
+                                <li data-type="longField"><i class="icon unselected"></i><span>简历</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>传承历史与现状</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>师徒关系</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>记忆特征</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>个人成就</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>自定义项1</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>自定义项2</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--//End 传承人内容-->
+                    <div class="item custom">
+                        <div data-type="longFieldCustom" class="dt selected"><i></i>添加自定义项</div>
+                    </div>
+                    <!--//End 传承人内容-->
+                    <div class="item status">
+                        <div class="dd">
+                            <ul>
+                                <li><i class="icon selected"></i>完成模块内所有的字段</li>
+                                <li><i class="icon unselected"></i>未完成模块内的必填项</li>
+                                <li><i class="icon warning"></i>完成模块内所有的必填项<br>未完成某些选填项</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--//End 基础信息-->
+                </div>
+                <!--//slide End-->
+
+                <!--Start 我要申报-信息填写完成可以提交审核-->
+                <div class="info_check">
+                    <div class="title">
+                        <i class="icon"></i>
+                        <span><strong>信息填写完成，可以提交审核</strong></span>
+                        <span>感谢您对非遗大数据平台的支持！</span>
+                    </div>
+                    <div class="buttons">
+                        <a href="">提交审核</a>
+                        <a href="">保存</a>
+                    </div>
+
+                </div>
+                <!--End 我要申报-信息填写完成可以提交审核-->
+
+                <!--Start 我要申报-录入完成1-->
+                <div class="info_check step1">
+                    <div class="title">
+                        <i class="icon"></i>
+                        <span>
+							<strong>添加此项目特殊属性，可以提高项目通过率。</strong>
+							<strong>点击增加自定义项进行编辑。</strong>
+							</span>
+                    </div>
+                    <div class="buttons">
+                        <a href="">增加自定义项</a>
+                        <a href="">提交审核</a>
+                    </div>
+
+                </div>
+                <!--End 我要申报-录入完成1-->
+
+            </div>
+    </div>
+
+
+    <!--Start 我要申报-录入完成-->
+    <div class="ipt_over">
+        <div class="content">
+            <div class="title">
+                <i class="icon"></i>
+                <span>信息填写完成，可以提交审核</span>
+                <span>感谢您对非遗大数据平台的支持！</span>
+            </div>
+            <div class="buttons">
+                <a class="btn1" href="">申报项目传承人</a>
+                <a class="btn2" href="">个人中心</a>
+            </div>
+        </div>
+    </div>
+    <!--End 我要申报-录入完成-->
+
+
+    <div class="footer"></div>
+    <!--//End-->
+
+    <script>
+        $(function() {
+            $('.header .content .nav li').eq(6).addClass('active').siblings('li').removeClass('active');
+        });
+        //时间
+        ! function() {
+            laydate.skin('molv'); //切换皮肤，请查看skins下面皮肤库
+            laydate({
+                elem: '#calendar'
+            }); //绑定元素
+        }();
+        projectPage.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>项目详情页</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <!--插件-->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <!--//End 插件-->
+
+    <!--静态数据-->
+    <script src="../../assets/data/category.js"></script>
+    <script src="../../assets/data/citys.js"></script>
+    <script src="../../assets/data/util.js"></script>
+    <script src="../../assets/data/dictionary.js"></script>
+    <!--//End 静态数据-->
+
+    <!--自定义数据-->
+    <script src="../../assets/js/utils.js"></script>
+    <script src="../../assets/js/system.js"></script>
+    <script src="../../assets/js/detail-project.js"></script>
+    <!--//End 自定义数据-->
+
+    <script>
+        var json = [{"contentFragmentId":2415213432549697,"imgs":[{"description":"","id":5643198617401718,"type":0,"uri":"10175-BIG.jpg","status":0}],"videos":[]},{"contentFragmentId":3047505955256062,"imgs":[],"videos":[]},{"contentFragmentId":3891953531552063,"imgs":[],"videos":[]},{"contentFragmentId":6226559864568114,"imgs":[],"videos":[]},{"contentFragmentId":6532466585312473,"imgs":[],"videos":[]},{"contentFragmentId":7011757946584148,"imgs":[{"id":9545421747067404,"type":0,"uri":"10178-BIG.jpg","status":0},{"id":3510721975481810,"type":0,"uri":"10176-BIG.jpg","status":0},{"id":8323258791419918,"type":0,"uri":"10177-BIG.jpg","status":0}],"videos":[]},{"contentFragmentId":5883409134935037,"imgs":[],"videos":[]},{"contentFragmentId":7486717914684412,"imgs":[{"description":"","id":5643198617401718,"type":0,"uri":"10175-BIG.jpg","status":0}],"videos":[]}];
+        var jsonAll = {"imgs":[{"description":"","id":5643198617401718,"type":0,"uri":"10175-BIG.jpg","status":0},{"id":3510721975481810,"type":0,"uri":"10176-BIG.jpg","status":0},{"id":9545421747067404,"type":0,"uri":"10178-BIG.jpg","status":0},{"id":8323258791419918,"type":0,"uri":"10177-BIG.jpg","status":0}],"videos":[]};
+        var jsonHead = {"lang":"chi","projectName":"Bisalhães 黑陶制作工艺","headImage":[{"description":"","id":5643198617401718,"type":0,"uri":"10175-BIG.jpg","status":0}]};
+    </script>
+</head>
+
+<body class="js-project">
+<div class="header header_detail"></div>
+<!--//End header -->
+<div class="filter_search filter_search_fixed">
+    <div class="content">
+        <div id="form"></div>
+        <div class="dropbox" id="drag"></div>
+    </div>
+</div>
+<!--//End filter_search -->
+
+
+<div class="container">
+    <div class="bd detail">
+        <div class="mainbg">
+            <img src="../../assets/uploads/project_detail_sm.jpg" alt="">
+            <!--<video controls>-->
+            <!--<source style="width: 100%;" src="assets/uploads/video1.mp4" type="video/mp4">-->
+            <!--</video>-->
+            <!--<span class="play_big"></span>-->
+        </div>
+        <!--//End main-->
+
+        <div class="crumbs">
+            <span>非遗名录</span>
+            <i class="gt"></i>
+            <span><a href="" title="口头传说和表述">口头传说和表述</a></span>
+            <i class="gt"></i>
+            <span class="last">昆曲</span>
+        </div>
+        <!--//End crumbs-->
+
+        <div class="card">
+            <div class="card_main">
+                <div class="floor">
+                    <a class="share" title="分享"></a>
+                    <a class="praise active" title="点赞" style="position: relative;"></a>
+                    <a class="album" data-id="all"><i class="play_sm"></i>【视频】昆曲传承人讲述昆曲…(2个视频／9张图片)</a>
+                    <div class="share_box">
+                        <div class="icons">
+                            <a href="" class="sina"></a>
+                            <!--<a href="" class="facebook"></a>-->
+                            <!--<a href="" class="twitter"></a>-->
+                            <a href="" class="weixin active"></a>
+                        </div>
+                        <div class="qrcode">
+                            <img src="../../assets/images/code2.png" alt="新浪">
+                            <img src="../../assets/images/code.png" alt="微信">
+                        </div>
+                    </div>
+                </div>
+                <!--//End -->
+                <div class="detail_title">
+                    <a href="" class="edit"><i class="icon"></i>编辑</a>
+                    <h2>昆曲昆曲昆曲昆曲昆曲昆曲昆曲昆昆曲昆曲昆曲昆曲昆曲昆曲昆曲昆</h2>
+                    <div class="doi_code">
+                        <i class="icon">ID</i>
+                        <span>标识码：37232519870103004383</span>
+                        <em class="icon"></em>
+                        <div class="drop">
+                            <img src="../../assets/images/code.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--//End title-->
+
+                <div class="bd subtxt">
+                        <span>
+                            <strong>类别：</strong>
+                            <em>传统戏剧</em>
+                        </span>
+                    <span>
+                            <strong>地区：</strong>
+                            <em>中央</em><i>|</i><em>北京市</em><i>|</i><em>上海市</em><i>|</i><em>江苏省</em><i>|</i><em>浙江省</em><i>|</i><em>湖南省</em>
+                        </span>
+                </div>
+                <!--//End-->
+
+                <div class="bd inheritor">
+                    <div class="tname">代表性传承人</div>
+                    <div class="master">
+                        <ul>
+                            <li style="">
+                                <div class="item">
+                                    <a href="" class="avatar">
+                                        <img src="../../assets/uploads/master1.jpg" alt="">
+                                    </a>
+                                    <span class="txt">
+                                        <p class="name"><a href="">康惠芳</a></p>
+                                    </span>
+                                </div>
+                                <div class="item">
+                                    <a href="" class="avatar">
+                                        <img src="../../assets/uploads/master1.jpg" alt="">
+                                    </a>
+                                    <span class="txt">
+                                        <p class="name"><a href="">康惠芳</a></p>
+                                    </span>
+                                </div>
+                                <div class="item">
+                                    <a href="" class="avatar">
+                                        <img src="../../assets/uploads/master1.jpg" alt="">
+                                    </a>
+                                    <span class="txt">
+                                        <p class="name"><a href="">康惠芳</a></p>
+                                    </span>
+                                </div>
+                                <div class="item">
+                                    <a href="" class="avatar">
+                                        <img src="../../assets/uploads/master1.jpg" alt="">
+                                    </a>
+                                    <span class="txt">
+                                        <p class="name"><a href="">康惠芳</a></p>
+                                    </span>
+                                </div>
+                                <div class="item">
+                                    <a href="" class="avatar">
+                                        <img src="../../assets/uploads/master1.jpg" alt="">
+                                    </a>
+                                    <span class="txt">
+                                        <p class="name"><a href="">康惠芳</a></p>
+                                    </span>
+                                </div>
+                                <div class="item">
+                                    <a href="" class="avatar">
+                                        <img src="../../assets/uploads/master1.jpg" alt="">
+                                    </a>
+                                    <span class="txt">
+                                        <p class="name"><a href="">康惠芳</a></p>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="more">
+                            <a href="javascript:;"><span>全部<em>2</em>人
+                            </span><i class="gt_big"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--//ENd-->
+
+                <div class="bd batch">
+                    <div class="tname">非遗在中国<i></i></div>
+                    <div class="subcon">
+                        <span>人类非物质文化遗产编号：Ⅳ-1</span>
+                        <span>级别：世界级</span>
+                        <span>批次：第一批</span>
+                    </div>
+                </div>
+                <!--//ENd-->
+            </div>
+            <!--//End 主内容-->
+
+            <div class="card_base">
+                <duv class="detail_title">
+                    <h2>基礎信息</h2>
+                </duv>
+                <div class="info" id="info">
+                    <ul>
+                        <li>
+                            <span class="key">拼音：</span>
+                            <span class="value">Kun Qu</span>
+                        </li>
+                        <li>
+                            <span class="key">中国十分类代码：</span>
+                            <span class="value">Argan, practices and know-how concerning the argan tree</span>
+                        </li>
+                        <li>
+                            <span class="key">外文名：</span>
+                            <span class="value">Kun Opera ／ Kunqu Opera</span>
+                        </li>
+                        <li>
+                            <span class="key">外文名：</span>
+                            <span class="value">Kun Opera ／ Kunqu Opera</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--//End 基本信息-->
+        </div>
+
+
+        <section class="bd floor odd">
+            <div class="card">
+                <header>
+                    <h4>個人成就</h4>
+                </header>
+                <article class="text_img">
+                    <div class="side">
+                        <div class="item">
+                            <p>
+                                昆曲又称昆腔、昆山腔、昆剧，是元末明初南戏发展到昆山一带，与当地的音乐、歌舞、语言结合而生成的一个新的声腔剧种。明代初年在昆山地区形成了“昆山腔”，嘉靖年间经过魏良辅等人的革新，昆山腔吸收北曲及海盐腔、弋阳腔的长处，形成委婉细腻、流丽悠长的“水磨调”风格，昆曲至此基本成型。梁辰鱼将传奇《浣纱记》以昆曲形式搬上舞台，使原来主要用于清唱的昆曲正式进入戏剧表演领域，进一步扩大了影响。万历年间，昆曲从江浙一带逐渐流播到全国各地。明代天启初年到清代康熙末年的一百多年是昆曲蓬勃兴盛的时期。清代乾隆年以后，昆曲逐渐衰落下去。新中国诞生以来，昆曲艺术出现了转机，国家先后建立了7个有独立建制的专业昆曲院团。目前昆曲主要由专业昆曲院团演出，有关演出活动多集中在江苏、浙江、上海、北京、湖南等地。</p>
+                            <p>
+                                清末，昆曲就逐渐没落。中华人民共和国成立后，曾得到一度的振兴。近年来，随着传统戏曲演出在城市中的衰微，昆曲正面临着生存的困境，演员和观众队伍不断缩减。昆曲要生存发展，有许多迫在眉睫的问题亟待解决。昆曲要生存发展，有许多迫在眉睫的问题亟待解决。</p>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <ul>
+                            <li>
+                                <img src="../../assets/uploads/exp1.png" alt="">
+                                <span>昆曲</span>
+                            </li>
+                        </ul>
+                        <div class="more">
+                            <a class="albums" data-id="7011757946584148" href="javascript:;">
+                                查看完整图集
+                                <i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!--//End brief-->
+
+        <section class="bd floor even">
+            <div class="card">
+                <header>
+                    <h4>代表作品</h4><em>共5项</em>
+                </header>
+                <article class="product_list">
+                    <ul>
+                        <li>
+                            <a href=""><img src="../../assets/uploads/detail_02.jpg" alt=""></a>
+                            <p class="name">《界牌关》选段</p>
+                            <p class="master">CCTV1 空中剧院演出 2001年</p>
+                        </li>
+                        <li>
+                            <a href=""><img src="../../assets/uploads/detail_03.jpg" alt=""></a>
+                            <p class="name">《界牌关》选段</p>
+                            <p class="master">CCTV1 空中剧院演出 2001年</p>
+                        </li>
+                        <li>
+                            <a href=""><img src="../../assets/uploads/detail_04.jpg" alt=""></a>
+                            <p class="name">《界牌关》选段</p>
+                            <p class="master">CCTV1 空中剧院演出 2001年</p>
+                        </li>
+                        <li>
+                            <a href=""><img src="../../assets/uploads/detail_05.jpg" alt=""></a>
+                            <p class="name">《界牌关》选段</p>
+                            <p class="master">CCTV1 空中剧院演出 2001年</p>
+                        </li>
+                        <li>
+                            <a href=""><img src="../../assets/uploads/detail_02.jpg" alt=""></a>
+                            <p class="name">《界牌关》选段</p>
+                            <p class="master">CCTV1 空中剧院演出 2001年</p>
+                        </li>
+                    </ul>
+                    <div class="page"></div>
+                </article>
+            </div>
+        </section>
+        <!--//End product_list-->
+
+        <section class="bd floor odd">
+            <div class="card">
+                <header>
+                    <h4>历史渊源</h4>
+                </header>
+                <article class="text_img">
+                    <div class="side" data-type="lgText">
+                        <p>1917年以来，京剧优秀演员大量涌现，呈现出流派纷呈的繁盛局面，由成熟期发展到鼎盛期，这一时期的代表人物为杨小楼、梅兰芳、余叔岩。</p>
+                        <p>
+                            1927年，北京《顺天吋报》举办京剧旦角名伶评选。读者投票选举结果:梅兰芳以演《太真外传》，尚小云以演《摩登伽女》，程砚秋以演《红拂传》，荀慧生以演《丹青引》，荣获“四大名旦”。“四大名旦”脱颖而出，是京剧走向鼎盛的重要标志。他们创造出各具特色的艺术风格，形成了梅兰芳的端庄典雅，尚小云的俏丽刚健，程砚秋的深沉委婉，荀慧生的娇昵柔媚“四大流派”，开创了京剧舞台上以旦为主的格局。武生杨小楼在继俞菊笙、杨月楼之后，将京剧武生表演艺术发展到新高度，被誉为“国剧宗师”、“武生泰斗”。老生中的余叔岩、高庆奎、言菊朋、马连良，20年代时称“四大须生”。同期的时慧宝、王凤卿、贯大元等也是生行中的优秀人才。30年代末、余、言、高先后退出舞台，马连良与谭富英、奚啸伯、杨宝森称之“四大须生”。女须生孟小冬，具有较高艺术造诣，颇有乃师余叔岩的艺术风范。</p>
+                        <p>
+                            1936年秋，北京大、中学校爱好京剧者及广大观众给各报写信，倡议进行京剧童伶选举。时富连成社社长叶龙章与北平《立言报》社长金达志商妥，由该报发表通告，专门接待各界投票，逐日在报上发表投票数字，并约请“韵石社”几人来报社监督。规定投票日期为半月，到期查点票数中华戏曲学校和富连成社负责人及《实报》、《实事白话报》、《北京晚报》、《戏剧报》亦派人当场查验票数。选举结果，富连成社李世芳得票约万张，当选“童伶主席”。生部冠军王金璐，亚军叶世长；旦角冠军毛世来，亚军宋德珠；净角冠军裘世戎，亚军赵德钰；丑角冠军詹世甫，亚军殷金振。选举结束后，于虎坊桥富连成社举行庆祝大会，并于当晚在鲜鱼口内华乐戏院举行加冕典礼，由李世芳，袁世海演出了《霸王别姬》。</p>
+                        <p>
+                            童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。童伶选举结束后，仍由《立言报》主持，选出李世芳、张君秋、毛世来、宋德珠为“四小名旦”，“四小名旦”联抉于长安、新新两家戏院演出了《白蛇传》和《四五花洞》，以示祝贺。1111111111111</p>
+                    </div>
+                    <div class="text_more">
+                        <span class="show">展开全部内容<i></i></span>
+                        <span class="hide">收起<i></i></span>
+                    </div>
+
+                    <div class="media">
+                        <ul>
+                            <li>
+                                <div class="card_video">
+                                    <div class="time">30:24</div>
+                                    <div class="play"></div>
+                                    <video poster="../../assets/uploads/exp2.png">
+                                        <source style="width: 100%;" src="../../assets/uploads/video1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <span>鼓锣</span>
+                            </li>
+                            <li>
+                                <img src="../../assets/uploads/exp3.png" alt="">
+                                <span>建国后昆剧界的杰出代表人物之一周传瑛</span>
+                            </li>
+                        </ul>
+                        <div class="more">
+                            <a class="arrow_right" href="">查看完整图集<i></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!--//End 历史渊源-->
+
+        <section class="bd floor even">
+            <div class="card">
+                <header>
+                    <h4>重要價值</h4>
+                </header>
+                <article class="plain_text">
+                    <p>傅谨：京剧是中国文化传统的重要表征之一。它是“地方戏时代”i出现的最重要的剧种，是雅文化在中国文化整体中渐趋 衰落的时代变革的产物。</p>
+                    <p>让·热内：京剧的主题、结构、表现手法之精妙绝顶。</p>
+                    <p>爱德华·戈登·克雷：中国京剧已经比西方任何其他戏剧更加成为一种独立而优秀的艺术形式。</p>
+                </article>
+            </div>
+        </section>
+        <!--//End 价值-->
+
+        <section class="bd floor odd">
+            <div class="card">
+                <header>
+                    <h4>影响</h4>
+                </header>
+                <article>
+                    <div class="plain_text">
+                        京剧曾称平剧，中国五大戏曲剧种之一，腔调以西皮、二黄为主，用胡琴和锣鼓等伴奏，被视为中国国粹，中国戏曲三鼎甲“榜首”。徽剧是京剧的前身。清代乾隆五十五年（1790年）起，原在南方演出的三庆、四喜、春台、和春，
+                        四大徽班陆续进入北京，他们与来自湖北的汉调艺人合作，同时又接受了昆曲、秦腔的部分剧目、曲调和表演方法，民间曲调，通过不断的交流、融合，最终形成京剧。京剧形成后在清朝宫廷内开始快速发展，直至共国得到空前的繁荣。京剧走遍世界各地，成为介绍、传播中国传统艺术文化的重要媒介。分布地以北京为中心，遍及中国。统艺术文化的重要媒介。分布地以北京为中心，遍及中国。在2010年11月16日，京剧被列入“人类非物质文化遗产代表作名录”。
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!--//ENd-->
+    </div>
+    <!--//End detail -->
+</div>
+
+
+<div class="bd footer"></div>
+<!--//End  footer-->
+
+
+<div class="side_fixed">
+    <ul></ul>
+    <a class="gotop" href="javascript:void(0)" title="返回顶部"></a>
+</div>
+<!--//End 右侧悬浮-->
+
+</body>
+
+</html>

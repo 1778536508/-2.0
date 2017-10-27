@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>搜索结果</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <!--[if IE]>
+    <link rel="stylesheet" href="../../assets/css/ie.css">
+    <script src="../../assets/js/html5.js"></script>
+    <![endif]-->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/system.js"></script>
+    <!--<script src="../assets/js/utils.js"></script>-->
+</head>
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header header_detail">
+    	<!--导航-->
+    	<style type="text/css">
+			.header .content .nav > ul > li > a:after{
+				background: #00000;
+			}
+		</style>
+		<script type="text/javascript">
+			(function(){
+				setTimeout(function(){
+					$(".header .content .nav li:nth-child(2)").addClass("active").siblings().removeClass("active");
+				},0.5)
+			})()
+		</script>
+        <div class="content">
+            <!--<a class="logo" href=""></a>
+            <div class="nav">
+                <ul>
+                    <li class="active"><a href="http://localhost:3000/首页.html">首页</a></li>
+                    <li><a href="http://localhost:3000/非遗名录.html">非遗名录</a></li>
+                    <li><a href="http://localhost:3000/非遗大师.html">非遗大师</a></li>
+                    <li><a href="http://localhost:3000/精选内容.html">精选内容</a></li>
+                    <li><a href="http://localhost:3000/非遗资讯.html">非遗资讯</a></li>
+                    <li><a href="http://localhost:3000/官方服务.html">官方服务</a></li>
+                    <li><a href="http://localhost:3000/我要申报.html">我要申报</a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <ul>
+                    <li class="login"><a class="active" href="javascript:;"><i class="icon"></i><em>登录</em></a></li>
+                    <li class="language">
+                        <a class="zh active" href="javascript:;"><em>中文</em></a>
+                        <a class="en" href="javascript:;"><em>EN</em></a>
+                    </li>
+                    <li class="search">
+                        <i class="icon"></i>
+                    </li>
+                </ul>
+            </div>-->
+        </div>
+        
+        <!--//End content-->
+        <!--<div class="drop_menu">
+            <div class="content">
+                <div class="item" style="width: 86px;">
+                    <dl>
+                        <dt>口头传说和表述</dt>
+                        <dd>
+                            <a href="">语言</a>
+                            <a href="">文字</a>
+                            <a href="">口述</a>
+                            <a href="">其他口头传统<br>及表述</a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="item" style="width: 143px;">
+                    <dl>
+                        <dt>表演艺术</dt>
+                        <dd>
+                            <a href="">音乐演奏</a>
+                            <a href="">舞蹈</a>
+                            <a href="">民歌</a>
+                            <a href="">传统戏剧</a>
+                            <a href="">曲艺</a>
+                            <a href="">传统体育、游艺与杂技</a>
+                            <a href="">其他表演艺术</a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="item" style="width: 100px;">
+                    <dl>
+                        <dt>社会风俗<br>礼仪、节庆</dt>
+                        <dd>
+                            <a href="">生产商贸习俗</a>
+                            <a href="">生活习俗</a>
+                            <a href="">人生仪式</a>
+                            <a href="">节日庆典</a>
+                            <a href="">其他仪式及庆典</a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="item" style="width: 240px;">
+                    <dl>
+                        <dt>有关自然界和<br>宇宙的知识和实践</dt>
+                        <dd>
+                            <a href="" style="width: 72px;">农林牧畜渔</a>
+                            <a href="" style="width: 129px; margin-left: 24px;">服装</a>
+                            <a href="" style="width: 72px;">食品</a>
+                            <a href="" style="width: 129px; margin-left: 24px;">住房与建筑</a>
+                            <a href="" style="width: 72px;">交通</a>
+                            <a href="" style="width: 129px; margin-left: 24px;">旅行</a>
+                            <a href="" style="width: 72px;">医、药</a>
+                            <a href="" style="width: 129px; margin-left: 24px;">军事防御</a>
+                            <a href="" style="width: 72px;">商贸</a>
+                            <a href="" style="width: 129px; margin-left: 24px;">工业、工程</a>
+                            <a href="" style="width: 72px;">天文、地理、水文等</a>
+                            <a href="" style="width: 129px; margin-left: 24px;">其他自然知识和实践</a>
+                        </dd>
+                    </dl>
+                </div>
+               
+
+                <div class="item" style="width: 210px;">
+                    <dl>
+                        <dt>传统的手工艺技能</dt>
+                        <dd>
+                            <a href="" style="width: 115px;">工具及机械制作</a>
+                            <a href="" style="width: 66px; margin-left: 24px;">髹饰工艺</a>
+                            <a href="" style="width: 115px;">家畜农林产品加工</a>
+                            <a href="" style="width: 66px; margin-left: 24px;">织染工艺</a>
+                            <a href="" style="width: 115px;">造纸、印刷机装裱</a>
+                            <a href="" style="width: 66px; margin-left: 24px;">编扎工艺</a>
+                            <a href="" style="width: 115px;">字画工艺</a>
+                            <a href="" style="width: 66px; margin-left: 24px;">锻冶工艺</a>
+                            <a href="" style="width: 115px;">剪刻工艺</a>
+
+                            <a href="" style="width: 66px; margin-left: 24px;">雕塑工艺</a>
+                            <a href="" style="width: 115px;">烧造工艺</a>
+                            <a href="" style="width: 66px; margin-left: 24px;">木作工艺</a>
+                            <a href="" style="width: 115px;">其他类</a>
+
+
+                        </dd>
+                    </dl>
+                </div>
+
+
+            </div>
+        </div>-->
+        <!--//End drop_menu-->
+
+    </div>
+
+    <div class="filter_search">
+        <div class="content">
+            <form class="form" action="">
+                <input class="ipt" type="text" value="苏州">
+                <input class="submit" type="submit" value="搜索">
+                <!--//End 自动提示-->
+                <div id="search-progress">
+                    <div class="progress">
+                        <span></span>
+                    </div>
+                </div>
+            </form>
+            <!--//End form-->
+
+            <div class="attr">
+                <span data-name="category">所属类别</span>
+                <span data-name="global">全球</span>
+            </div>
+            <!--//End attribute-->
+
+            <div class="dropbox">
+                <div class="item" data-name="category">
+                    <dl class="level">
+                        <dt>
+                    <div class="title">一级分类</div>
+                    <div class="subtitle">所有分类</div>
+                    </dt>
+                        <dd>
+                            <ul>
+                                <li>口头传统和表述</li>
+                                <li>表演艺术</li>
+                                <li>社会风俗、礼仪、节庆</li>
+                                <li>有关自然界和宇宙的知识和实践</li>
+                                <li>传统的手工艺技能</li>
+                                <li>传统的手工艺技能</li>
+                                <li>传统的手工艺技能</li>
+                                <li>传统的手工艺技能</li>
+                                <li>传统的手工艺技能</li>
+                                <li>传统的手工艺技能</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                    <div class="title">二级分类</div>
+                    <div class="subtitle">所有二级分类</div>
+                    </dt>
+                        <dd>
+                            <ul>
+                                <li>工具和机械制作</li>
+                                <li>家畜农林产品加工</li>
+                                <li>造纸、印刷及装裱</li>
+                                <li>烧造工艺</li>
+                                <li>锻冶工艺</li>
+                                <li>雕塑工艺</li>
+                                <li>雕塑工艺</li>
+                                <li>雕塑工艺</li>
+                                <li>雕塑工艺</li>
+                                <li>雕塑工艺</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 所属分类-->
+                <div class="item" data-name="global">
+                    <dl class="level">
+                        <dt>
+	                    	<div class="title">位置</div>
+	                    </dt>
+                        <dd>
+                            <ul>
+                                <li>全球</li>
+                                <li>中国</li>
+                                <li><a href="">非洲</a></li>
+                                <li>非洲</li>
+                                <li>亚太</li>
+                                <li>欧美</li>
+                                <li>拉美</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+	                    	<div class="title">按照字母顺序</div>
+	                    </dt>
+                        <dd>
+                            <ul>
+                                <li>安微</li>
+                                <li>澳门</li>
+                                <li>北京</li>
+                                <li>上海</li>
+                                <li>福建</li>
+                                <li>甘肃</li>
+                                <li>广东</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 位置-->
+            </div>
+            <!--//End attribute-->
+        </div>
+    </div>
+    <!--//End filter_search -->
+
+    <!-- 找到项目 start -->
+    <div class="container">
+        <div class="directory search">
+            <div class="section">
+                <div class="title"><span>126</span>
+                    <p>找到结果</p>
+                </div>
+                <!--//End title-->
+                <div class="filter_bar">
+                    <div class="links">
+                        <a class="active" href="">全部465</a>
+                        <a href="">项目</a>
+                        <a href="">传承人</a>
+                        <a href="">作品</a>
+                    </div>
+                    <div class="icon_tab active"><i></i></div>
+                </div>
+                <!--//End bar-->
+
+                <div class="pro_column3 active">
+                    <ul>
+                        <li>
+                            <a class="pic"><img src="../assets/uploads/Group%206.jpg" alt=""></a>
+                            <div class="context">
+                                <h4>苏绣<i class="icon_list_cate"></i></h4>
+                                <div class="doi">
+                                    <span class="tag">DO</span>
+                                    <span>标识码</span>
+                                    <span>37232519870103004383</span>
+                                </div>
+                                <div class="cate">
+                                    <span>类别</span>
+                                    <span>表演艺术 - 传统戏剧/曲艺</span>
+                                </div>
+                                <div class="brief">
+                                    苏绣是中国优秀的民族传统工艺之一，是苏州地区刺绣产品的总称，其发源地在苏州吴县一带，现已遍衍无锡、常州等地。刺绣与养蚕，缫丝分不开，又称丝绣...
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="pic"><img src="../assets/uploads/Group%206.jpg" alt=""></a>
+                            <div class="context">
+                                <h4>丁奎志<i class="icon_list_user"></i></h4>
+                                <div class="cate">
+                                    <a href="" class="icon_inter"><i></i>UNESCO认证</a>
+                                    <span class="name_project">苏绣</span>
+                                </div>
+                                <div class="doi">
+                                    <span class="tag">DO</span>
+                                    <span>标识码</span>
+                                    <span>37232519870103004383</span>
+                                </div>
+                                <div class="brief">
+                                    苏绣是中国优秀的民族传统工艺之一，是苏州地区刺绣产品的总称，其发源地在苏州吴县一带，现已遍衍无锡、常州等地。刺绣与养蚕，缫丝分不开，又称丝绣...
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="" class="pic"><img src="../assets/uploads/p2@2x.png" alt=""></a>
+                            <div class="context">
+                                <h4>小猫戏蝶<i class="icon_list_album"></i></h4>
+                                <div class="info">
+                                    <a href=""><img src="../assets/uploads/Bitmap1.png" alt=""></a>
+                                    <span>姚慧芬</span>
+                                    <span class="name_project">苏绣</span>
+                                </div>
+                                <div class="brief">
+                                    苏绣是中国优秀的民族传统工艺之一，是苏州地区刺绣产品的总称，其发源地在苏州吴县一带，现已遍衍无锡、常州等地。刺绣与养蚕，缫丝分不开，又称丝绣...
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="pic"><img src="../assets/uploads/Group%206.jpg" alt=""></a>
+                            <div class="context">
+                                <h4>苏绣<i class="icon_list_cate"></i></h4>
+                                <div class="doi">
+                                    <span class="tag">DO</span>
+                                    <span>标识码</span>
+                                    <span>37232519870103004383</span>
+                                </div>
+                                <div class="cate">
+                                    <span>类别</span>
+                                    <span>表演艺术 - 传统戏剧/曲艺</span>
+                                </div>
+                                <div class="brief">
+                                    苏绣是中国优秀的民族传统工艺之一，是苏州地区刺绣产品的总称，其发源地在苏州吴县一带，现已遍衍无锡、常州等地。刺绣与养蚕，缫丝分不开，又称丝绣...
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="pic"><img src="../assets/uploads/Group%206.jpg" alt=""></a>
+                            <div class="context">
+                                <h4>丁奎志<i class="icon_list_user"></i></h4>
+                                <div class="cate">
+                                    <a href="" class="icon_inter"><i></i>UNESCO认证</a>
+                                    <span class="name_project">苏绣</span>
+                                </div>
+                                <div class="doi">
+                                    <span class="tag">DO</span>
+                                    <span>标识码</span>
+                                    <span>37232519870103004383</span>
+                                </div>
+                                <div class="brief">
+                                    苏绣是中国优秀的民族传统工艺之一，是苏州地区刺绣产品的总称，其发源地在苏州吴县一带，现已遍衍无锡、常州等地。刺绣与养蚕，缫丝分不开，又称丝绣...
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="" class="pic"><img src="../assets/uploads/p2@2x.png" alt=""></a>
+                            <div class="context">
+                                <h4>小猫戏蝶<i class="icon_list_album"></i></h4>
+                                <div class="info">
+                                    <a href=""><img src="../assets/uploads/Bitmap1.png" alt=""></a>
+                                    <span>姚慧芬</span>
+                                    <span class="name_project">苏绣</span>
+                                </div>
+                                <div class="brief">
+                                    苏绣是中国优秀的民族传统工艺之一，是苏州地区刺绣产品的总称，其发源地在苏州吴县一带，现已遍衍无锡、常州等地。刺绣与养蚕，缫丝分不开，又称丝绣...
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="pic"><img src="../assets/uploads/Group%206.jpg" alt=""></a>
+                            <div class="context">
+                                <h4>苏绣<i class="icon_list_cate"></i></h4>
+                                <div class="doi">
+                                    <span class="tag">DO</span>
+                                    <span>标识码</span>
+                                    <span>37232519870103004383</span>
+                                </div>
+                                <div class="cate">
+                                    <span>类别</span>
+                                    <span>表演艺术 - 传统戏剧/曲艺</span>
+                                </div>
+                                <div class="brief">
+                                    苏绣是中国优秀的民族传统工艺之一，是苏州地区刺绣产品的总称，其发源地在苏州吴县一带，现已遍衍无锡、常州等地。刺绣与养蚕，缫丝分不开，又称丝绣...
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="pic"><img src="../assets/uploads/Group%206.jpg" alt=""></a>
+                            <div class="context">
+                                <h4>丁奎志<i class="icon_list_user"></i></h4>
+                                <div class="cate">
+                                    <a href="" class="icon_inter"><i></i>UNESCO认证</a>
+                                    <span class="name_project">苏绣</span>
+                                </div>
+                                <div class="doi">
+                                    <span class="tag">DO</span>
+                                    <span>标识码</span>
+                                    <span>37232519870103004383</span>
+                                </div>
+                                <div class="brief">
+                                    苏绣是中国优秀的民族传统工艺之一，是苏州地区刺绣产品的总称，其发源地在苏州吴县一带，现已遍衍无锡、常州等地。刺绣与养蚕，缫丝分不开，又称丝绣...
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="" class="pic"><img src="../assets/uploads/p2@2x.png" alt=""></a>
+                            <div class="context">
+                                <h4>小猫戏蝶<i class="icon_list_album"></i></h4>
+                                <div class="info">
+                                    <a href=""><img src="../assets/uploads/Bitmap1.png" alt=""></a>
+                                    <span>姚慧芬</span>
+                                    <span class="name_project">苏绣</span>
+                                </div>
+                                <div class="brief">
+                                    苏绣是中国优秀的民族传统工艺之一，是苏州地区刺绣产品的总称，其发源地在苏州吴县一带，现已遍衍无锡、常州等地。刺绣与养蚕，缫丝分不开，又称丝绣...
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="load_more">
+                    <a href="javascript:;">Load More</a>
+                </div>
+            </div>
+            <!-- 项目 end -->
+
+            <div class="search_lose">
+                <div class="main">
+                    <div class="icon"><i class="icon_search_lose"></i></div>
+                    <div class="name">很抱歉，您的搜索没有结果！</div>
+                    <div class="desc">请尝试一些别的关键词，使用一些规词，比如苏州，刺绣...</div>
+                </div>
+            </div>
+            <!--//End 搜索失败-->
+        </div>
+    </div>
+    <!-- 找到项目 end -->
+
+    <div class="bd footer">
+        <div class="diich">
+            <div class="hd">
+                <p class="name"><span>DIICH</span><em>非遺國際</em></p>
+                <p class="subname">2017 © EFeiYi. All rights reserved</p>
+            </div>
+        </div>
+        <!--//End diich-->
+        <div class="main">
+            <div class="hd">
+                <div class="lbox">
+                    <div><span>项目概况</span><em>tel：400-876-8766</em></div>
+                    <div><span>重大活动</span><em>email：efeiyi@efeiyi.com</em></div>
+                    <div><span>合作资源</span><em>地址：北京市东城区前门大街72&amp;74号二层</em></div>
+                    <div><span>业务体系</span><em>add：2Floor，72&amp;74,Qian Men ST.Dongcheng District,Beijing,China</em></div>
+                </div>
+                <!--//End lbox-->
+                <div class="rbox">
+                    <div class="share">
+                        <a href="" class="facebook" title="facebook"></a>
+                        <a href="" class="twitter" title="twitter"></a>
+                        <a href="" class="instagram" title="instagram"></a>
+                        <a href="" class="linkedin" title="linkedin"></a>
+                        <span class="code"><img src="../assets/images/footer_code.png" alt=""></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//ENd main-->
+    </div>
+    <!--//End--footer-->
+
+    <div id="refresh-progress" class="refresh">
+        <div class="progress">
+            <span></span>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function() {
+        var searchPage = {
+            init: function() {
+                $('.header_detail .content .info li.search').hide();
+                $('.header_detail .content .info li.login').addClass('line');
+                this.filterBar();
+                this.search();
+            },
+            filterBar: function() {
+                var obj = $('.filter_bar');
+                var linkTab = obj.find('a');
+                var iconTab = obj.find('.icon_tab');
+                var proColumn = $('.pro_column3'); //搜索列表
+
+                //筛选
+                linkTab.on('click', function() {
+                    $(this).addClass('active').siblings('a').removeClass('active');
+                    return false;
+                });
+
+                //切换图标
+                iconTab.on('click', function() {
+                    if ($(this).hasClass('active')) { //九宫格
+                        $(this).removeClass('active');
+                        proColumn.removeClass('active');
+                    } else { //横排
+                        $(this).addClass('active');
+                        proColumn.addClass('active');
+                    }
+                });
+
+
+            },
+            search: function() {
+                var filter = $('.filter_search'); //下拉搜索
+                var filterFixed = $('.filter_search_fixed');
+                var ipt = filter.find('.ipt');
+                var iptVal = ipt.val();
+                var filterAll = filter.find('.attr span'); //筛选项
+                var filterItem = filter.find('.item'); //筛选下来框
+                var suggest = filter.find('.suggest');
+                var body = $('body');
+                //获取焦点
+                ipt.focus(function() {
+                    $(this).val('');
+                    body.append('<div class="overbg"></div>');
+                });
+
+                //失去焦点如果为空则显示原始值
+                ipt.blur(function() {
+                    var _val = $(this).val();
+                    if (_val == '') {
+                        $(this).val(iptVal);
+                    }
+                    $('.overbg').remove();
+                });
+
+
+
+
+
+
+                //2.点击筛选
+                filterAll.on('click', function() {
+                    var _this = $(this);
+                    var _index = _this.index();
+                    filterItem.eq(_index)
+                        .css('left', parseInt(_this.position().left) + 'px')
+                        .show()
+                        .siblings('.item')
+                        .hide();
+                });
+
+
+                filterItem.each(function() {
+                    var level = $(this).find('.level');
+                    var level2 = $(this).find('.level2');
+                    var _li = level.find('li'); //分类
+                    var __li = level2.find('li'); //二级分类
+
+
+                    _li.hover(function() {
+                        $(this).addClass('active').siblings('li').removeClass('active');
+                        level2.show();
+                    });
+
+
+
+                    if ($(this).attr('data-name') == 'category') {
+                        //点击
+                        _li.on('click', function() {
+                            filterItem.hide();
+                            var text = $(this).text();
+                            filterAll.eq(0).text(text);
+
+                        });
+                        __li.on('click', function() {
+                            filterItem.hide();
+                            var text = $(this).text();
+                            filterAll.eq(0).text(text);
+                        });
+                    }
+
+                    if ($(this).attr('data-name') == 'global') {
+                        //点击
+                        _li.on('click', function() {
+                            filterItem.hide();
+                            var text = $(this).text();
+                            filterAll.eq(1).text(text);
+
+                        });
+                        __li.on('click', function() {
+                            filterItem.hide();
+                            var text = $(this).text();
+                            filterAll.eq(1).text(text);
+                        });
+                    }
+                });
+
+                //3.阻止点击自身关闭
+                filter.on('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+
+                //4.点击自身之外的地方关闭下拉框
+                $(document).on("click", function() {
+                    filterItem.hide();
+                    filterFixed.slideUp('fast');
+                });
+
+                //自动提示
+                if (suggest.is(':visible')) {
+                    body.css('overflow', 'hidden');
+                    body.append('<div class="overbg"></div>');
+                } else {
+                    body.css('overflow', '');
+                }
+
+                body.find('.overbg').on('click', function() {
+                    filterItem.hide();
+                    filterFixed.slideUp('fast');
+                    suggest.hide();
+                    $(this).remove();
+                    body.css('overflow', '');
+                });
+
+            }
+        };
+        searchPage.init();
+
+//        progress.refresh(); //页面刷新进度条
+//        progress.search();  //搜索进度条
+
+//        progress.close('#refresh-progress');//关闭页面刷新进度条
+//        progress.close('#search-progress');//关闭页面刷新进度条
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我要申报-传承人表单</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/inputs.css">
+    <script src="../../assets/js/jquery.min.js"></script>
+    <!--<script src="../../assets/js/laydate.js"></script>-->
+    <script src="../../assets/data/citys.js"></script>
+    <script src="../../assets/js/system.js"></script>
+    <script src="../../assets/js/inputs.js"></script>
+    <style>
+        .login {
+            display: none;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header fixed header_detail"></div>
+    <!--//End header-->
+
+    <div class="container ipt_base">
+            <div class="head">
+                <div class="hd">
+                    <div class="name">填写申报信息-李秀丽（土家银器传人）</div>
+                    <div class="handle">
+                        <a class="active" href="">保存</a>
+                        <a class="empty" href="">预览<img src="../../assets/images/icon_preview_loading.gif" style="vertical-align: middle;" /></a>
+                        <a class="empty" href="">提交</a>
+                        <a class="disabled" href="">提交</a>
+                    </div>
+                </div>
+            </div>
+            <!--//End project_name-->
+
+            <div class="hd">
+                <div class="slide">
+                    <div class="item">
+                        <div class="dt selected"><i class="icon selected"></i>基础信息</div>
+                        <div class="dd">
+                            <ul>
+                                <li data-type="masterBaseStep1" class="selected"><i class="icon selected"></i><span>基本信息</span></li>
+                                <li data-type="masterBaseStep2"><i class="icon unselected"></i><span>联系方式</span></li>
+                                <li data-type="masterBaseStep3"><i class="icon unselected"></i><span>职业信息</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--//End 基础信息-->
+                    <div class="item">
+                        <div class="dt selected"><i class="icon selected"></i>传承人内容<em class="arrow"></em></div>
+                        <div class="dd">
+                            <ul>
+                                <li data-type="longField"><i class="icon unselected"></i><span>简历</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>传承历史与现状</span></li>
+                                <li data-type="masterPupil"><i class="icon unselected"></i><span>师徒关系</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>记忆特征</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>个人成就</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>自定义项1</span></li>
+                                <li data-type="longField"><i class="icon unselected"></i><span>自定义项2</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--//End 传承人内容-->
+
+                    <div class="item custom">
+                        <div data-type="longFieldCustom" class="dt selected"><i></i>添加自定义项</div>
+                    </div>
+                    <!--//End 传承人内容-->
+                    <div class="item status">
+                        <div class="dd">
+                            <ul>
+                                <li><i class="icon selected"></i>完成模块内所有的字段</li>
+                                <li><i class="icon unselected"></i>未完成模块内的必填项</li>
+                                <li><i class="icon warning"></i>完成模块内所有的必填项<br>未完成某些选填项</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--//End 基础信息-->
+                </div>
+                <!--//slide End-->
+
+                <div id="tpl"></div>
+                <!--//End-->
+            </div>
+        </div>
+
+    <div class="footer"></div>
+    <!--//End-->
+
+
+
+
+
+
+</body>
+    <script>
+        $(function() {
+            $('.header .content .nav li').eq(6).addClass('active').siblings('li').removeClass('active');
+        });
+
+        inheritorPage.init();
+
+
+
+
+
+
+
+    </script>
+</html>

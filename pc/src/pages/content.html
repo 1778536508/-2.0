@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>精选内容</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://diich.efeiyi.com/assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+
+    <script src="http://diich.efeiyi.com/assets/js/jquery.min.js"></script>
+    <script src="http://diich.efeiyi.com/js/category.js"></script>
+    <script src="http://diich.efeiyi.com/js/citys.js"></script>
+    <script src="http://diich.efeiyi.com/assets/js/system.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <style>
+        .wonderful .slider {
+            height: 500px;
+        }
+        .wonderful .slider ul.num li {
+            font-family:'微软雅黑';
+        }
+        .wonderful .slider ul.img li {
+            display: none;
+        }
+
+        .wonderful .slider ul.img img {
+            width: 1200px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -600px;
+        }
+        .wonderful .slider .content {
+            width:1200px;
+            height:500px;
+            position: relative;
+            margin:0 auto;
+        }
+        .modal_video {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 20;
+        }
+
+        .modal_video .content {
+            width: 800px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -200px;
+            margin-left: -400px;
+            z-index: 20;
+            background: #fff;
+        }
+
+        .modal_video .content video {
+            width: 100%;
+            top:0;
+            left:0;
+        }
+
+        .modal_video .overbg0 {
+            background: rgba(0, 0, 0, .85);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .directory .pro_column3 .context .avatar img {
+            line-height: 36px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .directory .pro_column3 .context .avatar span {
+            float: left;
+        }
+
+        .directory .pro_column3 .pic {
+            display: -webkit-flex;
+            -webkit-justify-content: center;
+            -webkit-align-items: center;
+        }
+        .mask_left {
+            width:200px;
+            height:600px;
+            background: -webkit-linear-gradient(left, #000,transparent);
+            position: absolute;
+            top:0;
+            left:0;
+            z-index:2;
+        }
+        .mask_right {
+            width:200px;
+            height:600px;
+            background: -webkit-linear-gradient(right, #000,transparent);
+            position: absolute;
+            top:0;
+            right:0;
+            z-index:2;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(245, 246, 247)">
+
+<div class="container">
+    <div class="header header_detail"></div>
+    <!--//End header -->
+    <div class="filter_search filter_search_fixed">
+        <div class="content">
+            <form class="form" action="http://diich.efeiyi.com/page/search.html">
+                <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+                <input type="hidden" id="area_code" name="area_code" value=""/>
+                <input type="hidden" id="gb_category_code" name="gb_category_code" value=""/>
+                <input type="hidden" id="type" name="type" value=""/>
+                <input class="submit" type="button" value="搜索" onclick="submit()">
+                <div class="suggest" style="display: none;">
+                    <ul>
+
+                    </ul>
+                </div>
+            </form>
+            <!--//End form-->
+
+            <div class="attr">
+                <span id="attr_text">所属类别</span>
+                <span id="area_text">全球</span>
+            </div>
+            <!--//End attribute-->
+
+            <div class="dropbox" id="drag">
+                <!--//ENd 全部-->
+
+                <div class="item" id="item_1">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">一级分类</div>
+                        <div class="subtitle">所有分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="mainCategory">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">二级分类</div>
+                        <div class="subtitle">所有二级分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="catecontent">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 所属分类-->
+
+                <div class="item">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">位置</div>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>中国</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">按照字母顺序</div>
+                        </dt>
+                        <dd>
+                            <ul id="citycontent">
+                                <li>安微</li>
+                                <li>澳门</li>
+                                <li>北京</li>
+                                <li>上海</li>
+                                <li>福建</li>
+                                <li>甘肃</li>
+                                <li>广东</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 位置-->
+
+            </div>
+            <!--//End attribute-->
+        </div>
+    </div>
+    <!--//End filter_search -->
+
+    <div class="wonderful">
+        <div class="bd slider">
+            <ul class="img">
+                <li class="bd" style="display: block;">
+                    <span class="play_big" data-id="0"></span>
+                    <div class="content">
+                        <div class="mask_left"></div>
+                        <img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/content/banner1.jpg" alt="">
+                        <div class="mask_right"></div>
+                    </div>
+                </li>
+                <li class="bd">
+                    <span class="play_big" data-id="1"></span>
+                    <div class="content">
+                        <div class="mask_left"></div>
+                        <img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/content/banner2.jpg" alt="">
+                        <div class="mask_right"></div>
+                    </div>
+                </li>
+            </ul>
+            <!--//End img -->
+            <ul class="num">
+                <li class="active">01</li>
+                <li>02</li>
+            </ul>
+        </div>
+        <!--//End slider -->
+        <div class="conbox">
+            <div class="content">
+                <div class="head">
+                    <h1>青花瓷</h1>
+                    <div class="desc">青花瓷，简称“青花”，是中国瓷器的主流品种之一，名列景德镇四大名瓷之首。以钴矿为原料，用色料在坯体上描绘纹饰，施釉后经高温还原焰一次烧成，釉色晶莹、透彻、雅致。
+                    </div>
+                    <div class="avatar">
+                        <span class="name">传统的手工艺技能</span>
+                        <span class="imgs">
+                           <a href="javascript:;" style="cursor:text;"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/content/huangguojun.jpg" alt=""></a>
+                       </span>
+                        <span class="inheritor_num">中国传统工艺大师黄国军</span>
+                    </div>
+                </div>
+                <!--//End-->
+
+                <!--<div class="main">-->
+                    <!--<div class="lbox">-->
+                        <!--<div class="name">中国苏绣</div>-->
+                        <!--<div class="desc">-->
+                            <!--苏绣是苏州地区刺绣产品的总称，汉族优秀的民族传统工艺之一，以苏州刺绣研究所的高新区的镇湖镇（现改为街道）刺绣最为有名。刺绣与养蚕，缫丝分不开，所以刺绣，又称丝绣。苏绣的发源地在苏州吴县一带，现已遍布很多地区，至今已有2000余年的历史，清代是苏绣的全盛时期，可谓流派繁衍，名手竞秀。苏绣具有图案秀丽、构思巧妙、绣工细致、针法活泼、色彩清雅的独特风格，地方特色浓郁；绣技具有“平、齐、和、光、顺、匀”的特点。-->
+                        <!--</div>-->
+                        <!--<div class="info" style="margin-top:20px;">-->
+                            <!--<span class="name">口头传统和表述</span>-->
+                            <!--<div class="avatar">-->
+                                <!--<a href=""><img src="http://resource.efeiyi.com/image/uploads/content/pic1.jpg" alt=""></a>-->
+                                <!--<span class="num">相关传承人 · 姚慧芬</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="rbox">-->
+                        <!--<img width="770" src="http://resource.efeiyi.com/image/uploads/content/pic1.jpg" alt="">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--//ENd main-->
+
+                <div class="directory">
+                    <div class="section">
+                        <div class="pro_column3">
+                            <ul id="products"></ul>
+                        </div>
+                        <!--<div class="load_more">-->
+                        <!--<a href="javascript:;">Load More</a>-->
+                        <!--</div>-->
+                    </div>
+                    <!-- 项目 end -->
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="bd footer"></div>
+    <!--//End--footer-->
+
+    <div class="modal_video" style="display: none;">
+        <div class="content">
+
+        </div>
+        <div class="overbg0"></div>
+    </div>
+
+</div>
+
+
+</body>
+<script>
+    $(function () {
+        $('.header .content .nav li').eq(3).addClass('active').siblings('li').removeClass('active');
+        //精选页面
+        common.slide(); //轮播图
+        (function () {
+            var modal = $('.modal_video');
+            var el = $('.play_big');
+            var content = modal.find('.content');
+            var arr = [
+                '<video class="video" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/video/qinghuaci.mp4" controls></video>',
+                '<video class="video" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/video/taohuawu.mp4" controls></video>',
+            ];
+
+            el.on('click', function () {
+                var index = $(this).attr('data-id');
+                content.append(arr[content]);
+                modal.fadeIn(200);
+            });
+            $('.overbg0').on('click', function () {
+                modal.fadeOut();
+                content.html('');
+            });
+            return false;
+        })();
+
+        //产品列表
+        (function () {
+            var data = [
+                {"name": "闹天宫", "master": "蔡水况", "pic": "400000015001.jpg", "avatar": "caishuikuang.jpg", project: '其他雕塑工艺'},
+                {"name": "南瓜套盘", "master": "蔡云娣", "pic": "400000015003.jpg", "avatar": "caiyunti.jpg",project:'石料雕塑工艺'},
+                {"name": "早生贵子壶", "master": "蔡云娣", "pic": "400000015005.jpg", "avatar": "caiyunti.jpg",project:'石料雕塑工艺'},
+                {"name": "叶上金蝉", "master": "程淑美", "pic": "400000015008.jpg", "avatar": "chengshumei.jpg",project:'石料雕塑工艺'},
+                {"name": "金扣红斑犀皮漆碗", "master": "甘而可", "pic": "400000015010.jpg", "avatar": "ganerke.jpg",project:'髹饰工艺（漆器等）'},
+                {"name": "绿金斑犀皮漆茶具一套", "master": "甘而可", "pic": "400000015011.jpg", "avatar": "ganerke.jpg",project:'髹饰工艺（漆器等）'},
+                {"name": "地动仪", "master": "甘而可", "pic": "400000015012.jpg", "avatar": "ganerke.jpg",project:'髹饰工艺（漆器等）'},
+                {"name": "丝绸之路", "master": "高水旺", "pic": "400000015014.jpg", "avatar": "gaoshuiwang.jpg",project:'烧造工艺（陶、瓷、玻璃料器等）'},
+                {"name": "连年有余", "master": "霍庆顺", "pic": "400000015019.jpg", "avatar": "huoqingshun.jpg",project:'年画'},
+                {"name": "吕尧臣作品小石冷泉", "master": "吕尧臣", "pic": "400000015022.jpg", "avatar": "lvxiaochen.jpg",project:'烧造工艺（陶、瓷、玻璃料器等）'},
+                {"name": "阴阳太极壶", "master": "吕尧臣", "pic": "400000015023.jpg", "avatar": "lvxiaochen.jpg",project:'烧造工艺（陶、瓷、玻璃料器等）'},
+                {"name": "宋世义翡翠西厢记", "master": "宋世义", "pic": "400000015024.jpg", "avatar": "songshiyi.jpg",project:'石料雕塑工艺'},
+                {"name": "翡翠敦煌伎乐天", "master": "宋世义", "pic": "400000015025.jpg", "avatar": "songshiyi.jpg",project:'石料雕塑工艺'},
+                {"name": "女王", "master": "孙燕云", "pic": "400000015027.jpg", "avatar": "sunyanyun.jpg",project:'刺绣工艺'},
+                {"name": "钱学森", "master": "孙燕云", "pic": "400000015028.jpg", "avatar": "sunyanyun.jpg",project:'刺绣工艺'},
+                {"name": "道德经", "master": "王芝文", "pic": "400000015030.jpg", "avatar": "wangzhiwen.jpg",project:'其他字画工艺'},
+                {"name": "百鸟朝凤", "master": "魏国秋", "pic": "400000015033.jpg", "avatar": "weiguoqiu.jpg",project:'编扎工艺（竹、藤、棕、草等材料的编织扎制）'},
+                {"name": "水乡小品", "master": "姚惠芬", "pic": "400000015036.jpg", "avatar": "yaohuifen.jpg",project:'刺绣工艺'},
+                {"name": "写意牡丹", "master": "姚惠芬", "pic": "400000015037.jpg", "avatar": "yaohuifen.jpg",project:'刺绣工艺'},
+                {"name": "花冠万年灯", "master": "张同禄", "pic": "400000015039.jpg", "avatar": "zhangtonglu.jpg",project:'铜器锻冶工艺'},
+                {"name": "百花齐放", "master": "朱炳仁", "pic": "400000015042.jpg", "avatar": "zhubingren.jpg",project:'铜器锻冶工艺'},
+                {"name": "圆明园之魂", "master": "朱炳仁", "pic": "400000015044.jpg", "avatar": "zhubingren.jpg",project:'铜器锻冶工艺'},
+                {"name": "将军罐", "master": "何俊明", "pic": "400000015047.jpg", "avatar": "kejunming.jpg",project:'髹饰工艺（漆器等）'},
+                {"name": "岁朝清供", "master": "康惠芳", "pic": "400000015048.jpg", "avatar": "kanghuifang.jpg",project:'刺绣工艺'},
+                {"name": "金龙鱼", "master": "康惠芳", "pic": "400000015050.jpg", "avatar": "kanghuifang.jpg",project:'刺绣工艺'},
+                {"name": "莲华", "master": "吕俊杰", "pic": "400000015052.jpg", "avatar": "lvjunjie.jpg",project:'其他烧造工艺'},
+                {"name": "《富春山居图》之二", "master": "魏立中", "pic": "400000015054.jpg", "avatar": "weilizhong.jpg",project:'印染工艺'},
+                {"name": "宋徽宗赵佶五色鹦鹉图", "master": "魏立中", "pic": "400000015055.jpg", "avatar": "weilizhong.jpg",project:'印染工艺'},
+                {"name": "鱼桌旗", "master": "吴元新", "pic": "400000015059.jpg", "avatar": "wuyuanxin.jpg",project:'印染工艺'}
+            ];
+
+
+            var product = $('#products');
+            var str = '';
+            var baseUrl='http://diich-resource.oss-cn-beijing.aliyuncs.com/html/content/images/';
+;            for (var i = 0; i < data.length; i++) {
+                str += '<li>' +
+                    '<p class="pic"><img src="'+ baseUrl + data[i].pic + '?x-oss-process=style/selected-content-grid-image" alt=""></p>' +
+                    '<div class="context">' +
+                    '<h4>' + data[i].name + '</h4>' +
+                    '<div class="tag">' +
+                    '<span class="name_project">传统手工艺</span>' +
+                    '</div>' +
+                    '<div class="avatar">' +
+                    '<img src="'+ baseUrl  + data[i].avatar + '" alt="">' +
+                    '<span>' + data[i].master + '</span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</li>';
+            }
+            product.append(str);
+        })();
+
+
+    });
+</script>
+</html>

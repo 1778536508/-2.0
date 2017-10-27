@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>非遗资讯</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://diich.efeiyi.com/assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <!--插件-->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="http://diich.efeiyi.com/assets/js/vue.js"></script>
+    <!--//End 插件-->
+
+    <!--静态数据-->
+    <script src="http://diich.efeiyi.com/data/category.js"></script>
+    <script src="http://diich.efeiyi.com/js/citys.js"></script>
+    <script src="http://diich.efeiyi.com/data/dictionary.js"></script>
+    <script src="http://diich.efeiyi.com/js/util.js"></script>
+    <!--//End 静态数据-->
+
+    <script src="../../assets/js/system.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <style>
+        .information .card ul li .context h3 a:hover {
+            text-decoration: none;
+        }
+        .information .card ul {
+            margin-top:0;
+        }
+        .information .card h2 {
+            margin-bottom:60px;
+        }
+        .cover_img {
+            width:370px;
+            height:277px;
+            background: #000;
+            float: left;
+            overflow: hidden;
+        }
+        .cover_img img {
+            -webkit-transition: all .3s;
+            transition: all .3s;
+
+        }
+        .cover_img:hover img {
+            transform: scale(1.1);
+            opacity:.8;
+        }
+    </style>
+</head>
+
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header header_detail"></div>
+    <!--//End header -->
+    <div class="filter_search filter_search_fixed">
+        <div class="content">
+            <form class="form" action="http://diich.efeiyi.com/page/search.html">
+                <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+                <input type="hidden" id="area_code" name="area_code" value="" />
+                <input type="hidden" id="gb_category_code" name="gb_category_code" value="" />
+                <input type="hidden" id="type" name="type" value="" />
+                <input class="submit" type="button" value="搜索" onclick="submit()">
+                <div class="suggest" style="display: none;">
+                    <ul>
+
+                    </ul>
+                </div>
+            </form>
+            <!--//End form-->
+
+            <div class="attr">
+                <span id="attr_text">所属类别</span>
+                <span id="area_text">全球</span>
+            </div>
+            <!--//End attribute-->
+
+            <div class="dropbox" id="drag">
+                <!--//ENd 全部-->
+
+                <div class="item" id="item_1">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">一级分类</div>
+                        <div class="subtitle">所有分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="mainCategory">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">二级分类</div>
+                        <div class="subtitle">所有二级分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="catecontent">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 所属分类-->
+
+                <div class="item">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">位置</div>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>中国</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">按照字母顺序</div>
+                        </dt>
+                        <dd>
+                            <ul id="citycontent">
+                                <li>安微</li>
+                                <li>澳门</li>
+                                <li>北京</li>
+                                <li>上海</li>
+                                <li>福建</li>
+                                <li>甘肃</li>
+                                <li>广东</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 位置-->
+
+            </div>
+            <!--//End attribute-->
+        </div>
+    </div>
+    <!--//End filter_search -->
+
+    <div class="container" id="app">
+        <div class="information">
+            <div class="info_detail">
+                <!--<div class="bd crumb">-->
+                    <!--<a href="/" title="首页">首页</a> &gt; <a href="" title="新闻资讯">新闻资讯</a> &gt; <em v-text="details.title"></em>-->
+                <!--</div>-->
+                <!--//End-->
+                <div class="title">
+                    <h2 v-text="details.title"></h2>
+                    <div class="time" v-text="details.time"></div>
+                </div>
+                <div class="info" v-html="details.content"></div>
+            </div>
+        </div>
+        <!--//End information-->
+
+
+    </div>
+
+    <div class="bd footer"></div>
+    <!--//End--footer-->
+</body>
+<script>
+    $(function() {
+        $('.header .content .nav li').eq(4).addClass('active').siblings('li').removeClass('active');
+        var app=new Vue({
+           el:'#app',
+            data:{
+               details:{
+                   title:'Basoga communities of Uganda engage in the safeguarding of the Bigwala',
+                   time:'20 March 2017',
+                   content:'<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id1_en03.jpg" alt=""></p>' +
+                   '<p>Bigwala, a cultural performance that is recognized as an Intangible Cultural Heritage in Need of Urgent Safeguarding by UNESCO is being revived by the members of the Basoga communities through a two-year International Assistance project (September 2015 – August 2017) supported under the Intangible Cultural Heritage Fund and implemented by the National Council of Folklorists of Uganda. Bigwala music and dance is a cultural practice of the Basoga people of Uganda, performed during royal celebrations such as coronations and funerals and, in recent decades, on social occasions. The members of the community feared that the dance will no longer be performed in a few years’ time, as there were only five elderly players remaining in the whole of the Busoga kingdom. The assistance provided to the Basoga communities to safeguard the dance has enabled knowledge transfer to young people who are trained in the practice of the dance, which is now being performed at different cultural events such as the Kyabazinga coronation anniversary in September 2016 and the 78th Kyabazinga day celebration in February 2017. </p>' +
+                   '<p>Furthermore, the participation of members of the Basoga communities has resulted in the commitment of farmers to grow Bigwala gourds as well as address other issues that might hinder the smooth revival of the cultural practice. 30 Bigwala sets of instruments are being currently used for the performances and seven communities now grow, make, play and dance to Bigwala. </p>' +
+                   '<p>Bigwala has recently received media coverage in Uganda.</p>'
+               }
+            },
+            mounted:function () {
+                document.title=this.details.title;
+            }
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我要申报-创建项目并申报传承人</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/inputs.css">
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/system.js"></script>
+    <script src="assets/js/inputs-bak.js"></script>
+</head>
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header fixed header_detail"></div>
+    <!--//End header-->
+
+    <div class="container ipt_page ipt_inheritor">
+        <div class="hd">
+            <div class="bd create_project">
+                <div class="bd back"><a href="javascript:history.go(-1);"><i></i>返回</a></div>
+                <div class="step1">
+                    <div class="dt">您要申报什么项目的传承人？</div>
+                    <div class="dd">
+                        <p>· 请输入您要申报的项目名称，如「景泰蓝」「昆曲」</p>
+                        <p>· 已录入的项目不能重复申报，请先搜索确认非遗国际是否已收录相关项目</p>
+                    </div>
+                    <form action="">
+                        <input class="ipt" type="text" placeholder="请输入项目名称">
+                        <input class="btn" type="submit" value="创建">
+                    </form>
+                </div>
+                <!--//End 创建项目页-->
+
+                <div class="step2">
+                    <div class="tips"><i></i>非遗国际暂未录入此项目，请先创建此项目，再进行传承人申报</div>
+                    <div class="result">
+                        <div class="item">
+                            <a class="btn_create" href="">创建项目并申报传承人</a>
+                        </div>
+                    </div>
+                </div>
+                <!--//End 选择项目无匹配-->
+
+                <div class="step2">
+                    <div class="bd">
+                        <div class="result">
+                            <div class="item">
+                                <div class="dd">
+                                    <ul>
+                                        <li>
+                                            <img src="../../assets/uploads/inputs_01.jpg" alt="">
+                                            <div class="info">
+                                                <p class="name"><strong>银器</strong><em>ID编码x1231233</em></p>
+                                                <p><strong>类型：</strong><span>传统技艺传统技艺传统技艺传统技艺</span></p>
+                                                <p><strong>地区：</strong><span>中国江苏省</span></p>
+                                            </div>
+                                            <a class="btn_create" href="" title="申报传承人">申报传承人</a>
+                                        </li>
+                                        <li>
+                                            <img src="../../assets/uploads/inputs_01.jpg" alt="">
+                                            <div class="info">
+                                                <p class="name"><strong>银器</strong><em>ID编码x1231233</em></p>
+                                                <p><strong>类型：</strong><span>传统技艺传统技艺传统技艺传统技艺</span></p>
+                                                <p><strong>地区：</strong><span>中国江苏省</span></p>
+                                            </div>
+                                            <a class="btn_create" href="" title="申报传承人">申报传承人</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="item item2">
+                                <div class="dt">没有找到您要申报的项目？<br>请先创建此项目，再进行传承人申报。</div>
+                                <div class="dd">
+                                    <a class="btn_create" href="" title="申报土家银器塔里木传承人">申报<span>土家银器里木</span>传承人</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//End 有模糊匹配-->
+
+
+
+
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer"></div>
+    <!--//End-->
+
+
+
+</body>
+<script>
+    $(function() {
+        $('.header .content .nav li').eq(6).addClass('active').siblings('li').removeClass('active');
+    })
+</script>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我要申报-项目表单</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/inputs.css">
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/Ecalendar.jquery.min.js"></script>
+    <script src="../../assets/data/citys.js"></script>
+    <!--<script src="assets/js/system-bak.js"></script>-->
+    <script src="../../assets/js/inputs.js"></script>
+</head>
+
+<body style="background-color: rgb(245, 246, 247)">
+<div class="header fixed header_detail">
+    <div class="content"><a class="logo" href="http://diich.efeiyi.com/page/index.html"></a>
+        <div class="nav">
+            <ul>
+                <li class=""><a href="http://diich.efeiyi.com/page/index.html" id="home">首页</a></li>
+                <li><a href="#" id="ich_directory">非遗名录</a></li>
+                <li><a href="http://diich.efeiyi.com/page/masters.html?lang=zh-CN" id="ich_master">代表性传承人</a></li>
+                <li><a href="http://diich.efeiyi.com/page/selected_content.html?lang=zh-CN" id="selected_content">精选内容</a></li>
+                <li><a href="http://diich.efeiyi.com/page/information.html?lang=zh-CN" id="information">非遗资讯</a></li>
+                <li><a href="http://diich.efeiyi.com/page/official_service.html?lang=zh-CN" id="official_service">官方服务</a></li>
+                <li class="active"><a href="http://diich.efeiyi.com/page/declare.html" id="project_declare">我要申报</a></li>
+                <li><a href="http://diich.efeiyi.com/page/declare.html" id="project_declare">个人中心</a></li>
+            </ul>
+        </div>
+        <div class="info">
+            <ul>
+                <li class="logined active">
+                    <div class="main">
+                        <div class="item user">
+                            <a href=""><img src="../../assets/uploads/inheritor_01.png" alt=""></a><span>管理员管理员</span>
+                        </div>
+                        <div class="item account"><a href="">账户管理</a></div>
+                        <div class="item logout"><a href="">退出</a></div>
+                    </div>
+                </li>
+                <li class="login" style=""><a class="active" href="javascript:;"><i class="icon"></i><em id="sign_in">登录</em></a>
+                </li>
+                <li class="language">
+                    <a class="zh active" href="javascript:switchLanguage('zh-CN');"><em>中文</em></a>
+                    <a class="en" href="javascript:switchLanguage('en');"><em>EN</em></a>
+                </li>
+                <li class="search"><i class="icon"></i></li>
+            </ul>
+        </div>
+    </div><!--//End content-->
+</div>
+<!--//End header-->
+
+<div class="ipt_over">
+    <div class="content">
+        <div class="title">
+            <i class="icon"></i>
+            <span>项目正在审核中，可以申报此项目传承人。</span>
+            <span>前往个人中心查询项目审核状态</span>
+        </div>
+        <div class="judge">
+            <label class="label" for="">是否申报传承人？</label>
+            <div class="control">
+                <span class="radio active"><i></i><input type="radio" name="">是</span>
+                <span class="radio"><i></i><input type="radio" name="">否</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="">个人中心</a>
+        </div>
+    </div>
+
+    <div class="judge_box" style="display: none;">
+        <div class="main">
+            <div class="title">
+                <i class="icon"></i>
+                <span>是否代表机构进行申报？</span>
+            </div>
+            <div class="buttons">
+                <a class="btn1" href="">是</a>
+                <a class="btn2" href="javascript:void(0)">否</a>
+            </div>
+        </div>
+        <div class="overbg"></div>
+    </div>
+
+</div>
+
+<div class="footer"></div>
+<!--//End-->
+
+<script>
+    $(function () {
+        $('.header .content .nav li').eq(6).addClass('active').siblings('li').removeClass('active');
+    });
+
+    organizationPage.init();
+</script>
+</body>
+</html>

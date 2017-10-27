@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>我要申报-2.1创建项目页</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/inputs.css">
+
+    <!--[if IE]>
+    <link rel="stylesheet" href="../../assets/css/ie.css">
+    <![endif]-->
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/system.js"></script>
+    <script src="../../assets/js/inputs.js"></script>
+</head>
+
+
+
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header fixed header_detail"></div>
+    <!--//End header-->
+
+    <div class="container ipt_page">
+        <div class="hd">
+            <div class="bd create_project">
+                <div class="bd back"><a href="javascript:history.go(-1);"><i></i>返回</a></div>
+                <div class="step1">
+                    <div class="dt">创建非遗项目</div>
+                    <div class="dd">
+                        <p>· 请输入您要申报的项目名称，如「景泰蓝」「昆曲」</p>
+                        <p>· 已录入的项目不能重复申报，请先搜索确认非遗国际是否已收录相关项目</p>
+                    </div>
+                    <form action="">
+                        <input class="ipt" type="text" placeholder="请输入项目名称">
+                        <input class="btn" type="submit" value="创建">
+                    </form>
+                </div>
+                <!--//End 创建项目页-->
+
+                <div class="step2">
+                    <div class="tips"><i></i>您要申报的项目可能已存在，若有符合的项目，请勿重复申报</div>
+                    <div class="bd">
+                        <div class="result">
+                            <div class="item">
+                                <div class="dt">搜索结果：</div>
+                                <div class="dd">
+                                    <ul>
+                                        <li>
+                                            <img src="../../assets/uploads/inputs_01.jpg" alt="">
+                                            <div class="info">
+                                                <p class="name"><strong>银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器银器</strong><em>ID编码x1231233</em></p>
+                                                <p><strong>类型：</strong><span>传统技艺传统技艺传统技艺传统技艺</span></p>
+                                                <p><strong>地区：</strong><span>中国江苏省</span></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="../../assets/uploads/inputs_01.jpg" alt="">
+                                            <div class="info">
+                                                <p class="name"><strong>银器</strong><em>ID编码x1231233</em></p>
+                                                <p><strong>类型：</strong><span>传统技艺传统技艺传统技艺传统技艺</span></p>
+                                                <p><strong>地区：</strong><span>中国江苏省</span></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--//End-->
+                            <div class="item">
+                                <div class="dt">若非遗国际尚未收录该项目：</div>
+                                <div class="dd">
+                                    <a class="btn_create" href="">创建新项目</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//End 有模糊匹配-->
+
+                <div class="step2">
+                    <div class="tips"><i></i>苏绣项目已存在，不能重复申报</div>
+                    <div class="bd">
+                        <div class="result">
+                            <div class="item">
+                                <div class="dt">搜索结果：</div>
+                                <div class="dd">
+                                    <ul>
+                                        <li>
+                                            <img src="../../assets/uploads/inputs_01.jpg" alt="">
+                                            <div class="info">
+                                                <p class="name"><strong>银器</strong><em>ID编码x1231233</em></p>
+                                                <p><strong>类型：</strong><span>传统技艺传统技艺传统技艺传统技艺</span></p>
+                                                <p><strong>地区：</strong><span>中国江苏省</span></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="../../assets/uploads/inputs_01.jpg" alt="">
+                                            <div class="info">
+                                                <p class="name"><strong>银器</strong><em>ID编码x1231233</em></p>
+                                                <p><strong>类型：</strong><span>传统技艺传统技艺传统技艺传统技艺</span></p>
+                                                <p><strong>地区：</strong><span>中国江苏省</span></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--//End-->
+                        </div>
+                    </div>
+                </div>
+                <!--//End 有精准匹配-->
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer"></div>
+    <!--//End-->
+
+
+
+</body>
+<script>
+    $(function() {
+        $('.header .content .nav li').eq(6).addClass('active').siblings('li').removeClass('active');
+    })
+</script>
+
+</html>

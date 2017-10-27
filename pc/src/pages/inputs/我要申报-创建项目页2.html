@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我要申报-2.1创建项目页</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/inputs.css">
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/system.js"></script>
+    <script src="../../assets/js/inputs.js"></script>
+</head>
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header fixed header_detail"></div>
+    <!--//End header-->
+
+    <div class="container ipt_page">
+        <div class="hd">
+            <div class="bd create_project">
+                <div class="bd back"><a href="javascript:history.go(-1);"><i></i>返回</a></div>
+                <div class="step3">
+                    <div class="dt">申报项目之前，请完善个人基本信息，提高审核通过率。留下联系方式，方便及时通知你项目申请情况。</div>
+                    <form action="">
+                        <div class="group">
+                            <label class="label" for=""><em>*</em>真实姓名</label>
+                            <div class="control">
+                                <input class="ipt" type="text" placeholder="请输入真实姓名">
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label class="label" for=""><em>*</em>联系电话</label>
+                            <div class="control">
+                                <input class="ipt" type="text" value="1111111111" disabled>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label class="label" for=""><em>*</em>邮件</label>
+                            <div class="control">
+                                <input class="ipt" type="text" placeholder="请输入邮件" >
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label class="label" for=""><em>*</em>你代表</label>
+                            <div class="control">
+                                <span class="radio"><i></i><input type="radio" name="">是</span>
+                                <span class="radio active"><i></i><input type="radio" name="">否</span>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label class="label" for="">&nbsp;</label>
+                            <div class="control">
+                                <a class="btn" href="javascript:void(0)">下一步</a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <!--//End 创建项目页-->
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer"></div>
+    <!--//End-->
+
+
+
+</body>
+<script>
+    $(function() {
+        $('.header .content .nav li').eq(6).addClass('active').siblings('li').removeClass('active');
+
+
+
+
+        $('.create_project').on('click', '.radio', function () {
+            var index = $(this).index();
+            $(this).addClass('active').siblings('.radio').removeClass('active');
+            if (index == 0) {
+                $(this).siblings('span').find('input').removeAttr("checked");
+                $(this).find('input').attr("checked", "true");
+            } else {
+                $(this).siblings('span').find('input').removeAttr("checked");
+                $(this).find('input').attr("checked", "true");
+            }
+        });
+
+    })
+</script>
+
+</html>

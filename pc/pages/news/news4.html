@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>非遗资讯</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://diich.efeiyi.com/assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <!--插件-->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="http://diich.efeiyi.com/assets/js/vue.js"></script>
+    <!--//End 插件-->
+
+    <!--静态数据-->
+    <script src="http://diich.efeiyi.com/data/category.js"></script>
+    <script src="http://diich.efeiyi.com/js/citys.js"></script>
+    <script src="http://diich.efeiyi.com/data/dictionary.js"></script>
+    <script src="http://diich.efeiyi.com/js/util.js"></script>
+    <!--//End 静态数据-->
+
+    <script src="../../assets/js/system.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <style>
+        .information .card ul li .context h3 a:hover {
+            text-decoration: none;
+        }
+        .information .card ul {
+            margin-top:0;
+        }
+        .information .card h2 {
+            margin-bottom:60px;
+        }
+        .cover_img {
+            width:370px;
+            height:277px;
+            background: #000;
+            float: left;
+            overflow: hidden;
+        }
+        .cover_img img {
+            -webkit-transition: all .3s;
+            transition: all .3s;
+
+        }
+        .cover_img:hover img {
+            transform: scale(1.1);
+            opacity:.8;
+        }
+    </style>
+</head>
+
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header header_detail"></div>
+    <!--//End header -->
+    <div class="filter_search filter_search_fixed">
+        <div class="content">
+            <form class="form" action="http://diich.efeiyi.com/page/search.html">
+                <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+                <input type="hidden" id="area_code" name="area_code" value="" />
+                <input type="hidden" id="gb_category_code" name="gb_category_code" value="" />
+                <input type="hidden" id="type" name="type" value="" />
+                <input class="submit" type="button" value="搜索" onclick="submit()">
+                <div class="suggest" style="display: none;">
+                    <ul>
+
+                    </ul>
+                </div>
+            </form>
+            <!--//End form-->
+
+            <div class="attr">
+                <span id="attr_text">所属类别</span>
+                <span id="area_text">全球</span>
+            </div>
+            <!--//End attribute-->
+
+            <div class="dropbox" id="drag">
+                <!--//ENd 全部-->
+
+                <div class="item" id="item_1">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">一级分类</div>
+                        <div class="subtitle">所有分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="mainCategory">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">二级分类</div>
+                        <div class="subtitle">所有二级分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="catecontent">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 所属分类-->
+
+                <div class="item">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">位置</div>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>中国</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">按照字母顺序</div>
+                        </dt>
+                        <dd>
+                            <ul id="citycontent">
+                                <li>安微</li>
+                                <li>澳门</li>
+                                <li>北京</li>
+                                <li>上海</li>
+                                <li>福建</li>
+                                <li>甘肃</li>
+                                <li>广东</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 位置-->
+
+            </div>
+            <!--//End attribute-->
+        </div>
+    </div>
+    <!--//End filter_search -->
+
+    <div class="container" id="app">
+        <div class="information">
+            <div class="info_detail">
+               <!-- <div class="bd crumb">
+                    <a href="/" title="首页">首页</a> &gt; <a href="" title="新闻资讯">新闻资讯</a> &gt; <em>文化部确定2017年文化和自然遗产日宣传口号： 保护非遗—在生活...</em>
+                </div>-->
+                <!--//End-->
+                <div class="title">
+                    <h2 v-text="details.title"></h2>
+                    <div class="time" v-text="details.time"></div>
+                </div>
+                <div class="info" v-html="details.content"></div>
+            </div>
+        </div>
+        <!--//End information-->
+
+
+    </div>
+
+    <div class="bd footer"></div>
+    <!--//End--footer-->
+</body>
+<script>
+    $(function() {
+        $('.header .content .nav li').eq(4).addClass('active').siblings('li').removeClass('active');
+        var app=new Vue({
+           el:'#app',
+            data:{
+               details:{
+                   title:'文化部确定2017年文化和自然遗产日宣传口号： 保护非遗—在生活中弘扬，在实践中振兴',
+                   time:'2017年05月24',
+                   content:
+                   '<p>为全面展示近年来非物质文化遗产(以下简称非遗)保护成果，引导和动员全社会积极参与非遗保护工作，2017年文化和自然遗产日(以下简称遗产日)前后，文化部将组织开展一系列非遗宣传展示活动。5月23日，文化部召开新闻发布会对有关情况进行了发布。</p>' +
+                   '<p>　文化部非遗司副司长王晨阳发布了今年遗产日非遗活动的主题、口号和重点内容，介绍了今年遗产日非遗活动的特点，宣布正式启动遗产日非遗宣传展示活动。文化部外联局副局长翟德玉和四川省文化厅厅长周思源详细介绍了今年遗产日非遗主场活动——第六届中国成都国际非遗节(以下简称成都非遗节)的有关情况。</p>' +
+                   '<p>今年遗产日非遗宣传展示活动的主题为“非遗保护——传承发展的生动实践”，口号为“保护非遗——在生活中弘扬，在实践中振兴”、“保护传承非遗，展现生活智慧”、“活力社区，活态非遗”、“振兴中国传统工艺”。届时，全国将有包括成都非遗节在内的1700多项活动同步开展，全面推广非遗传承发展的生动实践经验，突出展示党的十八大以来非遗保护工作所取得的优秀成果。</p>' +
+                   '<p>国家设立“文化遗产日”是我国文化遗产保护领域的一项重要举措。自2006年起，国务院将每年6月的第二个星期六设立为“文化遗产日”。文化部每年都在“文化遗产日”前后开展活动，通过各种方式宣传非遗保护，为非遗保护工作营造了良好的氛围。2016年国务院将“文化遗产日”调整设立为“文化和自然遗产日”，凸显了国家对文化和自然遗产工作的高度重视。</p>' +
+                   '<p>　据介绍，今年第六届成都国际非遗节将于6月10日至18日举办。本届成都非遗节将以“传承发展的生动实践”为主题，遵循“走进生活、活态活力”的理念，以“世界风、中国节、中国戏、中国艺”为主线，举办国际非遗系列大展、国际会议和国际论坛、非遗竞技、中国传统表演艺术进社区等一系列活动。成都非遗节将紧扣传承发展中华优秀传统文化，振兴传统工艺的使命，积极动员国际国内社会各界广泛参与，全面展示非遗的独特魅力和保护成果。</p>' +
+                   '<p>此外在文化部的组织下，各省、自治区、直辖市和各相关单位，包括中国非遗传承人群研修研习培训计划(以下简称研培计划)参与高校等，都将组织丰富多彩的非遗宣传活动，并且每省、自治区、直辖市都将设立自己的主场活动。如：上海将在大世界举办“百年薪传承——非遗嘉年华”;河北将联合北京、天津在廊坊举办“第三届京津冀非物质文化遗产联展”;文化部恭王府将举办“非遗服饰秀”，中国昆曲古琴研究会将举办“良辰美景——古琴昆曲演出季”;国家图书馆将举办“非遗讲座月”，清华大学美术学院将举办“融古铸今——2017中国国际当代金属艺术精品展”。据统计，遗产日前后，全国各地城乡社区的非遗宣传展示活动累计将达到1700多项，届时全国各地民众都有机会零距离参与到非遗活动中来。</p>' +
+                   '<p>为加强今年遗产日非遗活动的宣传，文化部与各新闻媒体合作，将开设一系列专题节目。如与中央电视台综艺频道《文化十分》合作，将播出“传承复兴乡村”和“非遗新生代”系列节目，通过多角度、多层面的立体剖析，全面呈现当前非遗保护成果;与中央电视台第七频道合作，将播出“文化和自然遗产日特别节目——筑梦匠心”，并将联合网络媒体共同开展“寻找最美传承人”活动;与中央人民广播电台文艺之声、华夏之声等合作，将共同推出遗产日特别节目。新闻媒体将以各种方式直接参与到遗产日非遗活动中来。</p>' +
+                   '<p>今年遗产日非遗活动具有以下几个特点：</p>' +
+                   '<p>一是贯彻中央关于中华优秀传统文化传承发展的一系列文件精神，坚持宣传正确的非遗保护理念。</p>' +
+                   '<p>近年来，习近平总书记对传承发展中华优秀传统文化做了一系列重要指示和论述，近期中办、国办印发了《关于实施中华优秀传统文化传承发展工程的意见》，国办转发了文化部、工信部、财政部制定的《中国传统工艺振兴计划》，这些论述和文件为当前非遗保护工作进一步指明了方向，与《中华人民共和国非物质文化遗产法》(以下简称非遗法)和联合国教科文组织《保护非物质文化遗产公约》(以下简称公约)，共同成为非遗保护工作的基本依据和遵循。认真贯彻这些论述和文件要求，准确理解非遗法和公约的精神实质，注重非遗的传承性、活态性和实践性，强调非遗传承的能动性和创造性，宣传正确的非遗理念，确保非遗工作始终在正确的理念下稳步开展，是今年遗产日各项非遗活动的基本要求和工作重点。</p>' +
+                   '<p>　二是聚焦非遗实践，注重体现优秀传统文化的创造性转化和创新性发展。</p>' +
+                   '<p>保护非遗，最根本的是保护传承实践，保护传承能力，保护传承环境。近年来，文化部在这方面着力开展工作，实施研培计划、振兴传统工艺等都是这方面的积极尝试，也是经过实践检验，证明行之有效的非遗保护的重要措施。今年遗产日的各项非遗活动，是一段时期以来文化部和全国各地积极开展非遗实践成果的集中展示，也是文化部推动优秀传统文化创造性转化和创新性发展成果的集中展示。</p>' +
+                   '<p>三是积极动员各种力量参与，着力构建全社会宣传非遗保护的系统化、常态化格局。</p>' +
+                   '<p>宣传工作是非遗保护的重要手段，承担着传播理念、提高影响、动员社会、扩大参与的重要职能。今年遗产日的非遗活动组织和筹备，特别加强了与各新闻媒体的联系和合作，将新闻媒体作为非遗保护的一支重要力量，主动邀请各媒体进入到非遗保护工作中来，直接参与策划宣传活动。在各位媒体朋友们的支持和帮助下，全社会非遗宣传工作正在逐渐开始走向系统化、常态化的格局。</p>' +
+                   '<p>四是积极创新活动形式，最大限度地提高遗产日活动的吸引力和影响力。</p>' +
+                   '<p>在今年遗产日非遗活动的筹备过程中，文化部和各地文化行政部门下大力气，创新活动形式，努力提高非遗活动的吸引力和影响力。比如成都非遗节的传统表演艺术进社区活动，来自全国各地的34支队伍将深入到成都市的22个区县的城乡社区，开展近400场形式多样，互动性强的展演活动，届时广大市民都有机会在家门口直接感受全国各地不同非遗项目的魅力。经过社会各界的不断努力，遗产日非遗活动将不断发展成为文化领域具有强大影响力的品牌活动。</p>' +
+                   '<p>各地和各单位文化和自然遗产日前后非遗宣传展示主要活动汇总请登录文化部官网。</p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id4_01.jpg" alt=""></p>'
+               }
+            },
+            mounted:function () {
+                document.title=this.details.title;
+            }
+        });
+    });
+</script>
+</html>

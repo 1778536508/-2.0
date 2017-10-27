@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>非遗资讯</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://diich.efeiyi.com/assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <!--插件-->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="http://diich.efeiyi.com/assets/js/vue.js"></script>
+    <!--//End 插件-->
+
+    <!--静态数据-->
+    <script src="http://diich.efeiyi.com/data/category.js"></script>
+    <script src="http://diich.efeiyi.com/js/citys.js"></script>
+    <script src="http://diich.efeiyi.com/data/dictionary.js"></script>
+    <script src="http://diich.efeiyi.com/js/util.js"></script>
+    <!--//End 静态数据-->
+
+    <script src="../../assets/js/system.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <style>
+        .information .card ul li .context h3 a:hover {
+            text-decoration: none;
+        }
+        .information .card ul {
+            margin-top:0;
+        }
+        .information .card h2 {
+            margin-bottom:60px;
+        }
+        .cover_img {
+            width:370px;
+            height:277px;
+            background: #000;
+            float: left;
+            overflow: hidden;
+        }
+        .cover_img img {
+            -webkit-transition: all .3s;
+            transition: all .3s;
+
+        }
+        .cover_img:hover img {
+            transform: scale(1.1);
+            opacity:.8;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header header_detail"></div>
+    <!--//End header -->
+    <div class="filter_search filter_search_fixed">
+        <div class="content">
+            <form class="form" action="http://diich.efeiyi.com/page/search.html">
+                <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+                <input type="hidden" id="area_code" name="area_code" value="" />
+                <input type="hidden" id="gb_category_code" name="gb_category_code" value="" />
+                <input type="hidden" id="type" name="type" value="" />
+                <input class="submit" type="button" value="搜索" onclick="submit()">
+                <div class="suggest" style="display: none;">
+                    <ul>
+
+                    </ul>
+                </div>
+            </form>
+            <!--//End form-->
+
+            <div class="attr">
+                <span id="attr_text">所属类别</span>
+                <span id="area_text">全球</span>
+            </div>
+            <!--//End attribute-->
+
+            <div class="dropbox" id="drag">
+                <!--//ENd 全部-->
+
+                <div class="item" id="item_1">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">一级分类</div>
+                        <div class="subtitle">所有分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="mainCategory">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">二级分类</div>
+                        <div class="subtitle">所有二级分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="catecontent">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 所属分类-->
+
+                <div class="item">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">位置</div>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>中国</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">按照字母顺序</div>
+                        </dt>
+                        <dd>
+                            <ul id="citycontent">
+                                <li>安微</li>
+                                <li>澳门</li>
+                                <li>北京</li>
+                                <li>上海</li>
+                                <li>福建</li>
+                                <li>甘肃</li>
+                                <li>广东</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 位置-->
+
+            </div>
+            <!--//End attribute-->
+        </div>
+    </div>
+    <!--//End filter_search -->
+
+    <div class="container" id="app">
+        <div class="information">
+            <div class="info_detail">
+                <!--<div class="bd crumb">-->
+                    <!--<a href="/" title="首页">首页</a> &gt; <a href="" title="新闻资讯">新闻资讯</a> &gt; <em v-text="details.title"></em>-->
+                <!--</div>-->
+                <!--//End-->
+                <div class="title">
+                    <h2 v-text="details.title"></h2>
+                    <div class="time" v-text="details.time"></div>
+                </div>
+                <div class="info" v-html="details.content"></div>
+            </div>
+        </div>
+        <!--//End information-->
+
+
+    </div>
+
+    <div class="bd footer"></div>
+    <!--//End--footer-->
+</body>
+<script>
+    $(function() {
+        $('.header .content .nav li').eq(4).addClass('active').siblings('li').removeClass('active');
+        var app=new Vue({
+           el:'#app',
+            data:{
+               details:{
+                   title:'非遗百科|千年技艺 沉淀莞香——莞香制作技艺',
+                   time:'2017年05月10',
+                   content:
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_01.jpg" alt=""></p>'+
+                   '<p class="sub"><em></em><span>千年技艺有积淀</span></p>' +
+                   '<p>莞香，中国树木中唯一以“东莞”的地方名来命名的树木，有着1800年的悠久历史，被誉为东莞地方特产和城市名片。据黄欧介绍称，莞香早在东汉时期已有种植，唐代时更成为尚药局监制的皇家用品，发展至明代已闻名遐迩，但在清雍正年间却一度衰落，历经磨难。据介绍，由于适宜种植莞香的土地极少，且结香不易，上品莞香价值高但难求，在清雍正年间香农更一度因为“无香可供”而遭受灭顶之灾。无奈香农为远灾避难，将所种香树悉数摧毁，远走他乡，导致莞香濒临绝迹，莞香文化日渐式微。然而，莞香虽沉寂多年，其蕴含的文化内涵和人文精神却并未衰退。</p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_02.jpg" alt=""></p>'+
+                   '<p>“莞诸物俱不异他邑，惟香奇特。”据历史记载，莞香是沉香中的珍品，被誉为最正宗、独特。清末史学家陈伯陶的《东莞县志》中记载：“莞香，先辨土宜，土宜正者。白石岭、鸡翅岭、百花洞（今大岭山镇）、牛眠石诸处亦不失为正；若乌泥坑、寮步则斯下矣。”历史上，白石岭、鸡翅岭、百花洞、牛眠石自唐代起就是四大皇家香林，所产莞香专供皇家使用，具有得天独厚的地理优势和悠久的人文历史价值。</p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_03.jpg" alt=""></p>'+
+                   '<p class="sub"><em></em><span>莞 香</span></p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_04.jpg" alt=""></p>'+
+                   '<p>莞香树，中国树木中唯一以东莞地名命名的树木，学名沉香树，别名白木香、女儿香、崖香、牙香树、密香树、六麻树，属瑞香科双子叶植物，归类为乡土常绿乔木或小乔木，是国家二级保护植物和特有珍贵药用植物，是莞香产生的主要载体</p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_05.jpg" alt=""></p>'+
+                   '<p>莞香，即莞产沉香，沉香以“产广东东莞县金桔岭，金钗岭者品质最良”，故又称莞香。莞香的生成，是指莞香树活体受伤后被多种益生真菌侵入寄生，在菌体内酶的作用下，使木薄壁细胞贮存的淀粉，产生一系列变化，最后形成香脂，经多年沉淀而成的固态结晶体。香脂呈黑褐色，坚实而重，入水即沉，故名沉香。</p>' +
+                   '<p class="sub"><em></em><span>制作技艺</span></p>' +
+                   '<p>莞香的生成，除了土壤、水质、气温等自然因素之外，莞香的种植、采香、结香等传统技艺都是莞香生产、结出好香的重要因素。莞香制作技艺包括对原生态香树的培植获取和加工取精两大部分，从移植、折枝、断根、开香门、育香到采香、理香、拣香、窨香、合香，工序多达30余道，需耗时数年甚至数十年才能成功结香。</p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_06.jpg" alt=""></p>'+
+                   '<p>结香：香脂生成过程，在对莞香树进行折枝断根开香门等手段后，自然生成香脂，一般耗时数年甚至十余年。</p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_07.jpg" alt=""></p>'+
+                   '<p>采香：按照传统，一般在小雪节气当天开始采香。根据树木结香的时间，及结香程度来采集。<br>留香：剔除白木和朽木，留下香脂部分。根据经验判断香的品种和结构后，动用铲刀、勾丝刀、凿子等工具剔除白木部分。<br>窨香：把同一等级和类别的香放进密封的陶罐里，以去除木的杂味。根据香的厚度决定放置时间，少则三五个月，多则两三年。</p>' +
+                   '<p class="sub"><em></em><span>莞香的用途</span></p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_08.jpg" alt=""></p>'+
+                   '<p>莞香的药用价值：莞香是一味传统名贵中药材，临床使用广泛。莞香是具有抗菌及增强免疫功能的药材，通常被配制加工成传统中成药或中药服用，具有清热祛风、凉血通脉、养心安神的作用，对肺脏、肾脏、胃脏、肠、高血压、糖尿病等慢性病有帮助治疗的功效。其强心作用疗效突出，日本“救心”牌救心药中就有莞香成分，安宫牛黄丸、十香止痛丸、奇应丸等中成药也含有莞香。</p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_09.jpg" alt=""></p>'+
+                   '<p class="sub"><em></em><span>莞香非遗传承大师</span></p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_10.jpg" alt=""></p>'+
+                   '<p>黄欧，广东省非物质文化遗产“莞香制作技艺”传承人，荣获由广东省文化厅等单位颁发的“活力非遗2013年度致敬人物”荣誉称号。黄欧结合运用现代科学技术，使莞香制作技艺得以传承，他创办的尚正堂莞香发展有限公司是广东省第一批非物质文化遗产保护示范基地。 </p>' +
+                   '<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id6_11.jpg" alt=""></p>'+
+                   '<p>“品茶、闻香、读画、赏乐、养生、论道”的一处静雅之地——印象中的尚正堂。“红袖添香夜读书”， 这几乎是中国古人臻于梦境的生活意趣。</p>'
+               }
+            },
+            mounted:function () {
+                document.title=this.details.title;
+            }
+        });
+    });
+</script>
+</html>

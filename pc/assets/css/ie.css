@@ -1,0 +1,30 @@
+.header .content .logo {
+    background: url(../images/logo@1x.png) no-repeat!important;
+}
+
+.header .icon {
+    background-image: url(../images/icon@1x.png);
+    height:18px;
+    top:14px;
+}
+
+.header .content .info li.login i {
+    background-position: 0 -20px;
+}
+
+
+.header.active .content .info li.login i,
+.header_detail .content .info li.search i {
+    background-position: -18px -20px;
+}
+.footer .diich .logo {
+    background: url(../images/footer_logo@1x.png) 0 0 no-repeat;
+}
+/*--//End--*/
+.side_fixed li:after,
+.side_fixed li.active:after{
+    display: none;
+}
+.home .slider form .ipt {
+    background: url(../images/ie-input-bg.png) repeat-x 0 0;
+}

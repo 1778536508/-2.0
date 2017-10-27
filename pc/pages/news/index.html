@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>非遗资讯</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <!--插件-->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="http://diich.efeiyi.com/assets/js/vue.js"></script>
+    <!--//End 插件-->
+
+    <!--静态数据-->
+    <script src="http://diich.efeiyi.com/data/category.js"></script>
+    <script src="http://diich.efeiyi.com/js/citys.js"></script>
+    <script src="http://diich.efeiyi.com/data/dictionary.js"></script>
+    <script src="http://diich.efeiyi.com/js/util.js"></script>
+    <!--//End 静态数据-->
+
+    <script src="../../assets/js/system.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <style>
+        .information .card ul li .context h3 a:hover {
+            text-decoration: none;
+        }
+        .information .card ul {
+            margin-top:0;
+        }
+        .information .card h2 {
+            margin-bottom:60px;
+        }
+        .cover_img {
+            width:370px;
+            height:277px;
+            background: #000;
+            float: left;
+            overflow: hidden;
+        }
+        .cover_img img {
+            -webkit-transition: all .3s;
+            transition: all .3s;
+
+        }
+        .cover_img:hover img {
+            transform: scale(1.1);
+            opacity:.8;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header header_detail"></div>
+    <!--//End header -->
+    <div class="filter_search filter_search_fixed">
+        <div class="content">
+            <form class="form" action="http://diich.efeiyi.com/page/search.html">
+                <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+                <input type="hidden" id="area_code" name="area_code" value="" />
+                <input type="hidden" id="gb_category_code" name="gb_category_code" value="" />
+                <input type="hidden" id="type" name="type" value="" />
+                <input class="submit" type="button" value="搜索" onclick="submit()">
+                <div class="suggest" style="display: none;">
+                    <ul>
+
+                    </ul>
+                </div>
+            </form>
+            <!--//End form-->
+
+            <div class="attr">
+                <span id="attr_text">所属类别</span>
+                <span id="area_text">全球</span>
+            </div>
+            <!--//End attribute-->
+
+            <div class="dropbox" id="drag">
+                <!--//ENd 全部-->
+
+                <div class="item" id="item_1">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">一级分类</div>
+                        <div class="subtitle">所有分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="mainCategory">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">二级分类</div>
+                        <div class="subtitle">所有二级分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="catecontent">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 所属分类-->
+
+                <div class="item">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">位置</div>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>中国</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">按照字母顺序</div>
+                        </dt>
+                        <dd>
+                            <ul id="citycontent">
+                                <li>安微</li>
+                                <li>澳门</li>
+                                <li>北京</li>
+                                <li>上海</li>
+                                <li>福建</li>
+                                <li>甘肃</li>
+                                <li>广东</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 位置-->
+
+            </div>
+            <!--//End attribute-->
+        </div>
+    </div>
+    <!--//End filter_search -->
+    
+
+    <!--Grid ranges map-->
+    <div class="grid">
+    	<div class="grid_map">
+    		<ul>
+    			<li><img src=""/></li>
+    		</ul>
+    	</div>
+    </div>
+    <!--//End Grid ranges map-->
+
+
+    <div class="container" id="app">
+        <!--<div class="slide_img"><img :src="bannerUri" alt=""></div>-->
+        <!--//End-->
+
+        <div class="information">
+            <div class="card">
+                <h2 style="margin-top: 60px;">新闻</h2>
+                <ul v-for="item in list">
+                    <li>
+                        <a :href="item.link" class="cover_img"><img :src="item.thumb+'?x-oss-process=style/information-list-image'" alt=""></a>
+                        <div class="context" style="padding-bottom:0;">
+                            <h3 data-type="title"><a :href="item.link" v-text="item.title"></a></h3>
+                            <span data-type="time" v-text="item.time"></span>
+                            <p data-type="brief" style="width: 100%;height: 94px; margin-top: 35px;overflow: hidden;" v-text="item.brief"></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bd footer"></div>
+    <!--//End--footer-->
+
+</body>
+<script>
+    $(function() {
+        $('.header .content .nav li').eq(4).addClass('active').siblings('li').removeClass('active');
+
+        var app=new Vue({
+            el:'#app',
+            data:{
+                bannerUri:'http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/news_banner.jpg',
+                list:[{
+                    id:1,
+                    title:'联合国教科文组织非遗创新发展高级别会议: 永新华韵启动三百亿非遗产业基金',
+                    time:'2017年05月18',
+                    brief:'2016年11月10日-12日，世界上最高级别的博物馆论坛“国际博物馆高级别论坛”在深圳举行，中国国家主席习近平发来贺信，对论坛召开表示热烈的祝贺。习近平指出，博物馆是保护和传承人类文明的重要殿堂，是连接过去、现在、未来的桥梁，在促进世界文明交流互鉴方面具有特殊作用。国务院副总理...',
+                    thumb:'http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/id7_04_1.jpg',
+                    link:'news7.html'
+                },
+                    {
+                        id:2,
+                        title:'【世界非物质文化遗产·端午节】纪念伟大诗人 传承民族精神',
+                        time:'2017年05月29',
+                        brief:'端午节蕴含着中华民族深厚的传统文化精神。2009年9月，联合国教科文组织正式审议批准中国端午节列入世界非物质文化遗产，成为中国首个选入世界非物质文化遗产的节日。',
+                        thumb:'http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/thumb_02.jpg',
+                        link:'news2.html'
+                    },
+                    {
+                        id:3,
+                        title:'非遗百匠|因刺绣而生，为刺绣而梦——朱寿珍',
+                        time:'2017年05月24',
+                        brief:'朱寿珍，女，中国工艺美术协会会员，永新华韵入驻大师。1969出生于太湖之滨，自幼研习苏绣，师承世家祖艺，绣艺精湛，方圆闻名，被誉为“四大名绣”之一。已荣获“国家高级工艺美术师”，“江苏省工艺美术名人”等殊荣。朱寿珍刺绣题材众多，有人物、动物，也有绣品仿油画、国画、书法等风格...',
+                        thumb:'http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/thumb_03.jpg',
+                        link:'news3.html'
+                    },
+                    {
+                        id:4,
+                        title:'文化部确定2017年文化和自然遗产日宣传口号： 保护非遗—在生活中弘扬，在实践中振兴',
+                        time:'2017年05月24',
+                        brief:'第六届国际非遗节继续由文化部、四川省人民政府、联合国教科文组织和中国联合国教科文组织全国委员会主办，成都市人民政府、四川省文化厅、中国非物质文化遗产保护中心和联合国教科文组织亚太地区非物质文化遗产国际培训中心、文化部民族民间文艺发展中心承办。',
+                        thumb:'http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/thumb_04.jpg',
+                        link:'news4.html'
+                    },
+                    {
+                        id:5,
+                        title:'非遗纪录片《风情中国》展现少数民族非遗风情',
+                        time:'2017年05月19',
+                        brief:'国家出版基金支持的国家级文化战略工程项目大型少数民族文化系列、 纪录片《风情中国》第二季目前已在湘西开拍。该纪录片旨在保护和宣传中国少数民族非物质文化遗产，内容涵盖了中国少数民族最主要、最典型的文化、习俗、信仰等内容，记录中国少数民族的人文风貌，展示中国少数民族非...',
+                        thumb:'http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/thumb_05.jpg',
+                        link:'news5.html'
+                    },
+                    {
+                        id:6,
+                        title:'非遗百科|千年技艺 沉淀莞香——莞香制作技艺',
+                        time:'2017年05月10',
+                        brief:'莞香是东莞最负盛名的特产和城市名片之一，莞人种香的历史悠久而厚重，在国内甚至国际上都有较高的知名度。近些年来，东莞在传承莞香文化的同时，也不忘努力创新，复兴布局东莞莞香产业发展。东莞已出台莞香文化产业发展相关方案，引导布局莞香产业全发展，未来将构建起集种植、营销...',
+                        thumb:'http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/thumb_06.jpg',
+                        link:'news6.html'
+                    }]
+            }
+        });
+
+    });
+</script>
+</html>

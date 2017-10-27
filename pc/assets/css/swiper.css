@@ -1,0 +1,379 @@
+.banner {
+  width: 100%;
+  /*border: 1px solid;*/
+  margin: 0 auto;
+  max-width: 1920px;
+  min-width: 1200px; }
+  .banner .swiper-container {
+    width: 100%; }
+    .banner .swiper-container .swiper-wrapper {
+      width: 100%; }
+      .banner .swiper-container .swiper-wrapper .swiper-slide {
+        width: 100%;
+        text-align: center; }
+        .banner .swiper-container .swiper-wrapper .swiper-slide div {
+          position: relative; }
+          .banner .swiper-container .swiper-wrapper .swiper-slide div p {
+            color: white;
+            position: absolute;
+            left: 120px;
+            top: 376px;
+            display: block;
+            width: 500px;
+            height: 50px;
+            /*border:1px solid;*/
+            text-align: left;
+            word-wrap: break-word;
+            font-size: 30px; }
+          .banner .swiper-container .swiper-wrapper .swiper-slide div img {
+            width: 100%;
+            min-width: 1200px; }
+          .banner .swiper-container .swiper-wrapper .swiper-slide div span {
+            color: white;
+            position: absolute;
+            left: 120px;
+            top: 464px;
+            line-height: 20px;
+            display: block;
+            width: 500px;
+            height: 50px;
+            /*border:1px solid;*/
+            text-align: left;
+            word-wrap: break-word; }
+  .banner .banner_text {
+    position: absolute;
+    left: 200px;
+    top: 250px;
+    width: 500px;
+    height: 50px;
+    /*border:1px solid;*/
+    z-index: 1; }
+    .banner .banner_text input {
+      width: 100%;
+      height: 100%;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid white;
+      background: none;
+      caret-color: white;
+      font-size: 30px;
+      color: white; }
+
+.swiper-pagination {
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0 0 0 10px; }
+
+.swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  left: 96px;
+  top: 576px; }
+
+.swiper-pagination-bullet {
+  color: #ffffff;
+  background: none;
+  width: 18px;
+  height: 24px;
+  border-radius: 0;
+  text-align: center; }
+
+.swiper-pagination-bullet-active {
+  border-bottom: 2px solid #ffffff; }
+
+.project_banner {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 32px;
+  position: relative; }
+  .project_banner .swiper-container-project {
+    overflow: hidden;
+    width: 100%; }
+    .project_banner .swiper-container-project .swiper-wrapper {
+      width: 100%; }
+      .project_banner .swiper-container-project .swiper-wrapper .swiper-slide {
+        overflow: hidden;
+        position: relative; }
+        .project_banner .swiper-container-project .swiper-wrapper .swiper-slide div:nth-child(1) {
+          transition: all 0.3s;
+          width: 300px;
+          height: 400px; }
+          .project_banner .swiper-container-project .swiper-wrapper .swiper-slide div:nth-child(1) img {
+            width: 100%;
+            height: 100%; }
+        .project_banner .swiper-container-project .swiper-wrapper .swiper-slide div:nth-child(2) {
+          position: absolute;
+          left: 40px;
+          top: 320px;
+          color: #FFFFFF;
+          z-index: 10; }
+          .project_banner .swiper-container-project .swiper-wrapper .swiper-slide div:nth-child(2) p:nth-child(1) {
+            font-size: 14px;
+            font-weight: lighter; }
+          .project_banner .swiper-container-project .swiper-wrapper .swiper-slide div:nth-child(2) p:nth-child(2) {
+            font-size: 24px;
+            font-weight: 500;
+            margin-top: 10px; }
+        .project_banner .swiper-container-project .swiper-wrapper .swiper-slide a {
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 300px;
+          height: 400px;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); }
+      .project_banner .swiper-container-project .swiper-wrapper .swiper-slide:hover {
+        overflow: hidden; }
+        .project_banner .swiper-container-project .swiper-wrapper .swiper-slide:hover div:nth-child(1) {
+          transform: scale(1.1);
+          transition: all 0.3s; }
+          .project_banner .swiper-container-project .swiper-wrapper .swiper-slide:hover div:nth-child(1) img {
+            width: 100%;
+            height: 100%; }
+
+.information_service {
+  width: 100%;
+  margin-top: 110px;
+  padding-bottom: 88px; }
+  .information_service ul {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 36px;
+    margin-bottom: 48px; }
+    .information_service ul li {
+      float: left;
+      width: 25%;
+      height: 280px; }
+      .information_service ul li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 30px;
+        padding-top: 40px;
+        padding-bottom: 40px; }
+        .information_service ul li a .pic {
+          width: 88px;
+          margin: 0 auto; }
+          .information_service ul li a .pic img {
+            width: 100%; }
+        .information_service ul li a .pic_h3 {
+          text-align: center;
+          font-size: 16px;
+          color: #000000;
+          font-weight: 600; }
+        .information_service ul li a .name {
+          margin-left: 50px; }
+          .information_service ul li a .name p {
+            font-size: 14px;
+            color: #777777;
+            font-weight: lighter; }
+      .information_service ul li a:hover {
+        background: #fafafa; }
+
+.rep_name {
+  width: 100%;
+  background: #F5f6f7;
+  padding-top: 110px;
+  padding-bottom: 80px; }
+  .rep_name .all_enterprise {
+    text-align: center;
+    margin-top: 22px; }
+  .rep_name .enterprise_banner {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 56px;
+    position: relative; }
+    .rep_name .enterprise_banner .swiper-container-enterprise {
+      overflow: hidden;
+      width: 100%; }
+      .rep_name .enterprise_banner .swiper-container-enterprise .swiper-wrapper {
+        width: 100%; }
+        .rep_name .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide div {
+          width: 376px;
+          height: 282px;
+          overflow: hidden; }
+          .rep_name .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide div img {
+            height: 100%; }
+
+.Inheritor {
+  width: 100%;
+  padding-top: 110px;
+  padding-bottom: 80px; }
+  .Inheritor .representative {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0px 0 100px 0; }
+    .Inheritor .representative .enterprise_banner {
+      margin-top: 60px;
+      width: 1200px;
+      position: relative; }
+      .Inheritor .representative .enterprise_banner .swiper-container-enterprise {
+        overflow: hidden;
+        width: 100%; }
+        .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper {
+          width: 100%; }
+          .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide {
+            width: 300px;
+            height: 300px; }
+            .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide a {
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: relative;
+              overflow: hidden; }
+              .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide a div:nth-child(1) {
+                width: 100%;
+                height: 100%;
+                overflow: hidden; }
+                .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide a div:nth-child(1) img {
+                  filter: blur(0);
+                  -webkit-filter: blur(0);
+                  -moz-filter: blur(0);
+                  -ms-filter: blur(0);
+                  -o-filter: blur(0);
+                  transition: all .1s; }
+              .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide a .enter_banner_content {
+                transition: all 0.3s;
+                -ms-transition: all 0.3s;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 999;
+                background: rgba(0, 0, 0, 0.8);
+                box-sizing: border-box;
+                padding: 20px;
+                opacity: 0; }
+                .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide a .enter_banner_content h2 {
+                  font-size: 24px;
+                  color: #FFFFFF;
+                  margin-top: 50px;
+                  font-weight: 500; }
+                  .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide a .enter_banner_content h2 i {
+                    display: block;
+                    width: 24px;
+                    height: 2px;
+                    background-color: #FFFFFF;
+                    margin-top: 20px; }
+                .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide a .enter_banner_content p {
+                  font-size: 14px;
+                  color: rgba(255, 255, 255, 0.5);
+                  font-weight: 100;
+                  margin-top: 30px;
+                  line-height: 20px;
+                  margin-bottom: 20px; }
+                .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide a .enter_banner_content span {
+                  font-size: 14px;
+                  color: #777777;
+                  border: 1px solid rgba(119, 119, 119, 0.5);
+                  padding: 2px 15px; }
+          .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide:hover a .enter_banner_content {
+            transition: all 0.3s;
+            -ms-transition: all 0.3s;
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.8); }
+          .Inheritor .representative .enterprise_banner .swiper-container-enterprise .swiper-wrapper .swiper-slide:hover a div img {
+            filter: blur(10px);
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -ms-filter: blur(10px);
+            -o-filter: blur(10px);
+            filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='10');
+            transition: all .1s; }
+
+.grid_mation {
+  width: 100%;
+  background: #FFFFFF;
+  padding-bottom: 40px; }
+  .grid_mation > div {
+    width: 1200px;
+    margin: 0 auto; }
+    .grid_mation > div .grid_mation_h2 {
+      box-sizing: border-box;
+      width: 100%;
+      padding-top: 110px; }
+      .grid_mation > div .grid_mation_h2 h2 {
+        font-size: 44px;
+        color: #1B1B1B;
+        font-weight: lighter; }
+    .grid_mation > div .grid_mation_ul {
+      width: 100%;
+      margin-top: 40px;
+      cursor: pointer; }
+      .grid_mation > div .grid_mation_ul li {
+        width: 25%;
+        float: left;
+        height: 72px;
+        border-bottom: 1px solid rgba(218, 218, 218, 0.5);
+        line-height: 72px;
+        border-left: 1px solid rgba(218, 218, 218, 0.5);
+        box-sizing: border-box;
+        padding-left: 20px; }
+        .grid_mation > div .grid_mation_ul li a {
+          font-size: 20px;
+          color: #777777;
+          font-weight: lighter; }
+        .grid_mation > div .grid_mation_ul li:nth-child(4) {
+          border-right: 1px solid rgba(218, 218, 218, 0.5); }
+        .grid_mation > div .grid_mation_ul li.bor_li {
+          border-bottom: 2px solid #1b1b1b; }
+          .grid_mation > div .grid_mation_ul li.bor_li a {
+            color: #1B1B1B; }
+      .grid_mation > div .grid_mation_ul li:hover {
+        border-bottom: 2px solid #1b1b1b; }
+        .grid_mation > div .grid_mation_ul li:hover a {
+          color: #1B1B1B; }
+    .grid_mation > div .grid_content {
+      width: 100%; }
+      .grid_mation > div .grid_content > div {
+        display: none;
+        width: 100%; }
+        .grid_mation > div .grid_content > div.hide {
+          display: block; }
+        .grid_mation > div .grid_content > div ul {
+          width: 100%; }
+          .grid_mation > div .grid_content > div ul li {
+            width: 100%;
+            height: 280px;
+            padding-top: 40px;
+            box-sizing: border-box; }
+            .grid_mation > div .grid_content > div ul li a {
+              display: block;
+              width: 100%;
+              height: 240px;
+              overflow: hidden;
+              cursor: pointer; }
+              .grid_mation > div .grid_content > div ul li a div:nth-child(1) {
+                width: 362px;
+                height: 100%;
+                float: left;
+                margin-right: 40px;
+                overflow: hidden; }
+                .grid_mation > div .grid_content > div ul li a div:nth-child(1) img {
+                  height: 100%; }
+              .grid_mation > div .grid_content > div ul li a div:nth-child(2) {
+                box-sizing: border-box; }
+                .grid_mation > div .grid_content > div ul li a div:nth-child(2) h3 {
+                  font-size: 24px;
+                  color: #1B1B1B;
+                  font-weight: 500;
+                  margin-top: 40px;
+                  margin-bottom: 8px; }
+                .grid_mation > div .grid_content > div ul li a div:nth-child(2) span {
+                  font-size: 14px;
+                  color: #1B1B1B;
+                  font-weight: 500; }
+                .grid_mation > div .grid_content > div ul li a div:nth-child(2) p {
+                  word-break: break-word;
+                  font-size: 14px;
+                  color: #949494;
+                  font-weight: 500;
+                  margin-top: 25px;
+                  line-height: 26px;
+                  box-sizing: border-box;
+                  padding-right: 40px; }
+            .grid_mation > div .grid_content > div ul li a:hover {
+              transition: all .1s;
+              box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
+              margin-top: -5px; }
+
+/*# sourceMappingURL=swiper.css.map */

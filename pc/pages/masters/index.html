@@ -1,0 +1,207 @@
+!DOCTYPE html>
+<!-- saved from url=(0041)http://diich.efeiyi.com/page/masters.html -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>非遗大师</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://diich.efeiyi.com/assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="http://diich.efeiyi.com/assets/css/common.css">
+    <link rel="stylesheet" href="http://diich.efeiyi.com/assets/css/layout.css">
+    <script src="http://diich.efeiyi.com/assets/js/jquery.min.js"></script>
+    <script src="http://diich.efeiyi.com/js/category.js"></script>
+    <script src="http://diich.efeiyi.com/js/citys.js"></script>
+    <script src="http://diich.efeiyi.com/assets/js/system.js"></script>
+    <script src="http://diich.efeiyi.com/js/jquery.i18n.properties-1.0.9.js"></script>
+    <script src="http://diich.efeiyi.com/js/i18n.js"></script>
+    <script src="http://resource.efeiyi.com/html/masters/js/master_data.js?t=2017071151"></script>
+    <script src="http://resource.efeiyi.com/html/masters/js/masters.js"></script>
+    <style>
+        .media_layer .content .album .main .num li {
+            font-family:'微软雅黑';
+        }
+        /*.master_page {*/
+            /*min-width:1200px;*/
+        /*}*/
+        /*.master_page .rbox .bottom {*/
+            /*width:100%;*/
+        /*}*/
+		
+		.master_page .rbox .title .master-name {
+			font-size: 36px;
+			color: #1B1B1B;
+			letter-spacing: 2px;
+			line-height: 48px;
+			font-weight: 800;
+		}
+		
+		.master_page .rbox .item .cate {
+			border: 1px solid #bbb;
+			font-size: 16px;
+			color: #949494;
+			line-height: 16px;
+			display: table;
+			padding: 6px 13px;
+			margin-top: 25px;
+			font-weight: 100;
+		}
+    </style>
+</head>
+
+<body>
+<div class="header header_detail"></div>
+<!--//End header -->
+
+<div class="filter_search filter_search_fixed">
+    <div class="content">
+        <form class="form" action="http://diich.efeiyi.com/page/search.html">
+            <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+            <input type="hidden" id="area_code" name="area_code" value=""/>
+            <input type="hidden" id="gb_category_code" name="gb_category_code" value=""/>
+            <input type="hidden" id="type" name="type" value=""/>
+            <input class="submit" type="button" value="搜索" onclick="submit()">
+            <div class="suggest" style="display: none;">
+                <ul>
+
+                </ul>
+            </div>
+        </form>
+        <!--//End form-->
+
+        <div class="attr">
+            <span id="attr_text">所属类别</span>
+            <span id="area_text">全球</span>
+        </div>
+        <!--//End attribute-->
+
+        <div class="dropbox" id="drag">
+            <!--//ENd 全部-->
+
+            <div class="item" id="item_1">
+                <dl class="level">
+                    <dt>
+                    <div class="title">一级分类</div>
+                    <div class="subtitle">所有分类</div>
+                    </dt>
+                    <dd>
+                        <ul id="mainCategory">
+
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="level2">
+                    <dt>
+                    <div class="title">二级分类</div>
+                    <div class="subtitle">所有二级分类</div>
+                    </dt>
+                    <dd>
+                        <ul id="catecontent">
+
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!--//End 所属分类-->
+
+            <div class="item">
+                <dl class="level">
+                    <dt>
+                    <div class="title">位置</div>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>中国</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="level2">
+                    <dt>
+                    <div class="title">按照字母顺序</div>
+                    </dt>
+                    <dd>
+                        <ul id="citycontent">
+                            <li>安微</li>
+                            <li>澳门</li>
+                            <li>北京</li>
+                            <li>上海</li>
+                            <li>福建</li>
+                            <li>甘肃</li>
+                            <li>广东</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!--//End 位置-->
+
+        </div>
+        <!--//End attribute-->
+    </div>
+</div>
+<!--//End filter_search -->
+
+
+<div class="master_page">
+    <div class="lbox">
+        <ul class="master_avatar"></ul>
+    </div>
+    <div class="rbox">
+        <div class="default">
+            <div class="title">
+                <h1>代表性传承人<br>人类群星闪耀时</h1>
+            </div>
+            <div class="context">
+                <p>当文化隐在历史里，有人说，过去的，就会成为过去。可当暗夜里月光黯淡，星光退却，总会有人成为日夜兼程的火种，用时间，挥散黑夜。星星之火，相传成光。</p>
+            </div>
+            <div class="bottom" style="min-width:246px;bottom: 110px;">
+                <a class="more" style="cursor:text;"><i></i>点击代表性传承人头像查看更多</a>
+            </div>
+        </div>
+        <!--//End 默认部分-->
+
+        <div class="item" style="">
+            <div class="title">
+                <a class="master-name" target="_block">姚惠芬</a><a class="cate" target="_block">苏绣</a><h4>frefdsfe</h4>
+            </div>
+            <!--//End title-->
+            <div class="context">
+                <p id="context-p"></p>
+            </div>
+            <!--//End context-->
+            <div class="bottom">
+                <a class="arrow_right" href="javascript:0;">MORE</a>
+                <div class="imgs"></div>
+            </div>
+        </div>
+        <!--//End-->
+    </div>
+</div>
+<!-- 非遗大师 主内容 end -->
+
+<div class="bd footer"></div>
+<!--//End--footer-->
+
+<div class="media_layer" style="display:none;">
+    <div class="content">
+        <div class="head" style="z-index:11;"><a href="" class="icon_close"></a></div>
+        <!--//End-->
+        <div class="items album" style="display: block;position: absolute;top:50%;margin-top: -329px;">
+            <div class="main">
+                <ul class="media" id="imgs">
+                </ul>
+                <ul class="num">
+                    <li class="active"></li>
+                    <li class="line">/</li>
+                    <li class="total">03</li>
+                </ul>
+            </div>
+            <!--//End-->
+            <span class="prev"></span>
+            <span class="next"></span>
+        </div>
+        <!--//End 相册-->
+    </div>
+</div>
+
+
+
+</body>
+</html>

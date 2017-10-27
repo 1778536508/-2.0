@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>苏绣</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://resource.efeiyi.com/html/project/assets/images/logo.png" media="screen"/>
+    <link rel="stylesheet" href="http://diich.efeiyi.com/assets/css/common.css">
+    <link rel="stylesheet" href="http://resource.efeiyi.com/assets/css/model.css">
+    <script src="http://diich.efeiyi.com/assets/js/jquery.min.js"></script>
+    <script src="http://diich.efeiyi.com/js/category.js"></script>
+    <script src="http://diich.efeiyi.com/js/citys.js"></script>
+    <script src="http://diich.efeiyi.com/assets/js/system.js"></script>
+    <script src="http://resource.efeiyi.com/assets/js/vue.js"></script>
+    <script src="http://resource.efeiyi.com/assets/js/model.js"></script>
+    <script src="http://resource.efeiyi.com/assets/js/static.js"></script>
+    <script src="http://diich.efeiyi.com/js/jquery.i18n.properties-1.0.9.js"></script>
+    <script src="http://diich.efeiyi.com/js/i18n.js"></script>
+    <!--<script src="../js/model.js"></script>-->
+    <!--<link rel="stylesheet" href="../css/model.css">-->
+
+    <style>
+        .product li a {
+            width:370px;
+            height:492px;
+            float: left;
+            overflow: hidden;
+            background: #f7f7f7;  display: -webkit-flex;
+            -webkit-justify-content: center;
+            -webkit-align-items: center;}
+        .product li p.name {
+            float: left;
+        }
+        .suxiu .history .context .item {
+            display: block;
+        }
+        .suxiu .history .context .item .lbox .name {
+            line-height:30px;
+        }
+        .suxiu .history .context .item .lbox .name p{
+            margin-bottom:20px;
+        }
+        .suxiu .mavatar li .txt p {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .modal_video {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 20;
+        }
+        .modal_video .content {
+            width: 1170px;
+            height:600px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -300px;
+            margin-left: -585px;
+            z-index: 20;
+            background: #fff;
+        }
+        .modal_video .content video {
+            width:100%;
+        }
+        .modal_video .content .head {
+            width: 100%;
+            height:120px;
+            line-height:120px;
+            font-size:44px;
+            text-align: center;
+            display: block;
+            position: relative;
+        }
+        .modal_video .content .head .close {
+            background:url(http://diich-resource.oss-cn-beijing.aliyuncs.com/assets/images/icon_modal_close.png); width:20px;height:20px;position: absolute;top:50%;right:40px;margin-top:-10px;
+            cursor: pointer;
+        }
+        .modal_video .content .main {
+            width:1090px;
+            padding:40px;
+            height:400px;
+            overflow-y: hidden;
+            float: left;
+        }
+        .modal_video .content .main .pic {
+            width:100%;
+            height:400px;
+            overflow-y: auto;
+            float: left;
+        }
+        .modal_video .content .main .pic p {
+            width:100%;
+            float: left;
+            text-align: center;
+        }
+        .modal_video .overbg0 {
+            background: rgba(0, 0, 0, .85);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+        .modal_video .content .main .pic::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        /*定义滚动条的轨道，内阴影及圆角*/
+        .modal_video .content .main .pic::-webkit-scrollbar-track {
+            -webkit-box-shadow: none;
+            background-color: #fff;
+        }
+        /*定义滑块，内阴影及圆角*/
+        .modal_video .content .main .pic::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: rgba(148, 148, 148, .5);
+        }
+        /*--//End 自定义滚动条--*/
+    </style>
+
+
+</head>
+
+<body>
+    <div class="header fixed" id="home-header"></div>
+    <!--//End header-->
+
+    <div class="filter_search filter_search_fixed">
+        <div class="content">
+            <form class="form" action="http://diich.efeiyi.com/page/search.html">
+                <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+                <input type="hidden" id="area_code" name="area_code" value=""/>
+                <input type="hidden" id="gb_category_code" name="gb_category_code" value=""/>
+                <input type="hidden" id="type" name="type" value=""/>
+                <input class="submit" type="button" value="搜索" onclick="submit()">
+                <div class="suggest" style="display: none;">
+                    <ul>
+
+                    </ul>
+                </div>
+            </form>
+            <!--//End form-->
+
+            <div class="attr">
+                <span id="attr_text">所属类别</span>
+                <span id="area_text">全球</span>
+            </div>
+            <!--//End attribute-->
+
+            <div class="dropbox" id="drag">
+                <!--//ENd 全部-->
+
+                <div class="item" id="item_1">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">一级分类</div>
+                        <div class="subtitle">所有分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="mainCategory">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">二级分类</div>
+                        <div class="subtitle">所有二级分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="catecontent">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 所属分类-->
+
+                <div class="item">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">位置</div>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>中国</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">按照字母顺序</div>
+                        </dt>
+                        <dd>
+                            <ul id="citycontent">
+                                <li>安微</li>
+                                <li>澳门</li>
+                                <li>北京</li>
+                                <li>上海</li>
+                                <li>福建</li>
+                                <li>甘肃</li>
+                                <li>广东</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 位置-->
+
+            </div>
+            <!--//End attribute-->
+        </div>
+    </div>
+    <!--//End filter_search -->
+
+    <div class="container suxiu" id="app">
+        <div class="bg">
+            <div class="main">
+                <div class="hd">
+                    <div class="info">
+                        <h1 class="bd">苏绣</h1>
+                        <div class="bd tag"><i class="m_icon"></i></div>
+                        <div class="bd doi"><i>ID</i><span>标识码：1231237128973812937</span></div>
+                    </div>
+                </div>
+                <div class="play"></div>
+                <img class="img_bg" src="http://resource.efeiyi.com/image/model/suxiu/suxiu.jpg" alt="">
+            </div>
+        </div>
+        <!--//End-->
+
+        <div class="base">
+            <div class="card">
+                <div class="main">
+                    <div class="floor">
+                        <a class="share js-share" title="分享"></a>
+                        <a class="praise1 js-praise" title="点赞" style="position: relative;"></a>
+                        <div class="share_box js-share_box">
+                            <div class="icons">
+                                <a href="" class="sina"></a>
+                                <a href="" class="weixin active"></a>
+                            </div>
+                            <div class="qrcode">
+                                <img width="108" style="display: none;" src="http://diich.efeiyi.com/ichProject/getImage?id=11040&type=sina"
+                                     alt="新浪">
+                                <img width="108" src="http://diich.efeiyi.com/ichProject/getImage?id=11040&type=weixin"
+                                     alt="微信">
+                            </div>
+                        </div>
+                    </div>
+                    <!--//End-->
+                    <h2 v-text="masters.title"><!--<a class="more" href=""><span>其他07人</span><i class="gt"></i></a>--></h2>
+                    <div class="mavatar">
+                        <ul class="master">
+                            <li v-for="item in masters.data">
+                                <a href="" class="avatar"><img :src="'http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/'+item.avatar" alt=""></a>
+                                <span class="txt">
+                                    <p class="name" v-text="item.name"></p>
+                                    <p v-text="item.title"></p>
+                                    <p v-text="item.subTitle"></p>
+                                </span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!--//End-->
+                    <div class="bd batch">
+                        <div class="tname">非遗在中国<i></i></div>
+                        <div class="subcon">
+                            <span>级别：中国国家级</span>
+                            <span>批次：第一批(2006年)</span>
+                            <span>中国国家非遗名录编号：Ⅶ-18</span>
+                        </div>
+                    </div>
+                    <!--//End-->
+                </div>
+            </div>
+        </div>
+        <!--//End base-->
+
+        <section class="floor brief">
+            <div class="card">
+                <div class="main">
+                    <div class="txt" v-text="projectBrief.title"></div>
+                    <ul class="info">
+                        <li style="width: 326px;margin-right:80px;">
+                            <h4 v-html="projectBrief.subTitle"></h4>
+                        </li>
+                        <li style="width:760px">
+                            <p v-text="projectBrief.desc"></p>
+                        </li>
+                    </ul>
+                    <div class="time">
+                        <p v-for="item in projectBrief.base"><strong v-text="item.zh"></strong><span v-text="item.en"></span></p>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--//End 项目简介-->
+
+        <section style="height: 500px;background:rgb(13,13,13);" class="floor pedigree">
+            <div class="card">
+                <div class="main">
+                    <div class="title">
+                        <h4 v-text="lineage.title"></h4>
+                    </div>
+
+                    <div class="project">
+
+                        <div class="context">
+                            <div class="bd items">
+                                <div class="bd b" style="background:url(http://diich-resource.oss-cn-beijing.aliyuncs.com/assets/model/suxiu/xm_lp_bg.jpg)">
+                                    <div class="item" :class="'item'+(index+1)" v-for="(item,index) in lineage.data">
+                                        <img :src="'http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/'+item.avatar" alt="">
+                                        <p v-text="item.name"></p>
+                                        <p v-text="item.title"></p>
+                                        <div class="mask">
+                                            <p v-if="item.sex">性别：{{item.sex}}</p>
+                                            <p v-if="item.birth">出生日期：{{item.birth}}</p>
+                                            <p v-if="item.way">传承方式：{{item.way}}</p>
+                                            <p v-if="item.skilled">擅长绣类：{{item.skilled}}</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="bd c">
+                                    <a href="javascript:;" id="js-modal" class="more">查看完整谱系<i class="gt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </section>
+        <!--//End 传承谱系-->
+
+        <section class="floor product">
+            <div class="card">
+                <div class="title">
+                    <h4 v-text="products.title"></h4>
+                </div>
+                <div class="main product_list">
+                    <ul>
+                        <li v-for="item in products.list">
+                            <a href=""><img :src="'http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/'+item.image" alt=""></a>
+                            <p class="name" v-text="item.name"></p>
+                            <div class="mask">
+                                <div class="con">
+                                    <p><img :src="'http://diich-resource.oss-cn-beijing.aliyuncs.com/html/master/assets/model/suxiu/'+item.avatar" alt=""></p>
+                                    <p class="line"><i></i></p>
+                                    <p class="txt" v-text="item.author"></p>
+                                    <!--<p class="txt">创作1964年3月</p>-->
+                                    <!--<a class="more" href="">查看作品详情<i class="gt"></i></a>-->
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <div class="page">
+
+                        <span class="prev active"></span><span class="show">01</span><span>/</span><span class="total">02</span><span class="next"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--//End 代表性作品-->
+
+        <section class="floor history">
+            <div class="card">
+                <div class="title">
+                    <h4 v-text="history.title"></h4>
+                </div>
+                <div class="context">
+                    <div class="item" v-for="(item, index) in history.list"  v-show="index==0">
+                        <div class="lbox">
+                            <div class="name" v-html="item.desc"></div>
+                        </div>
+                    </div>
+                    <!--//End 春秋-->
+                </div>
+                <div class="tab">
+                    <span :class="{active:index==0}" v-for="(item,index) in history.list"><em v-text="item.years"></em><i></i></span>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </section>
+        <!--//End 历史渊源-->
+
+        <section class="floor field">
+            <div class="card">
+                <div class="title">
+                    <h4>基本内容</h4>
+                </div>
+                <div class="main">
+                    <div class="lbox">
+                        <p>苏绣是在丝、毛、麻、布等织物上，以针引线通过运针，组织成各种图案色彩的传统手工技艺</p>
+                    </div>
+                    <div class="rbox" data-type="lgText" data-number="500">
+                        <div class="text">
+                            <p>一、苏绣产品种类</p>
+                            <p>苏绣传承发展至今，从其功能分，有刺绣实用品和刺绣欣赏品两大品类。</p>
+                            <p>（一）刺绣实用品主要有：1.服饰（绣衣、绣鞋、绣帽等）、衾具（帐沿、床帏、被面、枕套等）、妆具（镜套、粉盒套等）、名片袋、褡裢、荷包、扇袋、桌围椅披等小件绣品。2.刺绣戏衣行头。3.外销出口的苏绣和服、腰带、韩服、舞衣等。</p>
+                            <p>（二）刺绣欣赏品，又称刺绣艺术品。至今可分为图案绣类、书画绣类、摄影绣类等。苏绣发展至今，艺术品的生产已经成为主要品类，各种题材皆可入绣，几乎可称无画不能绣。</p>
+                            <p>二、制作原料</p>
+                            <p>1、底料：凡是织物都可作为苏绣的底料，有棉、麻、毛、丝、化纤织物、竹帘等，苏绣艺术品的底料主要为真丝类织物，具薄、透、滑等特点。</p>
+                            <p>测试数据1111111111111</p>
+                            <p>测试数据1111111111111</p>
+                            <p>测试数据1111111111111</p>
+                            <p>测试数据1111111111111</p>
+                            <p>测试数据1111111111111</p>
+                            <p>测试数据1111111111111</p>
+                        </div>
+                        <!--<div class="text_more">-->
+                            <!--<span class="show">展开全部内容<i></i></span>-->
+                            <!--<span class="hide">收起全部内容<i></i></span>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="pic"><img class="img_bg" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/xm_field_01.jpg" alt="" style="margin-top: -352px; margin-left: -700px;"></div>
+        </section>
+        <!--//End 基本内容-->
+
+        <section class="floor skill">
+            <div class="card">
+                <div class="title">
+                    <h4>项目特征</h4>
+                </div>
+                <div class="main" data-type="lgText" data-number="560">
+                    <div class="lbox">
+                        <div class="text">
+                            <p>一、苏绣技艺在传统社会，其服务方向，分为四大类：1、为民间所用，生活气息浓郁，淳厚质朴；2、为宗教所用，庄严神秘；3、为宫廷所用，富丽堂皇；4、为文人、士大夫服务，清雅精致。近代以后，则开始面向国际，产品用途与风格更趋于广泛多元，从而形成了广泛性与多元性的特征。</p>
+                            <p>二、苏绣技艺经过无数代人的丰富与发展，已形成了9大类40余种针法，并形成了无所不能绣的丰富的绣法，因而形成了丰富性特征。</p>
+                            <p>三、苏绣技艺在长期的实践与不断总结中，形成了门类齐全、科目细致的绣法，绣法不断细化，体现出完整性与系统性的特征。</p>
+                            <p>四、苏绣技艺秉承精益求精的精神，不断地在针法与绣法上寻求发展，使艺术表现力不断提高与拓展，从而具有了拓展性特征。</p>
+                            <!--<p>五、苏绣技艺产生发展于苏州地区，自明代以来一直保持精细雅洁的地方风格，集中体现了苏州文化敦厚温文、崇文尚礼、精细典雅的特性，已经成为苏州文化的象征之一，因而具有浓郁的地方性特征</p>-->
+                            <!--<p>1111、苏绣技艺产生发展于苏州地区，自明代以来一直保持精细雅洁的地方风格，集中体现了苏州文化敦厚温文、崇文尚礼、精细典雅的特性，已经成为苏州文化的象征之一，因而具有浓郁的地方性</p>-->
+                            <!--<p>11111111111111</p>-->
+                            <!--<p>111111111</p>-->
+                            <!--<p>11111111111111</p>-->
+                            <!--<p>11111111111111</p>-->
+                            <!--<p>11111111111111</p>-->
+                            <!--<p>11111111111111</p>-->
+                        </div>
+                        <!--<div class="text_more" style="position: inherit;margin-top:80px;">-->
+                            <!--<span class="show">展开全部内容<i></i></span>-->
+                            <!--<span class="hide">收起全部内容<i></i></span>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="rbox">
+                        <img style="margin-bottom: 28px;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/xm_field_02.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--//End 项目特征-->
+
+        <section class="floor skill" style="background:#fff;">
+            <div class="card">
+                <div class="title">
+                    <h4>主要价值</h4>
+                </div>
+                <div class="main">
+                    <div class="lbox">
+                        <p style="font-size:30px;font-weight:bold;line-height: 48px;">苏绣一直是苏州地区最具代表性的民族民间工艺美术技艺之一，对它的保护具有重要价值</p>
+                    </div>
+                    <div class="rbox">
+                        <p>1、艺术价值：苏绣历来与中国画紧密结合：宋代，山水、花鸟、佛像等画作就开始成为苏绣的绣稿底本。明代受“吴门画派”影响，苏绣形成了自己精细雅洁的独特艺术风格，直至当代，国画一直是苏绣的重要表现题材。近年来，苏绣完美地表达了吴冠中、袁运甫等当代国画名家的作品，受到这些画家的高度赞赏。苏绣艺术在宋以后一直与中国画的发展紧密结合，并不断从中汲取营养，丰富了自身的发展。时至今日，艺术欣赏品已成为苏绣的主要品类，苏绣技艺不断提升，使艺人若想达到较高的艺术水准，必须具备一定的书画知识与较高的艺术素养，因而保护苏绣技艺对保护中国传统书画艺术具有一定的积极意义。</p>
+                        <p>2、技艺交流价值：苏绣在清代以后不断从其他地区、民族的刺绣技艺中汲取营养，与湘绣、蜀绣、粤绣与苗绣等绣种相互融合，互相影响。二十世纪以后，苏绣技艺作为中国传统工艺美术的代表在国际上多次获奖，获得广泛赞誉。因而保护苏绣技艺对于促进国内国际工艺美术与文化艺术交流具有一定的积极意义。</p>
+                        <p>3、学术价值：苏绣是中国最早拥有理论著作（清，丁佩《绣谱》）的绣种，经过多年的归纳整理，苏绣理论体系、针法技巧逐步发展完善，出版了众多的技法绣法书籍，研究层面不断拓展与深入，保护苏绣技艺对于研究中国的传统刺绣技艺与工艺美术理论等均具有重要的学术价值。</p>
+                        <p>4、实用价值：苏绣技艺是中华民族悠久发达的服饰文化的重要体现。在旧时代，从帝后朝服到百姓服饰，无不以刺绣作为重要的装饰手段，而苏绣自明代即成为皇家御用服饰的主要产地，同时民间服饰也因刺绣菱、莲、鱼等而具有浓郁的地方色彩。保护苏绣技艺对于保护中华民族丰富的服饰传统与服饰文化，具有重要意义。</p>
+                        <p>5、民俗学价值:苏绣产生于江南水乡，其民间绣品，一直具有浓郁的民间色彩与水乡生活气息，在长期的发展中，形成了一套完整的民俗服饰与礼仪服饰，如在人生的诞生、成年、结婚、祝寿与葬礼中均有特定的刺绣服装与被袱床帐等。另外为区别男女长幼，也形成了一套约定俗成的刺绣服饰图案，如女子服饰绣凤、花，男子服饰绣龙等。因此，保护传统的苏绣技艺对于苏州民俗研究与保存部分民俗具有重要意义。</p>
+                        <p>6、妇女研究的重要意义：苏州女子历来有刺绣的传统，刺绣是旧时城乡女子必备的技能，也是众多平民女子谋生与养家的手段，对于富贵之家的女子，刺绣则是体现智慧灵巧的手段。苏州女子有在七夕节笃巧的习俗，七夕节为她们提供试女红，争当针神的机会；中秋有吴中闺秀身着绣衣夜行赏月的“走月亮”习俗等。因此保护苏绣技艺，对于丰富人民群众的物质文化生活，通过美育提高人民群众的素质，促进人们全面发展，构建社会主义和谐社会，都将产生重要的作用。</p>
+                        <img style="position: absolute;bottom: 0;left: -400px;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/xm_field_03.jpg" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--//End 主要价值-->
+
+        <section class="floor skill">
+            <div class="card">
+                <div class="main">
+                    <div class="lbox">
+                        <div class="title">
+                            <h4>濒危状况</h4>
+                        </div>
+                    </div>
+                    <div class="rbox" style="margin-top: 120px;margin-bottom: 48px;">
+                        <p>苏绣名扬中外，曾有辉煌的昨天：清代形成的“绣市”说明苏绣曾广为流传，建国后经过复苏、发展期，使苏州地区成为我国最大的刺绣发展基地。虽然今日的苏绣分布仍有一定规模，工艺技巧也有一定的提高，但却隐患重重，在不远的将来就将面临濒危的局面：
+                            1.苏绣日用品赖以生存、发展的社会经济基础发生了变革。随着工业化的来临，人们的日常生活发生了变化：一些传统民俗日益淡化：传统刺绣服饰经历变...</p>
+                        <!--<div class="text_more" style="left: 0;bottom: -60px;">-->
+                            <!--<span class="show">展开全部内容<i></i></span>-->
+                            <!--<span class="hide">收起全部内容<i></i></span>-->
+                        <!--</div>-->
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <!--//End 濒危状况-->
+
+        <section class="floor skill" style="background:#fff;">
+            <div class="card">
+                <div class="main">
+                    <div class="lbox">
+                        <div class="title">
+                            <h4>保护措施</h4>
+                        </div>
+                    </div>
+                    <div class="rbox" style="margin-top: 120px;margin-bottom: 48px;">
+                        <p>1、苏州市已制订出台《苏州市民族民间传统文化保护办法》，为苏绣等非物质文化遗产的保护提供法律保障。</p>
+                        <p>2、苏州市已制定了《“文化苏州”行动计划》与《中国民族民间文化保护工程综合性试点苏州市总体实施方案》，将苏绣等非物质文化遗产的保护列为《行动计划》与《实施方案》的重要内容。</p>
+                        <p>3、2004年设立了苏州市民族民间传统文化保护专项资金，2005年安排300万</p>
+                        <!--<div class="text_more" style="left: 0;bottom: -60px;">-->
+                            <!--<span class="show">展开全部内容<i></i></span>-->
+                            <!--<span class="hide">收起全部内容<i></i></span>-->
+                        <!--</div>-->
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <!--//End 保护措施-->
+
+        <section class="floor skill">
+            <div class="card">
+                <div class="main">
+                    <div class="lbox">
+                        <div class="title">
+                            <h4>材料</h4>
+                        </div>
+                        <p>1、底料：凡是织物都可作为苏绣的底料，有棉、麻、毛、丝、化纤织物、竹帘等，苏绣艺术品的底料主要为真丝类织物，具薄、透、滑等特点。</p>
+                        <p>2、花线：苏绣采用的绣线以真丝制成的花线为主。花线是用天然蚕丝染成，色彩丰富，色阶齐备.且纤维细致透明，抱合好，拉力强，能分丝分缕。苏绣中还有人发、珍珠、金银丝等制成的特殊的绣线。</p>
+                    </div>
+                    <div class="rbox" style="margin-top: 120px;margin-bottom: 48px;">
+                        <img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/xm_field_04.jpg" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <!--//End 材料-->
+
+        <section class="floor skill" style="background:#fff;">
+            <div class="card">
+                <div class="main">
+                    <div class="lbox">
+                        <div class="title">
+                            <h4>制作技术、方法或过程</h4>
+                        </div>
+                        <p>1、制作绣稿：由设计人员创作画稿。</p>
+                        <p>2、描稿：由设计人员将画稿的块面、轮廓以白描线条的形式落稿。</p>
+                        <p>3、勾稿：将描稿的纹样勾于半透明玻璃纸上。</p>
+                        <p>4、染线：根据画稿的色彩需要，将白坯线染色。</p>
+                        <p>5、选底料：根据画稿内容需要，选择所需要的刺绣面料。</p>
+                        <p>6、上绷：在木制的绷架上固定刺绣底料。</p>
+                        <p>7、钉稿：将勾稿的纹样固定在刺绣底料上。</p>
+                        <p>8、配线：根据绣稿内容，配置各色绣线。</p>
+                        <p>9、刺绣：以所需要的刺绣针法、技法，进行绘画的再创造。</p>
+                        <p>10、完工：通过以上的全部流程，完成刺绣作品。</p>
+                        <p>11、装裱：用手工将刺绣作品从绷面上分离出来，装入镜框。</p>
+                    </div>
+                    <div class="rbox" style="margin-top: 120px;margin-bottom: 48px;">
+                       <p class="bd" style="margin-bottom:30px;"> <img style="float: right;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/xm_field_05.jpg" alt=""></p>
+                        <p class="bd"><img style="float: right;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/xm_field_06.jpg" alt=""></p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--//End 制作技术、方法或过程-->
+
+        <section class="floor skill">
+            <div class="card">
+                <div class="title">
+                    <h4>花样或图案</h4>
+                </div>
+                <div class="main">
+                    <div class="bd">
+                        <p style="width:770px;line-height: 36px;float:left;margin-bottom: 90px;">在多年的实践中，苏绣已经形成了一套完整的绣法理论体系。根据所要表现物体形象的类型，分为花鸟、风景（山水）、人物等科目类别，之下，又细分为各个具体的表现内容的绣法，如欣赏品中的花分为单瓣花和复瓣花两大类，之下的梅花、杜鹃花、牡丹、荷花等都有不同的具体绣法。</p>
+                    </div>
+                    <div class="bd">
+                        <img style="float:left;margin-right: 30px;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/xm_field_07.jpg" alt="">
+                        <img style="float:left;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/xm_field_08.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--//End 花样或图案-->
+
+        <section class="floor skill" style="background:#fff;">
+            <div class="card">
+                <div class="main">
+                    <div class="lbox" style="width: 585px;margin-top: 120px;margin-bottom: 48px;">
+                        <p class="bd" style="margin-bottom:30px;"><img style="float: right;position: relative;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/xm_field_09.jpg" alt=""></p>
+                        <p class="bd"><img style="float: right;position: relative;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/project_suxiu/xm_field_10.jpg" alt=""></p>
+                    </div>
+                    <div class="rbox" style="width:530px;">
+                        <div class="title">
+                            <h4>工具</h4>
+                        </div>
+                        <p style="margin-bottom:30px;">一、绷架<br>目前，手工制作的刺绣欣赏品，主要工具还是沿袭传统的木制绷架，包括绷架、绷凳、立架。</p>
+                        <p style="margin-bottom:30px;">1、绷架：由2根轴绷、2+A1:AD79100厘米左右。绷闩用于纬向，一般长70厘米左右。绣制大件绣品时，则根据需要制作相应的大绷。<br>2、绷凳：用来放置绷架。一般采用一副三足凳，两足在外，一足在内。凳面一般宽为8厘米，长为70厘米，高度一般在79厘米左右。<br>3、立架，功用与绷凳相同，只是为竖放。需要对色、对光的绣品，使用立架绣制。<br>4、搁手板：安放在绷架两轴上，防止产品的污损，保证产品的质量，用作搁手臂的长形木版。目前常用的阔为6厘米，长视绷面大小而定，一般为70厘米。</p>
+                        <p>二、绣针<br>1、12号钢针：为目前手工刺绣常用绣针，这种针身细如羊毛，亦有羊毛针之称。<br>2、钢丝绣花针：针身短而细，适于绣制双面绣。<br>3、长9号针：针身细而长，针尾细、线孔大，易于穿线，常作乱针绣和单面绣的用针。<br>4、装裱材料：用于刺绣欣赏品，有结合木雕工艺的镜框、托架等和与传统书画装裱方法所用材料相同的宣纸、绢、绫边、轴管等。</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--//End 工具-->
+
+
+    </div>
+    <!--//End container-->
+
+    <div class="model_fixed" style="height: 710px;">
+        <ul></ul>
+    </div>
+
+
+    <div class="footer"></div>
+    <!--//End container-->
+
+
+    <div class="modal_video" style="display: none;">
+        <div class="content">
+            <video id="videoId" class="video" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/video/modal/suxiu_project.mp4" controls=""></video></div>
+        <div class="overbg0"></div>
+    </div>
+
+
+
+</body>
+<script>
+    $(function() {
+        var app=new Vue({
+           el:'#app',
+            data:{
+                //代表传承人
+                masters:{
+                    title:'代表传承人',
+                    data:[
+                        {name:'张美芳',title:'国家级非遗传承人',subTitle:'原苏州刺绣研究所副',avatar:'xm_base_01.jpg'},
+                        {name:'姚惠芬',title:'国家级非遗传承人',subTitle:'江苏工艺美术名人',avatar:'xm_base_02.jpg'},
+                        {name:'张玉英',title:'国家级非遗传承人',subTitle:'中国工艺美术大师',avatar:'xm_base_03.jpg'}
+                    ]
+                },
+                //项目简介
+                projectBrief:{
+                    title:'项目简介',
+                    subTitle:'苏绣 -<br>中国优秀的民族传统工艺之一',
+                    desc:'苏绣技艺主要集中于苏州市区与太湖之滨的镇湖。据《说苑》记载，二千五百年前苏州就已有刺绣服饰。宋代苏州刺绣有所发展。苏州目前最早的刺绣实物是从虎丘塔、瑞光塔中出土的刺绣品。明代，苏绣开始形成“精细雅洁”的独特风格。其时刺绣欣赏品多采用文人画稿，代表为韩希孟的绣品。出现专为皇室御用的宫货绣和商品绣，戏衣业由昆曲兴起而盛。清代，苏州被称为“绣市”，有3个刺绣行业公所，绣庄150多家，四乡有绣工10万余人，刺绣成为众多家庭的副业。清末民初，苏绣艺术家沈寿创仿',
+                    base:[
+                        {zh:'拼音：',en:'Su Xiu'},
+                        {zh:'外文名：',en:'Su Embroidary'},
+                        {zh:'民族：',en:'汉族'}
+                    ]
+                },
+                //传承谱系
+                lineage:{
+                    title:'传承谱系',
+                    data:[
+                        {
+                            name:'韩希孟',
+                            title:'传统细绣创始人',
+                            sex:'女',
+                            birth: '1874',
+                            way: '',
+                            skilled: '',
+                            avatar:'lineage_01.png'
+                        },
+                        {
+                            name:'李娥瑛',
+                            title:'细绣改革大师',
+                            sex:'女',
+                            birth: '1926',
+                            way: '家庭',
+                            skilled: '人物、花鸟',
+                            avatar:'lineage_02.png'
+                        },
+                        {
+                            name:'顾文霞',
+                            title:'苏州苏绣名家',
+                            sex:'女',
+                            birth: '1931',
+                            way: '家庭',
+                            skilled: '花鸟山水、猫',
+                            avatar:'lineage_03.png'
+                        },
+                        {
+                            name:'管佩英',
+                            title:'中国苏绣大师',
+                            sex:'女',
+                            birth: '1939',
+                            way: '家庭传承',
+                            skilled: '',
+                            avatar:'lineage_04.png'
+                        }
+                    ]
+                },
+                //代表性作品
+                products:{
+                    title:'代表性作品',
+                    list:[
+                        {name:'耶稣像',image:'500001.jpg',author:'姚惠芬',avatar:'sx_px_06.png',link:''},
+                        {name:'姑苏春色图',image:'500002.jpg',author:'姚惠芬',avatar:'sx_px_06.png',link:''},
+                        {name:'邓小平同志和孙子',image:'500003.jpg',author:'姚惠芬',avatar:'sx_px_06.png',link:''},
+                        {name:'花猫嬉蚱蜢',image:'500004.jpg',author:'姚惠芬',avatar:'sx_px_06.png',link:''},
+                        {name:'玳瑁猫',image:'500005.jpg',author:'姚惠芬',avatar:'sx_px_06.png',link:''},
+                        {name:'红底沙发双猫',image:'500006.jpg',author:'姚惠芬',avatar:'sx_px_06.png',link:''}
+                    ]
+                },
+                //历史渊源
+                history:{
+                    title:'历史渊源',
+                    list:[
+                        {years:'清朝',desc:'<p>清朝（公元1644～1911年）的苏绣以“精细雅洁”而闻名，当时的苏州更有了“绣市”的誉称。清代中后期，苏绣在绣制技术上有了进一步发展，新出现了精美的“双面绣”，仅苏州一地专门经营刺绣的商家就有65家之多。</p><p>席永敬妻诸葛氏，年十五于归，事孀姑尽孝。永敬日玩周易，氏乃绣河图洛书九宫八卦诸图，经纬巧密……(《苏州府志》)清朝是苏绣的全盛时期，真可谓流派繁衍，名手竞秀。皇室享用的大量品，几乎全出于艺人之手。民间更是丰富多彩，广泛用于服饰、戏衣、被面、枕袋帐幔、靠垫、鞋面、香包、扇袋等方面。这些苏绣生活用品不仅针法多样、绣工精细、配色秀雅，而且图案花纹含有喜庆、长寿、吉祥之意，深受群众喜爱。还有一种“画绣”，属于高档欣赏品，称之为“闺阁绣”。史载吴县的钱慧、曹墨琴，吴江的杨卯君、沈关关，无锡的丁佩、薛文华等人的佳作，皆名垂一时。在西学东流的潮流中，苏绣也出现了创新的兆头。 光绪年间，技艺精湛的艺术家沈云芝闻名苏州绣坛，她溶西画肖神仿真的特点于刺绣之中，新创了“仿真绣”。光绪三十年（公元1904年）慈禧七十寿辰，沈云芝绣了佛像等八幅作品祝寿。慈禧备加赞赏，书写“寿”、“福 ”两字，分赐给沈云芝和她的丈夫余觉。从此沈云芝改名沈寿，嗣后她的作品《意大利皇后爱丽娜像》，曾作为国家礼品赠送给意大利，轰动了意国朝野，《耶稣像》1915年在美国举办的“巴拿马——太平洋国际博览会”上获一等大奖，售价高达一万三千美元。《美国女伏倍克像》赴美展出时，其盛况空前。沈寿的“仿真绣”传誉中外，开拓了苏绣崭新的一页。在她的倡导下，江苏的苏州、南通、丹阳、无锡、常熟等地分别举办了传习所、绣工科、绣工会等。她曾先后到苏州、北京、天津、南通等地课徒传艺，培养了一代新人。其时著名艺人还有华基、唐义真、李佩敝、蔡群秀、张应秀、金静芬……她们的作品先后在“意大利都朗万国博览会”（公元1911）、“巴拿马——太平洋国际博览会”（公元1915年）、“比利时万国博览会”（公元1930年）上获奖，为中华民族传统工艺在国际上赢得了荣誉。三十年代初，丹阳正则女职中绣工科主任杨守玉，始创了纵横交叉、长短不一、分层重叠的“乱针绣” 丰富与提高了苏绣艺术的表现能力。</p><p>自本世纪五十年代初以来，艺人创作开拓了新的广阔天地。苏州、南通、常州、无锡、扬州、东台等地先后建立了研究机构或工厂，使艺人安心专致研究和创作。对失传的技艺进行了挖掘、总结、提高、发展，使古老的苏绣艺术重放异彩。1986年建成中国苏绣博物馆。</p><p>民国时期整体来讲，由于常年战乱，苏绣业曾一度衰落。特别是到了清末民初</p>'},
+                        {years:'近代',desc:'<p>中华人民共和国建立后，苏绣得到进一步的恢复和发展。</p><p>1950年后，国家专门设立了苏州刺绣研究所，并开办刺绣训练班。苏绣的针法由原来的18种发展到今天的40余种。19世纪末，刺绣大师沈寿继承传统，吸收西洋画精髓，创造了“仿真绣”。20世纪30年代，杨守玉突破传统，发明“乱针绣”。1958年，凭着扎实的素描功底和熟练的乱针绣技巧，任嘒闲又开创了“虚实乱针绣”。任嘒闲第一幅虚实乱针绣作品《列宁胸像》，以绣品面料色彩为基调，运用粗细结合、虚实排列与留空的手法，来表现丰富的画面，线条轻松活泼、接针不露痕迹，色彩简洁，整体感强，惟妙惟肖地表现了人物。在全国刺绣质量评比会上，这幅作品被定为“肖像绣的质量标准”，后又在上海举办的中国工艺美术大师精品展上获金奖，现为江苏省美术馆收藏。</p>'}
+                    ]
+                }
+            },
+            mounted:function () {
+                sxProject.init();
+                this.modal();
+            },
+            methods:{
+               modal:function () {
+                   var $modal=$('.modal_video');
+                   $('#js-modal').on('click',function () {
+                       $modal.fadeIn();
+                       $('body').css('overflow','hidden');
+                   });
+                   $modal.on('click','.overbg0, .close',function () {
+                       $modal.fadeOut();
+                       $('body').css('overflow','');
+                   })
+
+               }
+            }
+        });
+
+    })
+</script>
+
+</html>

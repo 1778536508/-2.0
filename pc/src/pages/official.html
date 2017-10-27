@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>官方服务</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://diich.efeiyi.com/assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="http://diich.efeiyi.com/assets/css/common.css">
+    <link rel="stylesheet" href="http://diich.efeiyi.com/assets/css/layout.css">
+    <script src="http://diich.efeiyi.com/assets/js/jquery.min.js"></script>
+    <script src="http://diich.efeiyi.com/js/category.js"></script>
+    <script src="http://diich.efeiyi.com/js/citys.js"></script>
+    <script src="../assets/js/system.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <style>
+        .modal_video {
+            position: fixed;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            z-index:20;
+        }
+        .modal_video .video {
+            position: absolute;
+            top:50%;
+            left:50%;
+            z-index:20;
+            background: #fff;
+        }
+        .modal_video .overbg0 {
+            background: rgba(0,0,0,.85);
+            position: fixed;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            z-index:10;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(245, 246, 247)">
+<div class="header header_detail"></div>
+<!--//End header -->
+<div class="filter_search filter_search_fixed">
+    <div class="content">
+        <form class="form" action="http://diich.efeiyi.com/page/search.html">
+            <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+            <input type="hidden" id="area_code" name="area_code" value="" />
+            <input type="hidden" id="gb_category_code" name="gb_category_code" value="" />
+            <input type="hidden" id="type" name="type" value="" />
+            <input class="submit" type="button" value="搜索" onclick="submit()">
+            <div class="suggest" style="display: none;">
+                <ul>
+
+                </ul>
+            </div>
+        </form>
+        <!--//End form-->
+
+        <div class="attr">
+            <span id="attr_text">所属类别</span>
+            <span id="area_text">全球</span>
+        </div>
+        <!--//End attribute-->
+
+        <div class="dropbox" id="drag">
+            <!--//ENd 全部-->
+
+            <div class="item" id="item_1">
+                <dl class="level">
+                    <dt>
+                    <div class="title">一级分类</div>
+                    <div class="subtitle">所有分类</div>
+                    </dt>
+                    <dd>
+                        <ul id="mainCategory">
+
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="level2">
+                    <dt>
+                    <div class="title">二级分类</div>
+                    <div class="subtitle">所有二级分类</div>
+                    </dt>
+                    <dd>
+                        <ul id="catecontent">
+
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!--//End 所属分类-->
+
+            <div class="item">
+                <dl class="level">
+                    <dt>
+                    <div class="title">位置</div>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>中国</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="level2">
+                    <dt>
+                    <div class="title">按照字母顺序</div>
+                    </dt>
+                    <dd>
+                        <ul id="citycontent">
+                            <li>安微</li>
+                            <li>澳门</li>
+                            <li>北京</li>
+                            <li>上海</li>
+                            <li>福建</li>
+                            <li>甘肃</li>
+                            <li>广东</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!--//End 位置-->
+
+        </div>
+        <!--//End attribute-->
+    </div>
+</div>
+<!--//End filter_search -->
+    <div class="container">
+        <div class="slide_img"><img src="http://resource.efeiyi.com/image/uploads/official_01.jpg" alt=""></div>
+        <!--//End-->
+        <div class="official">
+            <div class="item">
+                <div class="card">
+                    <header>关于非遗国际</header>
+                </div>
+                <div class="home about">
+                    <div class="bd introduce">
+                        <ul class="bd">
+                            <li>
+                                <div class="lbox">
+                                    <div class="content">
+                                        <div class="info">
+                                            <p>2016年联合国教科文组织联合永新华韵发起国际非物质文化遗产大数据库的建设项目，并于2017年率先于中国运营后向全世界各国推广运营。</p>
+                                            <p>
+                                                国际非遗大数据库是保护、传承和交流非物质文化遗产的一个重要平台，每个团体、人都可以分享自己的意愿并发挥文化多样性的创造性力量以巩固我们的共同的价值观。国际非遗大数据库的建设，是确保非物质文化遗产生命力的一个重要平台。该平台包括对非物质文化遗产各个方面的确认、立档、研究、保存、保护、宣传、弘扬、传承 （特别是通过正规和非正规教育） 和振兴。</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="rbox">
+                                    <div class="video">
+                                        <span class="play play120" data-id="0" style="z-index:20;"><i></i></span>
+                                        <img class="preview" src="http://resource.efeiyi.com/image/uploads/serve/pic1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <!--//ENd 关于非遗国际-->
+
+            <div class="item">
+                <div class="card">
+                    <header>服务模式</header>
+                    <div class="directory serve">
+                        <ul class="bd">
+                            <li>
+                                <div class="bd top">
+                                    <p><i class="icon1"></i><span>O2O<br>服务</span></p>
+                                </div>
+                                <div class="bd context">
+                                    <p>针对非遗领域相关传承人、民间艺人的线下空间合作，提供相关作品展示、产品售卖等服务</p>
+                                </div>
+                                <div class="bd link"><a href="http://resource.efeiyi.com/other/%E3%80%9020170515%E3%80%91e%E9%A3%9E%E8%9A%81-%E9%9D%9E%E7%89%A9%E8%B4%A8%E6%96%87%E5%8C%96%E9%81%97%E4%BA%A7O2O%E7%94%B5%E5%95%86%E5%B9%B3%E5%8F%B0v1.0.pdf" target="_blank">查看详情</a></div>
+                            </li>
+                            <li>
+                                <div class="bd top">
+                                    <p><i class="icon2"></i><span>真品认证体<br>系 - 诚品宝</span></p>
+                                </div>
+                                <div class="bd context">
+                                    <p>防伪溯源体系从非遗作品的创作源头出发，承载作品生产、备案、物流、销售等各环节信息，为非遗作品交易双方提供信用保障</p>
+                                </div>
+                                <div class="bd link"><a href="http://resource.efeiyi.com/other/%E3%80%9020170518%E3%80%91%E8%AF%9A%E5%93%81%E5%AE%9D-%E9%9D%9E%E7%89%A9%E8%B4%A8%E6%96%87%E5%8C%96%E9%81%97%E4%BA%A7%E9%98%B2%E4%BC%AA%E6%BA%AF%E6%BA%90%E5%B9%B3%E5%8F%B0v1.0.pdf" target="_blank">查看详情</a></div>
+                            </li>
+                            <li>
+                                <div class="bd top">
+                                    <p><i class="icon3"></i><span>文化<br>产权</span></p>
+                                </div>
+                                <div class="bd context">
+                                    <p>非遗与金融交易平台的合作，为非物质文化遗产的创新保护和活力传承提供的一种有效模式</p>
+                                </div>
+                                <div class="bd link"><a href="http://resource.efeiyi.com/other/%E9%9D%9E%E9%81%97%E4%BA%A7%E6%9D%83%E4%BA%A4%E6%98%93%E6%9C%8D%E5%8A%A1%E4%BB%8B%E7%BB%8D.pdf" target="_blank">查看详情</a></div>
+                            </li>
+                            <li>
+                                <div class="bd top">
+                                    <p><i class="icon4"></i><span>国际非遗<br>认证服务</span></p>
+                                </div>
+                                <div class="bd context">
+                                    <p>通过联合国教科文组织非遗项目评定委员会审核，将获得由联合国教科文组织颁发的非遗项目认证证书等相关服务</p>
+                                </div>
+                                <div class="bd link"><a href="http://resource.efeiyi.com/other/%E9%9D%9E%E9%81%97%E4%BA%A7%E6%9D%83%E4%BA%A4%E6%98%93%E6%9C%8D%E5%8A%A1%E4%BB%8B%E7%BB%8D.pdf">查看详情</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!--//End 服务模式-->
+
+        </div>
+    </div>
+
+    <div class="bd footer"></div>
+    <!--//End--footer-->
+
+    <div class="modal_video" style="display: none;">
+        <div class="content">
+            <video class="video" style="width:600px;height:388px;margin-top:-194px;margin-left:-300px" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/video/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AE%A3%E4%BC%A0%E7%89%87%E5%88%9D%E7%89%88.mp4" controls></video>
+        </div>
+        <div class="overbg0"></div>
+    </div>
+    <!--//End 视频弹出层-->
+</body>
+<script>
+    $(function() {
+        $('.header .content .nav li').eq(5).addClass('active').siblings('li').removeClass('active');
+
+        //视频弹出层
+        (function () {
+            var modal=$('.modal_video');
+            var el=$('.play120');
+            var content=modal.find('.content');
+            var video=content.find('video').get(0);
+
+            el.on('click',function () {
+                video.play();
+                modal.fadeIn(200);
+            });
+            $('.overbg0').on('click',function(){
+                video.pause();
+                modal.fadeOut();
+            });
+            return false;
+        })();
+
+    });
+</script>
+</html>

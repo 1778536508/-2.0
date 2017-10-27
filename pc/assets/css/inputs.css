@@ -1,0 +1,2126 @@
+﻿html,
+body,
+.container {
+    height: auto;
+}
+
+.hd {
+    width: 1167px;
+    margin: 0 auto;
+}
+
+.main965 {
+    width: 965px;
+    margin: 0 auto;
+}
+
+.red {
+    color: #D0011b;
+}
+
+/*--//End--*/
+.checkbox {
+    background: #fff url(../images/inputs/check.png) 0 0 no-repeat;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.radio {
+    padding-left: 26px;
+    line-height: 48px;
+    position: relative;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.radio i {
+    background: url(../images/inputs/radio.png) 0 0 no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.radio input[type=radio] {
+    display: none;
+}
+
+.radio.active i {
+    background-position: 0 -20px;
+}
+
+/*--//End--*/
+.file_up .file {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0;
+}
+
+.file_up .progress {
+    background: rgba(224, 224, 224, 1);
+    height: 74%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    display: none;
+}
+
+.file_up .progress .loader {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -2px;
+    display: block;
+}
+
+.file_up .progress .font {
+    width: 100%;
+    height: 12px;
+    line-height: 12px;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: 30px;
+}
+
+.file_up .preview {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: none;
+}
+
+/*--//End 上传图片--*/
+.calendarWarp .icon {
+    display: none;
+}
+
+.ECalendarNoneSelect, .ECalendarNoneSelect input {
+    -moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.calendarWarp {
+    position: relative;
+    display: inline-block;
+    font-weight: 100
+}
+
+\ .calendarWarp .icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -9px
+}
+
+.calendarWarp h2 {
+    margin: 0;
+    font-weight: 400
+}
+
+.ECalendarBox {
+    border: 1px solid #ee3f2f
+}
+
+.ECalendarBox div, .ECalendarBox li, .ECalendarBox ul {
+    float: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 100
+}
+
+.ECalendarBox li {
+    list-style-type: none
+}
+
+.ECalendarBox ol, .ECalendarBox ul {
+    list-style: none
+}
+
+.ECalendarBox .ilasttext {
+    cursor: pointer
+}
+
+.ECalendarBox {
+    position: absolute;
+    width: 290px;
+    background: #fff;
+    color: #fff;
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 1em;
+    z-index:2;
+}
+
+.ECalendarBox .currentyear {
+    position: relative
+}
+
+.ECalendarBox .currentyear:after {
+    position: absolute;
+    top: -1px;
+    left: 35px;
+    display: block;
+    overflow: hidden;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #fff;
+    border-top: 0;
+    border-left: 0;
+    content: "";
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.ECalendarBox ul:after {
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+    content: ""
+}
+
+.ECalendarBox ul {
+    zoom: 1
+}
+
+.ECalendarBox li {
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer
+}
+
+.ECalendarBox .head1 {
+    position: relative;
+    border-style: solid;
+    border-top-width: 3px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 0
+}
+
+.ECalendarBox ul.day {
+    border: 10px solid #fff
+}
+
+.ECalendarBox .day li, .ECalendarBox ul.week li {
+    width: 14.25%;
+    height: 24px;
+    line-height: 24px
+}
+
+.ECalendarBox ul.week {
+    margin-top: 10px
+}
+
+.ECalendarBox ul.week li:hover {
+    background: 0
+}
+
+.ECalendarBox .currentdate {
+    padding: 4px 4px 0 4px;
+    height: 42px;
+    cursor: pointer
+}
+
+.ECalendarBox .currentdate h2, .ECalendarBox .currentdate h2 span {
+    margin-left: 2px;
+    font-size: 34px;
+    line-height: 1.2em
+}
+
+.ECalendarBox .currentdate h2 i {
+    font-size: 30px;
+}
+
+.ECalendarBox .imonth, .ECalendarBox .iyear {
+    position: relative
+}
+
+.ECalendarBox h2 i {
+    position: absolute;
+    left: 0;
+    z-index: 9;
+    display: block;
+    height: 26px;
+    background: rgba(0, 0, 0, .2);
+    line-height: 26px
+}
+
+.ECalendarBox i.a1 {
+    top: 38px;
+    opacity: .6
+}
+
+.ECalendarBox i.a2 {
+    top: 64px;
+    opacity: .4
+}
+
+.ECalendarBox i.a3 {
+    top: 90px;
+    opacity: .2
+}
+
+.ECalendarBox i.r1 {
+    top: -20px;
+    opacity: .6
+}
+
+.ECalendarBox i.r2 {
+    top: -46px;
+    opacity: .4
+}
+
+.ECalendarBox i.r3 {
+    top: -72px;
+    opacity: .2
+}
+
+.ECalendarBox .currentlastgo {
+    position: relative;
+    top: 5px;
+    cursor: pointer
+}
+
+.ECalendarBox .currenttime {
+    position: relative;
+    padding: 6px;
+    font-size: 14px
+}
+
+.ECalendarBox .currenttime .itime {
+    position: relative;
+    top: 1px;
+    font-size: 16px
+}
+
+.ECalendarBox .currenttime .itimebox {
+    margin-left: 10px
+}
+
+.ECalendarBox .currenttime li:hover {
+    background: rgba(0, 0, 0, .1)
+}
+
+.ECalendarBox .oper {
+    position: absolute;
+    top: 11px;
+    right: 4px
+}
+
+.ECalendarBox .oper li {
+    margin-left: 5px;
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, .1);
+    line-height: 28px
+}
+
+.ECalendarBox .oper li:hover {
+    background: 0;
+    background: rgba(255, 255, 255, .3)
+}
+
+.ECalendarBox ul.day li {
+    position: relative;
+    overflow: hidden;
+    height: 30px;
+    color: #444;
+    line-height: 30px
+}
+
+.ECalendarBox ul.day li::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 7;
+    margin: -15px 0 0 -50px;
+    width: 100px;
+    height: 30px;
+    color: #000;
+    content: attr(data-settime);
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px
+}
+
+.ECalendarBox .at12, .ECalendarBox .at12::after, .ECalendarBox .at24, .ECalendarBox .at24::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    border: 1px solid rgba(0, 0, 0, .4);
+    background: rgba(255, 255, 255, .9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2)
+}
+
+.ECalendarBox .at12 {
+    margin: -61px 0 0 -61px;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px
+}
+
+.ECalendarBox .at12::after {
+    margin: -101px 0 0 -101px;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    content: " ";
+    opacity: .2
+}
+
+.ECalendarBox .at24 {
+    margin: -101px 0 0 -101px;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px
+}
+
+.ECalendarBox .at24::after {
+    margin: -61px 0 0 -61px;
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+    content: " ";
+    opacity: .2
+}
+
+.ECalendarBox .pointer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 6;
+    margin: -60px 0 0 -60px;
+    width: 120px;
+    height: 120px
+}
+
+.ECalendarBox .at24 .pointer {
+    margin: -100px 0 0 -100px;
+    width: 200px;
+    height: 200px
+}
+
+.ECalendarBox .pointer::before {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    left: 50%;
+    height: 1px;
+    background: rgba(0, 0, 0, .1);
+    content: ""
+}
+
+.ECalendarBox .pointer::after {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    margin-top: -10px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba(0, 0, 0, .4);
+    border-radius: 30px;
+    border-bottom-left-radius: 0;
+    background: rgba(255, 255, 255, .8);
+    content: "";
+    transform: rotate(45deg)
+}
+
+.ECalendarBox li:hover {
+    background: #f6f6f6
+}
+
+.ECalendarBox li.activ {
+    color: #fff !important;
+    background: rgba(0, 0, 0, .6)
+}
+
+.ECalendarBox li.other {
+    background: #fff;
+    color: #ddd !important
+}
+
+.ECalendarBox .select {
+    overflow: hidden;
+    margin: 0 -10px;
+    height: 20px;
+    height: 0;
+    background: rgba(0, 0, 0, .1)
+}
+
+.ECalendarBox .select li {
+    padding: 0 10px;
+    color: rgba(255, 255, 255, .6);
+    font-size: 12px;
+    line-height: 20px;
+    line-height: 20px
+}
+
+.ECalendarBox .select li:first-child {
+    margin-left: 8px
+}
+
+.ECalendarBox .select li:hover {
+    background: rgba(255, 255, 255, .1)
+}
+
+/*--//ENd 认证时间--*/
+.ipt_page .create_project {
+    min-height: 500px;
+}
+
+.ipt_page .create_project .back {
+    margin: 60px 0;
+}
+
+.ipt_page .create_project .back a {
+    color: #777;
+}
+
+.ipt_page .create_project .back i {
+    background: url(../images/inputs/back.png) no-repeat 0 0;
+    width: 21px;
+    height: 15px;
+    float: left;
+    margin-right: 8px;
+}
+
+.ipt_page .create_project .step1 {
+    width: 100%;
+    float: left;
+}
+
+.ipt_page .create_project .step1 .dt {
+    font-size: 24px;
+    color: #1b1b1b;
+    font-weight: 800;
+}
+
+.ipt_page .create_project .step1 .dd {
+    color: #949494;
+    line-height: 24px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.ipt_page .create_project .step1 form .ipt {
+    background: #fff;
+    width: 520px;
+    padding: 0 20px;
+    height:46px;
+    line-height: 46px;
+    border: 1px solid #E5E5E5;
+    float: left;
+}
+
+.ipt_page .create_project .step1 form .btn {
+    background: #4283EA;
+    width: 96px;
+    line-height: 48px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 1px;
+    float: left;
+    margin-left: 16px;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.ipt_page .create_project .step1 form .btn:hover {
+    background: #376dc3;
+}
+
+.ipt_page .create_project .step2 {
+    width: 100%;
+    float: left;
+    margin-top: 80px;
+}
+
+.ipt_page .create_project .step2 .tips {
+    background: #FFD58E;
+    line-height: 38px;
+    padding: 0 16px;
+    float: left;
+}
+
+.ipt_page .create_project .step2 .tips i {
+    background: url(../images/inputs/tips.png) no-repeat 0 0;
+    width: 19px;
+    height: 18px;
+    float: left;
+    margin: 10px 17px 10px 0;
+}
+
+.ipt_page .create_project .step2 .btn_create {
+    width: 270px;
+    line-height: 58px;
+    text-align: center;
+    font-size: 20px;
+    color: #4283EB;
+    border: 1px solid #e5e5e5;
+    float: left;
+    background: #fff;
+}
+
+.ipt_page .create_project .step2 .result {
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+}
+
+.ipt_page .create_project .step2 .result .item {
+    width: 50%;
+    float: left;
+}
+
+.ipt_page .create_project .step2 .result .dt {
+    width: 100%;
+    color: #949494;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.ipt_page .create_project .step2 .result .dd {
+    width: 560px;
+    float: left;
+}
+
+.ipt_page .create_project .step2 .result .dd li {
+    width: 100%;
+    height: 177px;
+    float: left;
+    margin-bottom: 30px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+}
+
+.ipt_page .create_project .step2 .result .dd li img {
+    width: 236px;
+    height: 177px;
+    float: left;
+}
+
+.ipt_page .create_project .step2 .result .dd li .info {
+    width: 252px;
+    padding: 40px 36px;
+    float: left;
+}
+
+.ipt_page .create_project .step2 .result .dd li .info p {
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    float: left;
+}
+
+.ipt_page .create_project .step2 .result .dd li .info span {
+    font-size: 14px;
+    color: #000;
+}
+
+.ipt_page .create_project .step2 .result .dd li .info strong {
+    font-size: 14px;
+    color: #949494;
+}
+
+.ipt_page .create_project .step2 .result .dd li .info p.name {
+    margin-bottom: 20px;
+}
+
+.ipt_page .create_project .step2 .result .dd li .info p.name strong {
+    width:100%;
+    font-size: 20px;
+    height: 21px;
+    line-height: 21px;
+    color: #1b1b1b;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    overflow: hidden;
+    float: left;
+}
+
+.ipt_page .create_project .step2 .result .dd li .info p.name em {
+    background: #4283EB;
+    padding: 0 10px;
+    height: 21px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #fff;
+    float: left;
+    margin-left: 4px;
+    display: none;
+}
+
+.ipt_page .create_project .step2 .result .dd .btn_create {
+    width: 200px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 20px;
+    color: #4283EB;
+    border: 1px solid #e5e5e5;
+    float: left;
+    background: #fff;
+}
+
+.ipt_page .create_project .step3 {
+    width: 100%;
+    float: left;
+}
+
+.ipt_page .create_project .step3 .dt {
+    width: 100%;
+    line-height: 22px;
+    float: left;
+}
+
+.ipt_page .create_project .step3 .group {
+    width: 100%;
+    float: left;
+    margin-top: 46px;
+}
+
+.ipt_page .create_project .step3 .group .label {
+    width: 8%;
+    line-height: 42px;
+    float: left;
+}
+
+.ipt_page .create_project .step3 .group .label em {
+    color: #f00;
+}
+
+.ipt_page .create_project .step3 .group .control {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+.ipt_page .create_project .step3 .group .control .errors {
+    width:100%;
+    line-height:30px;
+    font-size:12px;
+    color: #f00;
+    position: absolute;
+    bottom:-30px;
+    left:0;
+}
+.ipt_page .create_project .step3 .group .control .ipt {
+    width: 92%;
+    padding: 0 4%;
+    border: 1px solid #E5E5E5;
+    height:42px;
+    line-height: 42px;
+    float:left;
+}
+
+.ipt_page .create_project .step3 .group .control .btn {
+    width: 104px;
+    line-height: 48px;
+    background: #4283EA;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    float: right;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.ipt_inheritor .create_project .step2 .result .item {
+    width: 774px;
+}
+
+.ipt_inheritor .create_project .step2 .result .dd {
+    width: 100%;
+}
+
+.ipt_inheritor .create_project .step2 .result .dd li .btn_create {
+    width: 140px;
+    position: absolute;
+    top: 50%;
+    right: 43px;
+    margin-top: -24px;
+}
+
+.ipt_inheritor .create_project .step2 .result .item2 {
+    width: 280px;
+    line-height: 26px;
+    float: right;
+}
+
+.ipt_inheritor .create_project .step2 .result .dd li .info p.name em {
+    margin-left: 10px;
+}
+
+.ipt_inheritor .create_project .step2 .result .dd .btn_create {
+    width: auto;
+    padding: 0 20px;
+}
+
+.ipt_inheritor .create_project .step2 .result .dd .btn_create span {
+    max-width: 120px;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 8px;
+}
+
+/*--//End 创建项目页--*/
+
+.ipt_page .explain .title {
+    margin-top: 80px;
+    margin-bottom: 56px;
+}
+
+.ipt_page .explain .title h1 {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.ipt_page .explain .section {
+    background: #fff;
+    width: 885px;
+    padding: 30px 40px;
+    float: left;
+    margin-bottom: 40px;
+}
+
+.ipt_page .explain .section .dt {
+    font-size: 24px;
+    color: #4283EB;
+    line-height: 33px;
+    margin-bottom: 20px;
+}
+
+.ipt_page .explain .section .dd p {
+    line-height: 30px;
+    color: #777;
+}
+
+.ipt_page .explain .section .dd strong {
+    color: #1b1b1b;
+    display: block;
+}
+
+.ipt_page .explain .section .dd .item {
+    margin-bottom: 20px;
+}
+
+.ipt_page .explain .more {
+    width: 100%;
+    text-align: center;
+    float: left;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.ipt_page .explain .more a {
+    color: #4283EB;
+}
+
+.ipt_page .explain .info {
+    background: #fff;
+    width: 100%;
+    float: left;
+}
+
+.ipt_page .explain .info .col2 {
+    width: 50%;
+    float: left;
+}
+
+.ipt_page .explain .info .col2 .con {
+    width: 360px;
+    text-align: center;
+    float: left;
+    margin-top: 94px;
+    margin-left: 120px;
+    margin-bottom: 100px;
+}
+
+.ipt_page .explain .info .col2 .txt {
+    width: 100%;
+    height: 72px;
+    line-height: 24px;
+    float: left;
+    margin-bottom: 40px;
+}
+
+.ipt_page .explain .info .col2 a {
+    background: #4283EA;
+    width: 194px;
+    line-height: 48px;
+    text-align: center;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    color: #fff;
+    display: inline-block;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.ipt_page .explain .info .col2 a:hover {
+    background: #3e6cb5;
+}
+
+/*--我要申报--*/
+
+.ipt_base {
+    width: 100%;
+    float: left;
+}
+
+.ipt_base .handle {
+    float: right;
+}
+
+.ipt_base .handle a {
+    width: 92px;
+    line-height: 38px;
+    text-align: center;
+    color: #4283EB;
+    border: 1px solid #4283EB;
+    float: left;
+    margin-left: 20px;
+}
+
+.ipt_base .handle a.active {
+    background: #4283EB;
+    color: #fff;
+}
+
+.ipt_base .handle a.disabled {
+    background: #B9B9B9;
+    color: #fff;
+    border-color: #B9B9B9;
+}
+
+.ipt_base .head {
+    width: 100%;
+    line-height: 36px;
+    padding: 30px 0;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+    border-top: 1px solid #e7e7e7;
+    float: left;
+    margin-bottom: 58px;
+}
+
+.ipt_base .head .name {
+    font-size: 24px;
+    float: left;
+}
+
+/*---项目/创承人名称-----*/
+
+.ipt_base .slide {
+    width: 252px;
+    border: 2px solid #d7d7d8;
+    background: #fff;
+    float: left;
+    margin-bottom: 120px;
+}
+
+.ipt_base .slide .item {
+    width: 224px;
+    padding: 30px 14px 0 14px;
+    float: left;
+}
+
+.ipt_base .slide .item .icon {
+    background: url(../images/inputs/check.png?t=100) 0 0 no-repeat;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -9px;
+}
+
+.ipt_base .slide .item .icon.full.checked {
+    background-position: 0 -18px;
+}
+
+.ipt_base .slide .item .icon.empty.checked {
+    background-position: 0 -54px;
+}
+
+.ipt_base .slide .item .icon.full.warning {
+    background-position: 0 -36px;
+}
+
+.ipt_base .slide .item .icon.selected {
+    background-position: 0 -18px;
+}
+
+.ipt_base .slide .item .icon.unselected {
+    background-position: 0 0;
+}
+
+.ipt_base .slide .item .icon.unselected2 {
+    background-position: 0 -54px;
+}
+
+.ipt_base .slide .item .icon.warning {
+    background-position: 0 -36px;
+}
+
+.ipt_base .slide .item .arrow {
+    background: #fff url(../images/inputs/arrow.png) 0 0 no-repeat;
+    width: 14px;
+    height: 7px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -3px;
+}
+
+.ipt_base .slide .item .active .arrow {
+    background-position: 0 -7px;
+}
+
+.ipt_base .slide .item .dt {
+    width: 100%;
+    line-height: 28px;
+    color: #1b1b1b;
+    text-indent: 32px;
+    position: relative;
+    cursor: pointer;
+    float: left;
+}
+
+.ipt_base .slide .item .dt.active {
+    margin-bottom: 20px;
+}
+
+.ipt_base .slide .item .dt.selected {
+    font-weight: bolder;
+    color: #4283EB
+}
+
+.ipt_base .slide .item .dd {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+}
+
+.ipt_base .slide .item .dd li {
+    padding-left: 40px;
+    text-indent: 16px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.ipt_base .slide .item .dd li.selected {
+    color: #4283EA;
+    font-weight: bolder;
+}
+
+.ipt_base .slide .item .dd li .icon {
+    left: 26px;
+}
+
+.ipt_base .slide .item.status {
+    width: 100%;
+    padding: 0 0 20px 0;
+    border-top: 1px solid #d7d7d8;
+}
+
+.ipt_base .slide .item.status li {
+    font-size: 14px;
+    line-height: 18px;
+    color: #949494;
+    text-indent: 0;
+    padding-left: 50px;
+}
+
+.ipt_base .slide .item.status li .icon {
+    top: 9px
+}
+
+.ipt_base .slide .item.custom {
+    margin-bottom: 20px;
+}
+
+.ipt_base .slide .item.custom .dt {
+    font-size: 16px;
+}
+
+.ipt_base .slide .item.custom .dt i {
+    background: url(../images/inputs/icon_add.png) no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -10px;
+}
+
+/*--------slide--------*/
+.ipt_base .content {
+    width: 876px;
+    border: 1px solid #bdbdbd;
+    background: #fff;
+    float: right;
+    margin-bottom: 100px;
+}
+
+.ipt_base .content .title {
+    font-size: 24px;
+    line-height: 92px;
+    padding: 0 60px;
+    background: #F5F6F8;
+}
+
+.ipt_base .content .hint {
+    padding: 0 60px;
+    line-height: 44px;
+    font-size: 14px;
+    color: #949494;
+    position: relative;
+    margin-bottom: 13px;
+}
+
+.ipt_base .content .hint em {
+    color: #f00;
+    line-height: 48px;
+    position: relative;
+    top: 5px
+}
+
+.ipt_base .content .hint .dot {
+    width: 2px;
+    height: 2px;
+    background: #949494;
+    position: absolute;
+    top: 50%;
+    left: 52px;
+    margin-top: -1px;
+}
+
+.ipt_base .content .st {
+    padding: 0 60px;
+    height: 60px;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.ipt_base .content .st:after {
+    content: '';
+    width: 24px;
+    height: 4px;
+    background: #4283EB;
+    position: absolute;
+    bottom: 0;
+    left: 60px;
+}
+
+.ipt_base .content .st h2 {
+    font-size: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: normal
+}
+
+.ipt_base .content .st h2.custom {
+    width: 100%;
+}
+
+.ipt_base .content .st h2.custom input {
+    width: 100%;
+    font-size: 20px;
+    color: #333;
+}
+
+.ipt_base .content .st span {
+    font-size: 14px;
+    color: #4283eb;
+}
+
+.ipt_base .content .errors_st {
+    float: left;
+    margin-top: -50px;
+    margin-left: 60px;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FF3E3E;
+    position: relative;
+}
+
+.ipt_base .content .errors i {
+    background: url(../images/inputs/errors.png);
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -8px;
+}
+
+.ipt_base .content .edit {
+    width: 754px;
+    border: 1px solid #e5e5e5;
+    float: left;
+    margin: 0 60px 30px 60px;
+}
+
+.ipt_base .content .edit .text {
+    width: 70%;
+    float: left;
+    position: relative;
+}
+
+.ipt_base .content .edit .text textarea {
+    width: 92%;
+    padding: 3% 4%;
+    min-height: 500px;
+    line-height: 26px;
+}
+
+.ipt_base .content .edit .text .errors {
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FF3E3E;
+    position: absolute;
+    bottom: -26px;
+    left: 0;
+}
+
+.ipt_base .content .edit .text .errors i {
+    background: url(../images/inputs/errors.png);
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -8px;
+}
+
+.ipt_base .content .edit .images {
+    width: 209px;
+    float: left;
+    margin-top: 3%;
+}
+
+.ipt_base .content .edit .images .item {
+    width: 100%;
+    max-width: 228px;
+    text-align: center;
+    float: left;
+    position: relative;
+}
+
+.ipt_base .content .edit .images .item img {
+    width: 100%;
+}
+
+.ipt_base .content .edit .images .item input {
+    width: 100%;
+    line-height: 36px;
+    text-align: center;
+    color: #1B1B1B;
+}
+
+.ipt_base .content .edit .images .item .remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 39px;
+    left: 0;
+    background: rgba(0, 0, 0, .3);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    opacity: 0;
+}
+
+.ipt_base .content .edit .images .item .remove i {
+    background: url(../images/inputs/icon_uploadImg_remove.png) 0 0 no-repeat;
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -21px;
+    margin-left: -21px;
+    cursor: pointer;
+}
+
+.ipt_base .content .edit .images .item:hover .remove {
+    opacity: 1;
+}
+
+.ipt_base .content .edit .images.active .item .remove {
+    bottom: 0;
+}
+
+.ipt_base .content .edit .images.active .item .remove i {
+    background-position: 0 -42px;
+    width: 28px;
+    height: 28px;
+    margin-top: -14px;
+    margin-left: -14px;
+}
+
+.ipt_base .content .edit .images .handle {
+    width: 100%;
+    max-width: 228px;
+    float: left;
+    margin-top: 20px;
+}
+
+.ipt_base .content .edit .images .handle .add {
+    width: 98px;
+    cursor: pointer;
+    float: left;
+    margin-right: 11px;
+    position: relative;
+}
+
+.ipt_base .content .edit .images .handle .add .icon {
+    width: 100%;
+    height: 98px;
+    border: 1px solid #e5e5e5;
+    position: relative;
+    float: left;
+}
+
+.ipt_base .content .edit .images .handle .add .icon i {
+    background: url(../images/icon_detail_edit.png) 0 0 no-repeat;
+    width: 29px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+}
+
+.ipt_base .content .edit .images .handle .add span {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #949494;
+    line-height: 36px;
+    float: left;
+}
+
+.ipt_base .content .edit .images .handle .add .icon i {
+    background-position: 0 -46px;
+}
+
+.ipt_base .content .edit .images .handle .add .icon2 i {
+    background-position: 0 -76px;
+}
+
+.ipt_base .content .edit .images.active .item {
+    width: 98px;
+    height: 98px;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    background: #eee;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.ipt_base .content .edit .images.active .item input {
+    position: absolute;
+    top: 98px;
+    left: 0;
+}
+
+.ipt_base .content .buttons {
+    float: right;
+    margin: 40px 30px;
+}
+
+.ipt_base .content .buttons a {
+    width: 102px;
+    line-height: 42px;
+    text-align: center;
+    border: 1px solid #4283ea;
+    font-size: 20px;
+    color: #4283EA;
+    float: left;
+    margin-left: 14px;
+}
+
+.ipt_base .content .buttons a.next {
+    background: #4283ea;
+    color: #fff;
+}
+
+.ipt_organization {
+    margin-top: 58px;
+}
+
+/*--//End--*/
+
+.horizontal .main {
+    padding: 0 60px;
+    float: left;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.horizontal .abs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.horizontal .w210 {
+    width: 168px;
+    padding: 0 20px;
+}
+
+.horizontal .w310 {
+    width: 268px;
+    padding: 0 20px;
+}
+
+.horizontal .w562 {
+    width: 540px;
+    padding: 0 20px;
+}
+
+.horizontal .w650 {
+    width: 625px;
+    padding: 0 20px;
+}
+
+.horizontal .group {
+    width: 100%;
+    float: left;
+    margin-bottom: 45px;
+}
+
+.horizontal .group .label {
+    width: 12%;
+    line-height: 48px;
+    font-size: 20px;
+    float: left;
+    position: relative;
+    text-indent: 5px;
+}
+
+.horizontal .group .label em,
+.horizontal .group .label i {
+    line-height: 10px;
+    font-size: 20px;
+    color: #D0021B;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: -15px;
+}
+
+.horizontal .group .control {
+    width: 88%;
+    float: left;
+    position: relative;
+}
+.horizontal .group .control .icon {
+    display: none;
+}
+.horizontal .group .control .ipt {
+    height: 46px;
+    line-height: 46px;
+    font-size: 16px;
+    border: 1px solid #e5e5e5;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+
+.horizontal .group .control div.ipt:after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #949494;
+    border-right: 1px solid #949494;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -4px;
+}
+
+.horizontal .group .control .ipt #ECalendar_date {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.horizontal .group .control div.select:after {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.horizontal .group .control select.ipt.w310 {
+    width: 310px;
+}
+
+.horizontal .group .control .file_up {
+    width: 310px;
+    height: 222px;
+    line-height: 222px;
+    text-align: center;
+    background: #E0E0E0;
+    position: relative;
+}
+
+.horizontal .group .control .file_up span {
+    font-size: 14px;
+    color: #777;
+}
+
+.horizontal .group .control .file_up.active span {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: rgba(0, 0, 0, .3);
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+}
+
+.horizontal .group .control .file_up.active .file {
+    height: 36px;
+    top: 186px;
+    z-index: 5;
+}
+
+.horizontal .group .control .tips {
+    width: 310px;
+    font-size: 14px;
+    color: #949494;
+    line-height: 20px;
+    float: left;
+    margin-top: 10px;
+}
+
+.horizontal .group .control .errors {
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FF3E3E;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+}
+
+.horizontal .group .control textarea {
+    width: 96%;
+    padding: 2%;
+    border: 1px solid #E5E5E5;
+    display: block;
+}
+
+.horizontal .group .control .errors i {
+    background: url(../images/inputs/errors.png);
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -8px;
+}
+
+.horizontal .group.inheritor .label {
+    width: 54%
+}
+
+.horizontal .group.inheritor .control {
+    width: 46%;
+}
+
+.horizontal .handle {
+    padding: 80px 0;
+    margin-right: 60px;
+}
+
+.cate_layer {
+    width: 534px;
+    height: 430px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -215px;
+    margin-left: -267px;
+    z-index: 12;
+    background: #fff;
+    display: none;
+}
+
+.cate_layer .content {
+    padding-left: 138px;
+    padding-right: 100px;
+}
+
+.cate_layer .content .title {
+    font-size: 24px;
+    color: #1B1B1B;
+    margin: 40px 0;
+}
+
+.cate_layer .content .items li {
+    width: 100%;
+    height: 18px;
+    line-height: 18px;
+    padding-left: 30px;
+    margin-bottom: 27px;
+    position: relative;
+    cursor: pointer;
+    float: left;
+}
+
+.cate_layer .content .items li .radio {
+    float: left;
+    margin-left: -30px;
+}
+
+.cate_layer .content .items li.active .radio i {
+    background-position: 0 -20px;
+}
+
+.cate_layer .content .confirm {
+    margin-top: 10px;
+}
+
+.cate_layer .content .confirm .btn {
+    width: 200px;
+    line-height: 48px;
+    text-align: center;
+    background: #ccc;
+    color: #000;
+    opacity: .7;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cate_layer .content .confirm .active.btn {
+    background: #4283EB;
+    color: #fff;
+    opacity: 1;
+}
+
+/*--//End 基本信息--*/
+.area {
+    display: none;
+}
+
+.area .icon {
+    background: url(../images/inputs/icon_area.png) 0 0 no-repeat;
+    position: absolute;
+    top: 50%;
+}
+
+.area div.select {
+    background: #fff;
+    width: 457px;
+    min-height: 200px;
+    border: 1px solid #e5e5e5;
+    position: absolute;
+    top: 46px;
+    right: -2px;
+    z-index: 2
+}
+
+.area div.select .tab {
+    width: 92%;
+    padding: 11px 4%;
+    float: left;
+    border-bottom: 1px solid #4283ea;
+    position: relative;
+}
+
+.area div.select .tab span {
+    background: #e5e5e5;
+    padding: 0 30px 0 10px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 14px;
+    float: left;
+    margin-right: 20px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
+
+.area div.select .tab span i.icon {
+    background-position: 0 0;
+    width: 28px;
+    height: 28px;
+    right: 0;
+    margin-top: -14px;
+}
+
+.area div.select .tab span.active {
+    background: #fff;
+    color: #4283ea;
+}
+
+.area div.select .tab span.active i.icon {
+    background-position: 0 -28px;
+}
+
+.area div.select .tab span.selected em.icon {
+    background-position: 0 -56px;
+    width: 14px;
+    height: 9px;
+    top: auto;
+    left: 50%;
+    bottom: -11px;
+    margin-left: -16px;
+}
+
+.area div.select .tab .icon_close {
+    background: #fff url(../images/inputs/close.png) 0 0 no-repeat;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -9px;
+    cursor: pointer;
+}
+
+.area div.select .con {
+    width: 100%;
+    float: left;
+    padding-bottom: 11px;
+}
+
+.area div.select .con .items.scrollbar {
+    width: 100%;
+    max-height: 320px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: none;
+}
+
+.area div.select .con .items ul {
+    width: 96%;
+    padding: 0 5%;
+    float: left
+}
+
+.area div.select .con .items li {
+    width: 86px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.area div.select .con .items li span {
+    font-size: 12px;
+    line-height: 13px;
+    padding: 3px 6px;
+    float: left;
+}
+
+.area div.select .con .items li.active span {
+    background: #4283ea;
+    color: #fff;
+}
+
+.area div.selected,
+.area div.selected li {
+    width: 100%;
+    float: left;
+}
+
+.area div.selected li span {
+    line-height: 36px;
+    padding-left: 10px;
+    padding-right: 26px;
+    background: #4283ea;
+    color: #fff;
+    font-size: 14px;
+    float: left;
+    margin-top: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.area div.selected i.icon {
+    background-position: -18px -56px;
+    width: 10px;
+    height: 10px;
+    right: 10px;
+    margin-top: -5px;
+}
+.horizontal .group .control .area div.selected i.icon {
+    display:block;
+}
+/*--//End 地域--*/
+.tipbox {
+    width: 240px;
+    height: 150px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -120px;
+}
+
+.tipbox .head {
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 6px 6px 0 0;
+}
+
+.tipbox .content {
+    border-radius: 0 0 6px 6px;
+    border: 1px solid #E5E5E5;
+    border-top: 0;
+    height: 110px;
+    text-align: center;
+    background: #fff;
+}
+
+.tipbox .content span {
+    font-size: 20px;
+    color: #1B1B1B;
+    display: block;
+    text-align: center;
+}
+
+.tipbox .content .icon {
+    background: #fff url(../images/inputs/icon_tipbox.png) no-repeat;
+    width: 37px;
+    height: 37px;
+    display: inline-block;
+    margin-top: 17px;
+    margin-bottom: 10px;
+}
+
+.tipbox.success .head {
+    background: #2ed832;
+}
+
+.tipbox.success .content .icon {
+    background-position: 0 0;
+}
+
+.tipbox.fail .head {
+    background: #ff3e3e;
+}
+
+.tipbox.fail .content .icon {
+    background-position: 0 -37px;
+}
+
+/*--//End 提示框--*/
+.info_check {
+    width: 876px;
+    border: 1px solid #bdbdbd;
+    background: #fff;
+    float: right;
+
+}
+
+.info_check .title {
+    width: 320px;
+    padding-left: 118px;
+    position: relative;
+    margin: 120px auto 50px auto;
+}
+
+.info_check .title span {
+    font-size: 14px;
+    color: #949494;
+    display: block;
+}
+
+.info_check .title strong {
+    line-height: 48px;
+    color: #1b1b1b;
+}
+
+.info_check .title .icon {
+    background: #fff url(../images/inputs/icon_info_check.png) no-repeat;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    left: 60px;
+}
+
+.info_check .buttons {
+    width: 420px;
+    margin: 0 auto 120px auto;
+}
+
+.info_check .buttons a {
+    width: 184px;
+    height: 56px;
+    line-height: 56px;
+    background: #4283ea;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.info_check.step1 span {
+    line-height: 22px;
+}
+
+.info_check.step1 strong {
+    line-height: 22px;
+}
+
+.info_check.step1 .icon {
+    background-position: 0 -48px;
+}
+
+/*--//End 信息填写完成，可以提交审核--*/
+.ipt_over {
+    width: 100%;
+    padding: 190px 0 150px 0;
+    float: left;
+    background: #fff;
+    border-top: 1px solid #E5E5E5;
+}
+.ipt_over .content {
+    width: 384px;
+    margin: 0 auto;
+}
+.ipt_over .content .title {
+    width: 100%;
+    position: relative;
+}
+.ipt_over .content .title span {
+    line-height: 28px;
+    font-size: 20px;
+    color: #000;
+    display: block;
+}
+.ipt_over .content .title .icon {
+    background: #fff url(../images/inputs/icon_info_check.png) no-repeat 0 -48px;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 5px;
+    left: -67px;
+}
+.ipt_over .content .judge {
+    width: 100%;
+    float: left;
+    margin: 50px 0;
+}
+.ipt_over .content .judge .label {
+    width: 60%;
+    font-size: 20px;
+    line-height: 48px;
+    float: left;
+}
+.ipt_over .content .judge .control {
+	width:40%;
+    float: left;
+}
+.ipt_over .content .buttons {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 120px auto;
+}
+.ipt_over .content .buttons a {
+    width: 184px;
+    height: 56px;
+    line-height: 56px;
+    background: #4283ea;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 0 10px;
+}
+.ipt_over .judge_box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index:11;
+}
+.ipt_over .judge_box .main {
+    width: 574px;
+    height: 316px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -158px;
+    margin-left: -287px;
+    background: #fff;
+    z-index: 6;
+}
+.ipt_over .judge_box .main .title {
+    width: 220px;
+    padding-left: 60px;
+    position: relative;
+    margin: 60px auto 70px auto;
+}
+.ipt_over .judge_box .main .title .icon {
+    background: #fff url(../images/inputs/icon_info_check.png) no-repeat;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ipt_over .judge_box .main .title span {
+    font-size: 20px;
+    line-height: 48px;
+    color: #000;
+    display: block;
+}
+.ipt_over .judge_box .main .buttons {
+    width: 454px;
+    text-align: center;
+    margin: 0 auto;
+}
+.ipt_over .judge_box .main .buttons a {
+    width: 184px;
+    height: 56px;
+    line-height: 56px;
+    background: #4283ea;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 6px;
+    float: left;
+}
+.ipt_over .judge_box .main .buttons a.btn2 {
+    float: right;
+}
+.ipt_over .judge_box .overbg {
+    background: rgba(0,0,0,0.12);
+}
+/*--//End 信息填写完成，可以提交审核--*/
+.organization {
+    width: 876px;
+    border: 1px solid #bdbdbd;
+    background: #fff;
+    float: right;
+    margin-bottom: 100px;
+}
+
+.organization .horizontal .main {
+    width: 757px;
+    margin-top: 50px;
+}
+
+.organization .horizontal .group .label {
+    width: 16%;
+}
+
+.organization .horizontal .group .control {
+    width: 84%;
+}
+
+.organization .horizontal .group .control textarea {
+    width: 552px
+}
+
+.organization .horizontal .group.inheritor .label {
+    width: 40%;
+}
+
+.organization .horizontal .group.inheritor .control {
+    width: 60%;
+}
+
+/*--//End 是否为自己申报--*/
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 12;
+    display: none;
+}
+
+.modal .content .loading {
+    width: 260px;
+    line-height: 32px;
+    padding: 10px 0;
+    background: #fff;
+    text-align: center;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    z-index: 2;
+    margin-left: -160px;
+    margin-top: -27px;
+}
+
+.modal .content .loading img {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.modal .bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, .7);
+    display: block;
+}
+
+/*--//End 预览loading框--*/

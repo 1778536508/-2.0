@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>九芝堂传统中医药文化</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://resource.efeiyi.com/html/project/assets/images/logo.png"
+          media="screen"/>
+    <link rel="stylesheet" href="http://diich.efeiyi.com/assets/css/common.css">
+    <link rel="stylesheet" href="http://resource.efeiyi.com/assets/css/model.css">
+    <script src="http://diich.efeiyi.com/assets/js/jquery.min.js"></script>
+    <script src="http://diich.efeiyi.com/js/category.js"></script>
+    <script src="http://diich.efeiyi.com/js/citys.js"></script>
+    <script src="http://diich.efeiyi.com/assets/js/system.js"></script>
+    <script src="http://resource.efeiyi.com/assets/js/model.js"></script>
+    <script src="http://resource.efeiyi.com/assets/js/static.js"></script>
+    <script src="http://diich.efeiyi.com/js/jquery.i18n.properties-1.0.9.js"></script>
+    <script src="http://diich.efeiyi.com/js/i18n.js"></script>
+    <!--<script src="../js/model.js"></script>-->
+    <!--<script src="../js/static.js"></script>-->
+    <style>
+        .bg .main .info .doi span {
+            font-family: '微软雅黑';
+        }
+    </style>
+</head>
+
+<body>
+<div class="header fixed" id="home-header"></div>
+<!--//End header -->
+<div class="filter_search filter_search_fixed">
+    <div class="content">
+        <form class="form" action="http://diich.efeiyi.com/page/search.html">
+            <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+            <input type="hidden" id="area_code" name="area_code" value="" />
+            <input type="hidden" id="gb_category_code" name="gb_category_code" value="" />
+            <input type="hidden" id="type" name="type" value="" />
+            <input class="submit" type="button" value="搜索" onclick="submit()">
+            <div class="suggest" style="display: none;">
+                <ul>
+
+                </ul>
+            </div>
+        </form>
+        <!--//End form-->
+
+        <div class="attr">
+            <span id="attr_text">所属类别</span>
+            <span id="area_text">全球</span>
+        </div>
+        <!--//End attribute-->
+
+        <div class="dropbox" id="drag">
+            <!--//ENd 全部-->
+
+            <div class="item" id="item_1">
+                <dl class="level">
+                    <dt>
+                    <div class="title">一级分类</div>
+                    <div class="subtitle">所有分类</div>
+                    </dt>
+                    <dd>
+                        <ul id="mainCategory">
+
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="level2">
+                    <dt>
+                    <div class="title">二级分类</div>
+                    <div class="subtitle">所有二级分类</div>
+                    </dt>
+                    <dd>
+                        <ul id="catecontent">
+
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!--//End 所属分类-->
+
+            <div class="item">
+                <dl class="level">
+                    <dt>
+                    <div class="title">位置</div>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>中国</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="level2">
+                    <dt>
+                    <div class="title">按照字母顺序</div>
+                    </dt>
+                    <dd>
+                        <ul id="citycontent">
+                            <li>安微</li>
+                            <li>澳门</li>
+                            <li>北京</li>
+                            <li>上海</li>
+                            <li>福建</li>
+                            <li>甘肃</li>
+                            <li>广东</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!--//End 位置-->
+
+        </div>
+        <!--//End attribute-->
+    </div>
+</div>
+<!--//End filter_search -->
+
+<div class="container suxiu tcm">
+    <div class="bg">
+        <div class="main">
+            <div class="hd">
+                <div class="info">
+                    <h1 class="bd">九芝堂传统中医药文化</h1>
+                    <div class="bd tag"><i class="m_icon"></i></div>
+                    <div class="bd doi"><i>ID</i><span>标识码：ICH.pj.E0902.cn.0000012</span></div>
+                </div>
+            </div>
+            <!--<div class="play"></div>-->
+            <img class="img_bg" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_01.jpg" style="margin-left:-960px;" alt="">
+        </div>
+    </div>
+    <!--//End-->
+
+    <div class="base" style="display: block ;">
+        <div class="card">
+            <div class="main">
+                <div class="floor">
+                    <a class="share js-share" title="分享"></a>
+                    <a class="praise1 js-praise" title="点赞" style="position: relative;"></a>
+                    <div class="share_box js-share_box">
+                        <div class="icons">
+                            <a href="" class="sina"></a>
+                            <a href="" class="weixin active"></a>
+                        </div>
+                        <div class="qrcode">
+                            <img width="108" style="display: none;" src="http://diich.efeiyi.com/ichProject/getImage?id=11040&type=sina"
+                                 alt="新浪">
+							<img width="108" src="http://diich.efeiyi.com/ichProject/getImage?id=11040&type=weixin"
+                                 alt="微信">
+                        </div>
+                    </div>
+                </div>
+                <!--//End-->
+                <h2>代表传承人<!--<a class="more" href=""><span>其他07人</span><i class="gt"></i></a>--></h2>
+                <div class="mavatar">
+                    <ul class="master">
+                        <!--<li>-->
+                            <!--<a href="" class="avatar"><img-->
+                                    <!--src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_master_01.jpg"-->
+                                    <!--alt=""></a>-->
+                            <!--<span class="txt">-->
+                                <!--<p class="name"><a>卢广荣</a></p>-->
+                                <!--<p>国家级非遗传承人</p>-->
+                                <!--<p>全国500名中医药老…</p>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                        <li>
+                            <a href="" class="avatar"><img
+                                    src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_master_02.jpg"
+                                    alt=""></a>
+                            <span class="txt">
+                                <p class="name"><a>余克建</a></p>
+                                <p>国家级非遗传承人</p>
+                                <p>第九、十界全国人...</p>
+                            </span>
+                        </li>
+                        <!--<li style="margin-right:0;">-->
+                            <!--<a href="" class="avatar"><img-->
+                                    <!--src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_master_03.jpg"-->
+                                    <!--alt=""></a>-->
+                            <!--<span class="txt">-->
+                                <!--<p class="name"><a>王国宝</a></p>-->
+                                <!--<p>北京市级非遗传承人</p>-->
+                                <!--<p>中药调剂国家级...</p>-->
+                            <!--</span>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+                <!--//End-->
+                <div class="bd batch">
+                    <div class="tname">非遗在中国<i></i></div>
+                    <div class="subcon">
+                        <span>级别：中国国家级</span>
+                        <span>批次：第二批(2008年)</span>
+                        <span>中国国家非遗名录编号：Ⅸ-11</span>
+                    </div>
+                </div>
+                <!--//End-->
+            </div>
+        </div>
+    </div>
+    <!--//End base-->
+
+    <section class="floor brief">
+        <div class="card">
+            <div class="main">
+                <div class="txt">项目简介</div>
+                <ul class="info">
+                    <li style="width: 320px;margin-right:80px;">
+                        <h4>九芝堂传统中医药文化 -<br>人体生命之学和人类健康之学</h4>
+                    </li>
+                    <li style="margin-right:24px;">
+                        <p>
+                            九芝堂中药文化传承至今已有357年历史，在这三百多年的历史长河中，九芝堂将传统的中药制药技术与湖南当地水土环境所结合，形成特有的具有湖湘特色的中药文化，包括独家的方剂、特有的中药炮制技术、务实敬业的经营作风和“恤苦济贫，优益同业”、“扶危救人”经营理念。</p>
+                    </li>
+                    <li>
+                        <p>九芝堂中医药文化不仅是湖湘中医药文化的典范，更是湖湘“思国忧民”传统文化的继承者。</p>
+                    </li>
+                </ul>
+                <!--<div class="time">-->
+                <!--<p><strong>拼音：</strong><span>Su Xiu</span></p>-->
+                <!--<p><strong>外文名：</strong><span>Su Embroidary</span></p>-->
+                <!--<p><strong>民族：</strong><span>汉族</span></p>-->
+                <!--</div>-->
+            </div>
+
+        </div>
+    </section>
+    <!--//End 项目简介-->
+
+    <section class="floor history" id="history" style="background:#1b1b1b;height: 1013px;">
+        <div class="card">
+            <div class="title">
+                <h4>传承谱系</h4>
+            </div>
+            <div class="content">
+                <ul>
+                    <li class="first">
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1650年</span>
+                            <span class="txt">清顺治7年，江苏吴县人劳澄先生（字：在兹，号：林屋山人）在古城长沙坡子街开未名小药店，这就是<br>劳九芝堂的前身</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">清朝康熙年间</span>
+                            <span class="txt">清康熙年间，劳澄之子劳楫给药店取名“劳九芝堂药铺”</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1775年</span>
+                            <span class="txt">清康熙四十年，劳澄重孙劳禄久继承家业”</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">清末民初</span>
+                            <span class="txt">清末民初，政局动荡，民生凋敝。劳九芝堂经过200多年的风雨沧桑，虽然从产品质量到店务经营以及资金来源都具备了一定的实力，可是由于封建生产关系的束缚，长期举步不前，一直是一个既不吸收外股，也不另设分店的保守的封建企业。特别是劳氏股东之间常发生内讧，致使业务逐渐衰落</span>
+                        </div>
+                    </li>
+                    <li class="refer">
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1918年</span>
+                            <span class="txt">（民国7年）劳昆僧出任经理，他自垫银洋300元，充实流动资金，竭力整顿店务，才使药铺重现生机，出现了一个中兴局面。到1930年，年营业额达到18万银元，抗日战争前夕劳九芝堂累计资金达40万银元（包括不动产）</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1938年11月</span>
+                            <span class="txt">日军攻陷长沙，药铺迁址湖南兰田镇（今涟源县）作小规模经营，直至抗日战争胜利，方回长沙复业。</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1944年</span>
+                            <span class="txt">长沙“文夕”大火，店房被烧毁，资金损失在半数以上。</span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1949年</span>
+                            <span class="txt">湖南和平解放前，店铺已陷于一蹶不振之境地。全国解放的春风给劳九芝堂带来了复苏与振兴，1956年公私合营中以劳九芝堂药铺为主，合并多家药店，正式成立了“九芝堂加工厂”，并设计启用了“芝”牌商标</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1959年</span>
+                            <span class="txt">改名为“九芝堂制药厂”</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1967年</span>
+                            <span class="txt">更名为“长沙中药厂”</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1971年</span>
+                            <span class="txt">改称“长沙中药一厂”</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1992年6月</span>
+                            <span class="txt">在北京人民大会堂召开新闻发布会，恢复“长沙九芝堂制药厂”厂名</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1993年6月</span>
+                            <span class="txt">“九芝堂药铺”在长沙市市区黄兴路隆重复业</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1994年6月</span>
+                            <span class="txt">改制为长沙九芝堂药业集团公司，实现了工厂制向公司制的转轨</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1996年8月</span>
+                            <span class="txt">长沙九芝堂药业集团公司兼并国有中型商业企业长沙市药材公司，有效地实现了工商结合、功能互补的目标</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元1999年5月</span>
+                            <span class="txt">以长沙九芝堂（集团）有限公司为主发起人，以发起方式设立湖南九芝堂股份有限公司</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元2000年6月</span>
+                            <span class="txt">湖南九芝堂股份有限公司向社会公开发行4000万A股并于同月在深圳证券交易所上市交易，融资3.6亿元</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元2003年7月</span>
+                            <span class="txt">湖南九芝堂股份有限公司成功增发新股5100万股，融资5亿元</span>
+                        </div>
+                    </li>
+                    <li class="last">
+                        <i class="line"></i>
+                        <div class="main">
+                            <span class="time">公元2004年6月</span>
+                            <span class="txt">湖南九芝堂股份有限公司更名为“九芝堂股份有限公司”</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="more">
+                    <span class="show">查看完整体系<i></i></span>
+                    <span class="hide" style="display: none;">收起<i></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//End 传承谱系-->
+
+    <section class="floor history">
+        <div class="card">
+            <div class="title">
+                <h4 style="color:#333;">历史渊源</h4>
+            </div>
+            <div class="context">
+                <div class="item" style="display: block;">
+                    <div class="lbox">
+                        <div class="name">清朝</div>
+                        <div class="txt">明朝吴有性的《温疫论》是温病学的重要里程，之后其他医家对温病学体系继续进行临床实践及理论探讨。在清朝温病学说有更进一步发展，已经形成了独立专题。这个时期的重要人物及著作有，叶桂与《温热论》、薜雪与《湿热条辨》、吴瑭与《温病条辨》。
+                            晚清时期，虽然中医面对西方医学严峻的考验，医家们继续拥护《伤寒论》、"寒凉派"、《神农本草经》以及其他传统中医理论，中医学仍旧受到普遍支持。王士雄(1808-66)，终其一生研究温病，撰写《温热经纬》一书。柳宝诒(1842-1901)的《温热逢源》及雷丰之《时病论》(1882)仍然对温病学的发展有一定贡献。
+                            在19世纪，植物药治疗是中医学的基本，早期有关文献不继被再次刊行，很多医家如吴其浚(1789-1846)于1848年出版之《植物名实图考》，费伯雄于1863年撰写《医醇剩议》等，都希望为这个以植物为本的医学作出贡献。当时最闻名的中药堂是同仁堂，位于首都北京，专门为皇宫供应药物。
+                            为拢络知识分子，清初的皇帝鼓励学术生活，并时常资助大型文献的编纂，因此当时有大量全书、类书及丛书刊行。
+                            在清朝末期，洋务运动引起了传统中医界的重视。由于种种复杂的原因，当时医学界出现了几种不同的态度和主张；一些人对传统中医一概加以鄙视，认为不科学，极力主张取缔；一些人拒绝接受新事物，认为西方医学全部不适合中国人；有一些受过西方思想的人，认识到中西医各有所长，迫切探索发展中国医学之路，试图把西医学术加以汇通。当然根据当时历史背景和医家们本身条件限制，其汇通中西医的活动，未能取得明显的成就。
+                            在汇通中西医活动方面，其中最早的一位先驱者为朱沛文，字少廉，广东南海县人，出身医学世家。他于1892年编撰了《中西脏腑图像合纂》，将人体结构、脏腑图像与西方生理解剖图谱相互参照，加以论述。内容较系统、丰富及集中地反映了他的中西医结合的学术思想
+                        </div>
+                    </div>
+                </div>
+                <!--//End 明代-->
+
+                <div class="item">
+                    <div class="lbox">
+                        <div class="name">现代</div>
+                        <div class="txt">习近平总书记说“中医药学是中国古代科学的瑰宝，也是打开中华文明宝库的钥匙。”
+                            现在，中国中医药是我国独特的卫生资源、潜力巨大的经济资源、具有原创优势的科技资源、优秀的文化资源、重要的生态资源。挖掘利用好中医药资源，具有重大现实和长远意义。” 健康是一个大的系统，它不纯粹指机体的健康，还包括心理健康、道德健康、行为健康等。健康更重要的是取决于人的内心，包括心理、心态、心灵、心智。中医文化已纳入“健康中国”相关国家级科研规划，深入研究中医文化的价值。中医文化既是传统的，又是当代的、未来的；既有很强的国家、民族辨识度，又有极大的普世价值。伴随着中国科学家屠呦呦因青蒿素获得诺贝尔奖，中医药科技侧的知晓度、认可度提升很多，但对中医文化侧、人文侧的内容却认识不足。笔者认为，“健康中国”国家级科研规划中应该深入研究中医文化的价值，如健康促进、健康公平研究，促进社会健康、道德健康、心理健康、身体健康的研究，中医文化展现形式、传播语言、适宜媒介的研究，中医文化海外交流、传播研究等。
+                            传承，是中医药学术进步的前提。因此，中医药学传承是提升中医药服务能力的核心工程。如何抓好中医学的传承？首先需要厘清传承的内涵与外延。      中医药学传承的内涵主要是：医德、医理、医术。      医德的传承，主要是以老带新传承体现“大医精诚”的医德，坚定中医药学的文化自信。通过传承，使中医人坚持“生命至贵，病人至上”的服务理念，做到以“诚”执业、以“净”执业、以“严”执业、以“精”执业，树立“普救含灵”的医风。      医理的传承，主要是以老带新传承“勤求博采”的治学方式，坚定中医药学的理论自信。通过传承，使中医人坚持“精研经典。
+                        </div>
+                    </div>
+                </div>
+                <!--//End 元-->
+
+                <div class="item">
+                    <div class="lbox">
+                        <div class="name">近代</div>
+                    </div>
+                </div>
+                <!--//End 元-->
+            </div>
+            <div class="tab">
+                <span class="active"><em>清朝</em><i></i></span>
+                <span><em>现代</em><i></i></span>
+                <div class="line"></div>
+            </div>
+        </div>
+    </section>
+    <!--//End 历史渊源-->
+
+    <section class="floor field" style="padding-bottom: 110px;">
+        <div class="card">
+            <div class="title">
+                <h4>基本内容</h4>
+            </div>
+            <div class="main">
+                <div class="lbox">
+                    <p>九芝堂中药文化传承至今已有357年历史</p>
+                </div>
+                <div class="rbox" data-type="lgText" data-number="500">
+                    <div class="text">
+                        <p>九芝堂中药文化传承至今已有357年历史，在这三百多年的历史长河中，九芝堂将传统的中药制药技术与湖南当地水土环境所结合，形成特有的具有湖湘特色的中药文化，包括独家的方剂、特有的中药炮制技术、务实敬业的经营作风和“恤苦济贫，优益同业”、“扶危救人”经营理念。九芝堂中医药文化不仅是湖湘中医药文化的典范，更是湖湘“思国忧民”传统文化的继承者。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//End 基本内容-->
+    <div class="bd" style="background:#f7f7f7;">
+        <div class="bd" style="height: 704px;position: relative;margin-top:140px;"><img class="img_bg" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_pic1.jpg" alt="" style="margin-top: -352px; margin-left: -700px;"></div>
+    </div>
+
+    <section class="floor skill" style="background:#f7f7f7;">
+        <div class="card">
+            <div class="title">
+                <h4>项目特征</h4>
+            </div>
+            <div class="main" data-type="lgText" data-number="560">
+                <div class="lbox">
+                    <div class="text" style="height: 684px;">
+                       <p>经过三百五十多年发展的九芝堂，对传统中医药文化进行了扬弃。继承和发展了优秀的传统中药工艺流程、改良了一批药方配方、将诚信经营、质量至上和恤苦济贫，热心公益的经营理念贯穿三百多年的历史长河。</p>
+                        <p>一、地道药材 质量为本</p>
+                        <p>踏踏实实做人，老老实实做药。“劳九芝堂药铺”对于成药原料的要求非常严格，非地道的上等好药材不用。如肉桂选用越南产的上桂，鹿茸用西茸，每逢生产参桂鹿茸丸时，总要将养得膘肥体壮的鹿栓在店门外展示一二天，然后敲锣打鼓当众将鹿茸割下，以示货真价实。制丸散用的麝香选自四川万县，广皮则用潮州所产。为了保证成药原来的品质，还从采收季节上加以注意。同时，在成药制作工艺及包装上也非常讲究，如熬制膏药的葱油要预先熬成黑色膏状油质，黄丹按季节下料，熬炼时掌握火候，药料须待油料熬至滴水成珠时方可拌入，收膏时趁热洒水入锅，让水蒸气把油烟带走，如此制成的膏药有明如镜、黑如漆、热天不流汁、冬天不硬不脱、香味浓的优点…</p>
+                    </div>
+                    <!--<div class="text_more" style="position: inherit;margin-top:80px;">-->
+                        <!--<span class="show">展开全部内容<i></i></span>-->
+                        <!--<span class="hide">收起全部内容<i></i></span>-->
+                    <!--</div>-->
+                </div>
+                <div class="rbox">
+                    <img style="margin-bottom: 28px;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_skill_01.jpg" alt="">
+                    <img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_skill_02.jpg" alt="">
+                    <img style="margin:0 28px;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_skill_03.jpg" alt="">
+                    <img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_skill_04.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//End  项目特征-->
+
+    <section class="floor skill" style="background:#fff;">
+        <div class="card">
+            <div class="title">
+                <h4>主要价值</h4>
+            </div>
+            <div class="main">
+                <div class="lbox">
+                    <p style="font-size:30px;font-weight:bold;line-height: 48px;">湖湘文化是中华文明的重要组成部分，湖湘中医药文化是中国医药宝库中一颗璀璨的明珠，是贡献给中华民族的一份独特财富。</p>
+                </div>
+                <div class="rbox">
+                    <p>一、历史价值</p>
+                    <p>湖湘文化是中华文明的重要组成部分，湖湘中医药文化是中国医药宝库中一颗璀璨的明珠，是贡献给中华民族的一份独特财富。</p>
+                    <p>九芝堂作为具有357年历史的中药老字号，是湖湘中医药文化的继承和发扬者。九芝堂将“悬壶济世、利泽生民”的湖湘中医药文化传统精髓一脉传承，并形成了具有九芝堂特有的“药者当付全力，医者当问良心”人文精神。经世代相传该祖训已成为九芝堂人的行为准则，并作为中国传统中医药文化的一部分，至今仍然在被广为传播</p>
+                    <p>三百多年以来，湖湘地区的中医药制药工艺在九芝堂得到了较好的保存，跳碾、辩药等制药技术一直沿袭至今；数百种成药配方至今仍在使用。</p>
+                    <p>1944年，日军攻陷长沙，九芝堂迁往涟源县继续营业，为抗日军民提供强有力的后勤支援，直至抗日胜利方回长沙复业。</p>
+                    <p>二、文化价值</p>
+                    <p>九芝堂中医药文化蕴含了丰富的中华民族文化及人文精神，也是中国传统中医药文化的一部分，至今仍然在被广为传播。九芝堂祖训“药者当付全力，医者当问良心”以及“炮制虽繁必不敢省人工，品味虽贵必不敢省物力”、“修和无人见，存心有天知”的古训，经代代相传已成为九芝堂人的行为准则。这些古训不仅有历史意义，对现在社会的人们也有很好的文化教育意义。九芝堂对穷苦百姓还无偿散发“万应膏”、“时疫散”等药铺常备的小药品等做法，无疑给生活在社会底层的市民带来了一定的实惠，同时也扩大了药铺的影响，提高了药铺的声誉，塑造了九芝堂心忧天下的企业形象。</p>
+                    <p>九芝堂中药文化是中华民族传统文化的组成部分，是对中国传统中医药文化的丰富、发展和传承。现代的九芝堂人正在将这种传统中医药文化带出国门，走向海外，在日本、英国、东南亚等世界范围内宣扬中华传统文化的魅力。</p>
+                    <p>三、医学价值</p>
+                    <p>劳九芝堂之所以能够广辟成药销路…</p>
+                    <p>濒危状况</p>
+                    <p>九芝堂经历了三百多年的发展历程，已经将一个传统的作坊式药铺发展成现在初具规模的现代中药企业，但是目前仍存在一些影响发展的困难：</p>
+                    <p>一、传统生产工艺、传统配方面临失传。</p>
+                    <p>受现代西方文化与西方医药学思维模式以及管理方式的影响,尤其是1983年以后我国卫生部进行药品整顿，以及卫生行政管理部门药品监督和注册审批过程的进一步规范，九芝堂传统中成药的药名、处方、炮制方法等发生了很大…</p>
+                    <img style="position: absolute;bottom: 0;left: -400px;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_skill_05.jpg" alt="">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="bd floor honor" style="background:#f7f7f7;">
+        <div class="card">
+            <div class="lbox">
+                <div class="content">
+                    <div class="info" data-type="lgText" data-number="310">
+                        <div class="title">
+                            <h4>频危状况</h4>
+                        </div>
+                        <div class="text">
+                            <p style="margin-bottom:0">
+                                九芝堂经历了三百多年的发展历程，已经将一个传统的作坊式药铺发展成现在初具规模的现代中药企业，但是目前仍存在一些影响发展的困难：
+                                一、传统生产工艺、传统配方面临失传。
+                                受现代西方文化与西方医药学思维模式以及管理方式的影响,尤其是1983年以后我国卫生部进行药品整顿，以及卫生行政管理部门药品监督和注册审批过程的进一步规范，九芝堂传统中成药的药名、处方、炮制方法等发生了很大…</p>
+                        </div>
+                            <!--<div class="text_more"-->
+                                 <!--style="position: inherit;margin-top:48px;left:0;bottom:0;padding-bottom:60px;">-->
+                                <!--<span class="show">展开全部内容<i></i></span>-->
+                                <!--<span class="hide">收起全部内容<i></i></span>-->
+                            <!--</div>-->
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="rbox">
+                <img class="preview" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/model/tcm/tcm_skill_06.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+</div>
+<!--//End container-->
+
+<div class="model_fixed" style="height: 710px;">
+    <ul></ul>
+</div>
+
+
+<div class="footer"></div>
+<!--//End container-->
+
+
+</body>
+<script>
+    $(function () {
+        $('.header .content .nav li').removeClass('active');
+        tcmProject.init();
+    })
+</script>
+
+</html>

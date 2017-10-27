@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/center.css">
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/system.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <!--<script src="../../assets/js/center.js"></script>-->
+</head>
+<body>
+<div class="header fixed header_detail"></div>
+<!--//End header-->
+<div class="center">
+    <div class="slide" id="slide">
+        <div class="nav">
+            <ul class="item">
+                <li class="selected">
+                    <a class="dt">我的申报<i class="arrow"></i></a>
+                    <div class="dd">
+                        <a class="link selected" data-type="masterDeclareTpl" >创承人</a>
+                        <a class="link" data-type="projectDeclareTpl">项目</a>
+                    </div>
+                </li>
+                <li><a data-type="collectTpl" class="dt">我的收藏</a></li>
+                <li><a data-type="messagesTpl" href="" class="dt">消息中心</a></li>
+                <li><a href="" class="dt">账户设置</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--//End slide-->
+
+    <div class="content" id="content">
+        <div class="declare">
+            <div class="tabs">
+                <span class="selected" data-id="0">已通过</span>
+                <span data-id="4">未通过</span>
+                <span data-id="3">审核中</span>
+                <span data-id="2">草稿箱</span>
+            </div>
+            <div class="main">
+                <div class="item" style="display: block;">
+
+                    <div class="box">
+                        <div class="loading"><img src="../../assets/images/loading.gif" alt=""></div>
+                        <div id="table"></div>
+                    </div>
+                    <div class="paging">
+                        <ul>
+                            <li>&lt;</li>
+                            <li>1</li>
+                            <li class="active">2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>&gt;</li>
+                            <li class="total">共4页</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<div class="footer"></div>
+</body>
+<script>
+$(function () {
+    var parent = $('#content');
+    parent.on('click', '.tabs span', function () {
+
+        $(this).addClass('selected').siblings('span').removeClass('selected');
+
+
+
+        $.ajax({
+            type: "POST",
+            url: 'http://192.168.1.41:8080/ichMaster/getIchMasterByUserId',
+            data: {params: {status:3}},
+            dataType: "json",
+            async: true,
+            beforeSend:function () {
+
+            },
+            success: function (data) {
+                console.log(data)
+            }
+        });
+
+
+        // callback(options);
+    });
+})
+</script>
+</html>

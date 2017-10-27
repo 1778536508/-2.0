@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>非遗资讯</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://diich.efeiyi.com/assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <!--插件-->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="http://diich.efeiyi.com/assets/js/vue.js"></script>
+    <!--//End 插件-->
+
+    <!--静态数据-->
+    <script src="http://diich.efeiyi.com/data/category.js"></script>
+    <script src="http://diich.efeiyi.com/js/citys.js"></script>
+    <script src="http://diich.efeiyi.com/data/dictionary.js"></script>
+    <script src="http://diich.efeiyi.com/js/util.js"></script>
+    <!--//End 静态数据-->
+
+    <script src="../../assets/js/system.js"></script>
+    <script src="../../assets/js/utils.js"></script>
+    <style>
+        .information .card ul li .context h3 a:hover {
+            text-decoration: none;
+        }
+        .information .card ul {
+            margin-top:0;
+        }
+        .information .card h2 {
+            margin-bottom:60px;
+        }
+        .cover_img {
+            width:370px;
+            height:277px;
+            background: #000;
+            float: left;
+            overflow: hidden;
+        }
+        .cover_img img {
+            -webkit-transition: all .3s;
+            transition: all .3s;
+
+        }
+        .cover_img:hover img {
+            transform: scale(1.1);
+            opacity:.8;
+        }
+    </style>
+</head>
+
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header header_detail"></div>
+    <!--//End header -->
+    <div class="filter_search filter_search_fixed">
+        <div class="content">
+            <form class="form" action="http://diich.efeiyi.com/page/search.html">
+                <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+                <input type="hidden" id="area_code" name="area_code" value="" />
+                <input type="hidden" id="gb_category_code" name="gb_category_code" value="" />
+                <input type="hidden" id="type" name="type" value="" />
+                <input class="submit" type="button" value="搜索" onclick="submit()">
+                <div class="suggest" style="display: none;">
+                    <ul>
+
+                    </ul>
+                </div>
+            </form>
+            <!--//End form-->
+
+            <div class="attr">
+                <span id="attr_text">所属类别</span>
+                <span id="area_text">全球</span>
+            </div>
+            <!--//End attribute-->
+
+            <div class="dropbox" id="drag">
+                <!--//ENd 全部-->
+
+                <div class="item" id="item_1">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">一级分类</div>
+                        <div class="subtitle">所有分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="mainCategory">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">二级分类</div>
+                        <div class="subtitle">所有二级分类</div>
+                        </dt>
+                        <dd>
+                            <ul id="catecontent">
+
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 所属分类-->
+
+                <div class="item">
+                    <dl class="level">
+                        <dt>
+                        <div class="title">位置</div>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>中国</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                        <div class="title">按照字母顺序</div>
+                        </dt>
+                        <dd>
+                            <ul id="citycontent">
+                                <li>安微</li>
+                                <li>澳门</li>
+                                <li>北京</li>
+                                <li>上海</li>
+                                <li>福建</li>
+                                <li>甘肃</li>
+                                <li>广东</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 位置-->
+
+            </div>
+            <!--//End attribute-->
+        </div>
+    </div>
+    <!--//End filter_search -->
+
+    <div class="container" id="app">
+        <div class="information">
+            <div class="info_detail">
+                <!--<div class="bd crumb">-->
+                    <!--<a href="/" title="首页">首页</a> &gt; <a href="" title="新闻资讯">新闻资讯</a> &gt; <em v-text="details.title"></em>-->
+                <!--</div>-->
+                <!--//End-->
+                <div class="title">
+                    <h2 v-text="details.title"></h2>
+                    <div class="time" v-text="details.time"></div>
+                </div>
+                <div class="info" v-html="details.content"></div>
+            </div>
+        </div>
+        <!--//End information-->
+
+
+    </div>
+
+    <div class="bd footer"></div>
+    <!--//End--footer-->
+</body>
+<script>
+    $(function() {
+        $('.header .content .nav li').eq(4).addClass('active').siblings('li').removeClass('active');
+        var app=new Vue({
+           el:'#app',
+            data:{
+               details:{
+                   title:'【世界非物质文化遗产·端午节】纪念伟大诗人 传承民族精神',
+                   time:'2017年05月29日',
+                   content:'<p class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/news/imgs/id2_01.jpg" alt=""></p>' +
+                   '<p>央视网消息：端午节蕴含着中华民族深厚的传统文化精神。2009年9月，联合国教科文组织正式审议批准中国端午节列入世界非物质文化遗产，成为中国首个选入世界非物质文化遗产的节日。</p>' +
+                   '<p>在屈原的家乡，湖北秭归，在这里有一句老话，叫“端午比年大”。</p>' +
+                   '<p>每到端午节，人们会穿上传统的服装，唱起古老的歌谣，来祭奠这位伟大的爱国诗人。</p>' +
+                   '<p>相传公元前278年，农历五月初五这天。遭到流放的屈原听闻秦军攻破楚国首都。万念俱灰的他选择以身殉国，自沉汨罗江。江边的百姓害怕屈原的遗体被鱼虾所食，纷纷向江中倾投米肉，后来便形成了包粽子的习俗。</p>' +
+                   '<p>古老的民族诞生动人的故事，动人的故事也在浸染着古老的民族。尽管关于端午节的传说有很多种，因为屈原高洁的品格，人们更愿意去相信屈原的故事。所以2000多年来的每一个五月初五，人们用一个个香甜精巧的粽子，纪念伟大的诗人，传承美好的精神。</p>' +
+                   '<p>龙舟也是端午节的传统民俗之一。早在屈原的故事之前，吴越等地的居民就已经形成了龙舟竞渡的习俗。这一原始的竞技活动因为屈原的投江增加了“屈子投江，民众竞舸拯救”的情节。历经千百年传承与发展，这一活动成为了极具中华民族特色的体育竞技活动。除此之外，端午节还有系五彩绳、挂香包、挂艾草、饮雄黄酒、避五毒等特色民俗，这些民俗皆因端午时值南方的仲夏，炎热与潮湿使得蛇虫繁衍，疾病多发，人们用这些方式祛病驱邪。</p>' +
+                   '<p>这些庆祝活动凝聚成了丰富多彩的端午文化，2009年9月，联合国教科文组织正式审议并批准中国端午节列入世界非物质文化遗产，成为中国首个入选世界非物质文化遗产的节日。千年传衍，古老的节日成为崭新的中国国家名片，与日益增长的中国国家影响力一起，传播到海角天边。</p>'
+
+               }
+            },
+            mounted:function () {
+                document.title=this.details.title;
+            }
+        });
+    });
+</script>
+</html>

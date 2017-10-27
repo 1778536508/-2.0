@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>姚慧芬</title>
+    <link rel="shortcut icon" type="image/x-icon" href="http://diich.efeiyi.com/assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="../../../assets/css/common.css">
+    <link rel="stylesheet" href="../css/model.css">
+    <!--插件-->
+    <script src="../../../assets/js/jquery.min.js"></script>
+    <!--//End 插件-->
+    <script src="../../../assets/js/system.js"></script>
+    <script src="../../../assets/js/utils.js"></script>
+
+    <script src="../js/vue.js"></script>
+    <script src="../js/model.js"></script>
+    <style>
+        .modal_video {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 20;
+        }
+        
+        .modal_video .content {
+            width: 800px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -200px;
+            margin-left: -400px;
+            z-index: 20;
+            background: #fff;
+        }
+        
+        .modal_video .content video {
+            width: 800px;
+            height: 400px;
+            top: 0;
+            left: 0;
+            background: #000;
+        }
+        
+        .modal_video .overbg0 {
+            background: rgba(0, 0, 0, .85);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header fixed" id="home-header"></div>
+    <!--//End header-->
+
+    <div class="filter_search filter_search_fixed">
+        <div class="content">
+            <div id="form"></div>
+            <div class="dropbox" id="drag"></div>
+        </div>
+    </div>
+    <!--//End filter_search -->
+
+    <div class="container suxiu" id="app">
+        <div class="bg">
+            <div class="main">
+                <div class="hd">
+                    <div class="info">
+                        <h1 class="bd">姚慧芬</h1>
+                        <div class="bd tag"><i class="m_icon"></i></div>
+                        <div class="bd doi"><i>ID</i><span>标识码：37232519870103004383</span></div>
+                    </div>
+                </div>
+                <div class="play"></div>
+                <img class="img_bg1" style="position: absolute;top:50%;left: 50%;margin-top:-405px;margin-left:-700px;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/html/master/assets/model/suxiu/sx_pic_01.jpg" alt="">
+            </div>
+        </div>
+        <!--//End-->
+
+        <div class="base">
+            <div class="card">
+                <div class="main">
+                    <div class="floor"><a title="分享" class="share js-share"></a> <a title="点赞" class="praise1 js-praise active1" style="position: relative;"></a> <div class="share_box js-share_box" style="display: none;"><div class="icons"><a href="" class="sina"></a> <a href="" class="weixin active"></a></div> <div class="qrcode"><img width="108" src="http://diich.efeiyi.com/ichMaster/getImage?id=6128&amp;type=sina" alt="新浪" style="display: none;"> <img width="108" src="http://diich.efeiyi.com/ichMaster/getImage?id=6128&amp;type=weixin" alt="微信"></div></div></div>
+                    <!--//End-->
+
+                    <h2>传承项目</h2>
+                    <div class="pro">
+                        <div class="img"><img src="http://diich-resource.oss-cn-beijing.aliyuncs.com/html/master/assets/model/suxiu/sx_pic_02.jpg" width="94" height="70" alt="">
+                        </div>
+                        <div class="txt">
+                            <p class="t1">苏绣</p>
+                            <p class="t2">类别：传统美术 | 地域：中国江苏省</p>
+                            <p class="t3">DOI ：37232519870103004383005768</p>
+                        </div>
+                    </div>
+                    <!--//End-->
+                    <div class="bd batch">
+                        <div class="tname">非遗在中国<i></i></div>
+                        <div class="subcon">
+                            <span>级别：中国国家级</span>
+                            <span>批次：第一批(2006年)</span>
+                            <span>中国国家非遗名录编号：Ⅶ-18</span>
+                        </div>
+                    </div>
+                    <!--//End-->
+                </div>
+            </div>
+        </div>
+        <!--//End base-->
+
+        <section class="floor brief">
+            <div class="card">
+                <div class="main">
+                    <div class="txt">传承人简介</div>
+                    <ul class="info">
+                        <li style="width: 326px;margin-right:80px;">
+                            <h4>姚惠芬 -<br>江苏省有突出贡献的中青年专家</h4>
+                        </li>
+                        <li style="width: 760px">
+                            <p>出生于苏州刺绣世家，自幼就开始学习刺绣。师从近代苏绣"仿真绣"大师沈寿的第三代传人牟志红和中国工艺美术大师任嘒娴。擅长将苏绣乱针绣的技法完美地融入中国传统水墨画的绣制中，使其绣品更具独创性。从艺近二十五年，国家高级工艺美术师，荣获"江苏省工艺美术名人"、"江苏省有突出贡献的中青年专家"等荣誉称号。办有自己的绣庄--姚惠芬刺绣艺术馆。其作品曾连续在三届"中国国家级工艺美术大师精品展"上荣获金奖。</p>
+                        </li>
+                    </ul>
+                    <div class="time">
+                        <p><strong>出生日期：</strong><span>1967</span></p>
+                        <p><strong>民族：</strong><span>汉族</span></p>
+                        <p><strong>所属机构：</strong><span>琴芬绣庄</span></p>
+                        <p><strong>职务职称：</strong><span>国家级非物质文化遗产项目（苏绣）代表性传承人</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--//End 传承人简介-->
+
+        <section class="floor pedigree">
+            <div class="card">
+                <div class="main">
+                    <div class="title">
+                        <h4 v-text="lineage.name"></h4>
+                    </div>
+                    <div class="info" v-text="lineage.desc"></div>
+                    <div class="contact">
+                        <div class="item" :class="'item'+(index+1)" v-for="(item,index) in lineage.master">
+                            <img :src="'http://diich-resource.oss-cn-beijing.aliyuncs.com/html/master/assets/model/suxiu/'+item.avatar" alt="">
+                            <p>{{item.name}}</p>
+                            <p>{{item.title}}</p>
+                            <div class="mask">
+                                <p>性别：{{item.sex}}</p>
+                                <p>出生日期：{{item.birth}}</p>
+                                <p>传承方式：{{item.way}}</p>
+                                <p v-if="item.skilled">擅长绣类：{{item.skilled}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--//End 传承人谱系-->
+
+        <section class="floor product">
+            <div class="card">
+                <div class="title">
+                    <h4 v-text="products.name"></h4>
+                </div>
+                <div class="main product product_list">
+                    <ul>
+                        <li v-for="item in products.list">
+                            <a href=""><img :src="'http://diich-resource.oss-cn-beijing.aliyuncs.com/html/master/assets/model/suxiu/'+item.image" alt=""></a>
+                            <p class="name" v-text="item.name"></p>
+                            <div class="mask">
+                                <div class="con">
+                                    <p><img :src="'http://diich-resource.oss-cn-beijing.aliyuncs.com/html/master/assets/model/suxiu/'+item.avatar" alt=""></p>
+                                    <p class="line"><i></i></p>
+                                    <p class="txt" v-text="item.author"></p>
+                                    <p class="txt" v-text="item.create"></p>
+                                    <!--<a class="more" href="">查看作品详情<i class="gt"></i></a>-->
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="page">
+                        <!--<span class="prev"></span><span class="show"></span><span>/</span><span class="total"></span><span class="next"></span>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--//End 代表性作品-->
+
+        <section class="bd floor row_img honor" style="background:#f7f7f7;">
+            <ul class="bd">
+                <li>
+                    <div class="lbox">
+                        <div class="content">
+                            <div class="info">
+                                <div class="title" style="margin-top:0">
+                                    <h4>技能特点</h4>
+                                </div>
+                                <p>姚惠芬出生于苏州刺绣世家，从艺三十多年，精通各种刺绣技法，擅长人物肖像及中国写意水墨画的绣制。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rbox">
+                        <img class="preview" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/html/master/assets/model/suxiu/sx_skill_02.jpg" alt="">
+                    </div>
+                </li>
+
+            </ul>
+
+        </section>
+        <!--//End 技能特点-->
+
+        <section class="floor field">
+            <div class="card">
+                <div class="title">
+                    <h4>领域活动</h4>
+                </div>
+                <div class="main">
+                    <div class="lbox">
+                        <p>注重研究当代苏绣风格与创新，在实践中逐渐形成自己的艺术特色</p>
+                    </div>
+                    <div class="rbox">
+                        <p>近十多年来，姚惠芬注重研究当代苏绣的风格与创新，并在清华大学美术学院学习东西方绘画实践与理论，对人物肖像及中国水墨写意刺绣的创作进行了大胆深入的探索，在实践中逐渐形成了自己的艺术特色与风格，首创了“简针绣”技法，创作出了一批诸如《素描少女肖像》、《葡萄少女肖像》以及《写意牡丹系列》、《写意花鸟系列》等具有高度艺术性和创造性的刺绣作品，这些作品无论在刺绣技法还是在审美内涵上均取得了不少新的突破。其作品已被英国“大英博物馆”、“伦敦大学美术馆”“美国波士顿儿童博物馆”等国内外多家博物馆、艺术馆及美国总统小布什、联合国教科文组织总干事博科娃等名人收藏</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pic"><img class="img_bg" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/html/master/assets/model/suxiu/sx_field_01.jpg" alt=""></div>
+        </section>
+        <!--//End 代表性作品-->
+
+        <section class="bd floor row_img honor" style="background:#f7f7f7;">
+            <ul class="bd">
+                <li>
+                    <div class="lbox">
+                        <div class="content">
+                            <div class="info">
+                                <div class="title" style="margin-top:0">
+                                    <h4>荣誉称号</h4>
+                                </div>
+                                <p>被评为研究员级高级工艺美术师、国家级非物质文化遗产项目（苏绣）代表性传承人。</p>
+                                <p>享受国务院特殊津贴专家、中国非物质文化遗产保护协会常务理事、首届中国刺绣艺术大师、江苏省工艺美术大师、江苏省333高层次人才培养对象、首届姑苏文化产业领军重点人才。</p>
+                                <p>一代“针神”沈寿的第四代传人。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rbox">
+                        <img class="preview" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/html/master/assets/model/suxiu/sx_honor_01.jpg" alt="">
+                    </div>
+                </li>
+
+            </ul>
+
+        </section>
+        <!--//End 荣誉称号-->
+
+    </div>
+    <!--//End container-->
+
+
+    <div class="modal_video" style="display: none;">
+        <div class="content">
+            <video class="video" id="videoId" width="800" height="400" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/video/modal/suxiu_master.mp4" controls=""></video></div>
+        <div class="overbg0"></div>
+    </div>
+
+    <div class="model_fixed" style="display: none;">
+        <ul></ul>
+    </div>
+
+    <div class="footer"></div>
+    <!--//End container-->
+</body>
+<script>
+    $(function() {
+        var app = new Vue({
+            el: '#app',
+            data: {
+                isShow: false,
+                //传承人谱系
+                lineage: {
+                    name: '传承人谱系',
+                    desc: '出生于苏州刺绣世家，自幼就开始学习刺绣。师从近代苏绣"仿真绣"大师沈寿的第三代传人牟志红和中国工艺美术大师任嘒娴。',
+                    master: [{
+                        name: '沈寿',
+                        title: '针神 / 一代绣圣',
+                        sex: '女',
+                        birth: '1874',
+                        way: '家庭传承',
+                        skilled: '人物花鸟',
+                        avatar: 'sx_px_01.png'
+                    }, {
+                        name: '金静芬',
+                        title: '苏州市刺绣研究所副所长',
+                        sex: '女',
+                        birth: '1885-1970',
+                        way: '师徒传承',
+                        skilled: '仕女',
+                        avatar: 'sx_px_02.png'
+                    }, {
+                        name: '牟志红',
+                        title: '中国苏绣殿堂级大师',
+                        sex: '女',
+                        birth: '1948',
+                        way: '师徒传承',
+                        skilled: '仕女',
+                        avatar: 'sx_px_03.png'
+                    }, {
+                        name: '杨守玉',
+                        title: '乱针绣／正则绣创始人',
+                        sex: '女',
+                        birth: '1895',
+                        way: '家庭与学校',
+                        skilled: '',
+                        avatar: 'sx_px_04.png'
+                    }, {
+                        name: '任嘒娴',
+                        title: '现代针神 / 虚实乱针绣、双面异色异样绣创始人',
+                        sex: '女',
+                        birth: '1916',
+                        way: '家庭与学校',
+                        skilled: '',
+                        avatar: 'sx_px_05.png'
+                    }, {
+                        name: '姚惠芬',
+                        title: '',
+                        sex: '女',
+                        birth: '1967',
+                        way: '校传',
+                        skilled: '水墨画',
+                        avatar: 'sx_px_06.png'
+                    }]
+                },
+                //代表性作品
+                products: {
+                    name: '代表性作品',
+                    list: [{
+                        name: '葡萄少女',
+                        image: 'sx_product_01.jpg',
+                        avatar: 'sx_px_06.png',
+                        author: '姚慧芬',
+                        create: '',
+                        link: ''
+                    }, {
+                        name: '达芬奇自画像',
+                        image: 'sx_product_02.jpg',
+                        avatar: 'sx_px_06.png',
+                        author: '姚慧芬',
+                        create: '',
+                        link: ''
+                    }, {
+                        name: '张大千肖像',
+                        image: 'sx_product_03.jpg',
+                        avatar: 'sx_px_06.png',
+                        author: '姚慧芬',
+                        create: '',
+                        link: ''
+                    }, ]
+                }
+            }
+        });
+        sxMaster.init();
+    })
+</script>
+
+</html>

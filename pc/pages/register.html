@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/system.js"></script>
+</head>
+
+<body style="background-color: rgb(245, 246, 247)">
+    <div class="header fixed header_detail"></div>
+    <!--//End header-->
+
+    <div class="container">
+        <div class="my_declare">
+            <form action="" class="form_area">
+                <div class="group">
+                    <div class="name"><em>*</em><span>昵称</span></div>
+                    <div class="area">
+                        <input type="text" class="ipt" value="">
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="name"><em>*</em><span>手机号</span></div>
+                    <div class="area">
+                        <input type="text" class="ipt" value="">
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="name"><em>*</em><span>验证码</span></div>
+                    <div class="area">
+                        <input type="text" class="ipt" value="" maxlength="10">
+                        <div class="code">
+                            <span>获取验证码</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="name"><em>*</em><span>密码</span></div>
+                    <div class="area">
+                        <input type="password" class="ipt" value="">
+                    </div>
+                </div>
+
+                <div class="group policy">
+                    <div class="name">&nbsp;</div>
+                    <div class="area">
+                        <label for="policy"><input id="policy" type="checkbox">我已仔细阅读并同意《法律声明及隐私权政策》</label>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="name">&nbsp;</div>
+                    <div class="area">
+                        <input class="btn" type="submit" value="注册">
+                        <a class="arrow_right" href="">已有账号，去登录</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--//End-->
+
+        <div class="footer"></div>
+        <!--//End-->
+    </div>
+
+
+
+</body>
+<script>
+    $(function() {
+        $('.header .content .nav li').eq(6).addClass('active').siblings('li').removeClass('active');
+    })
+</script>
+
+</html>

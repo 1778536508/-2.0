@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>首页</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/logo.png" media="screen">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+
+    <!--[if IE]>
+    <link rel="stylesheet" href="../../assets/css/ie.css">
+    <script src="../../assets/js/html5.js"></script>
+    <![endif]-->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <!--<script src="../assets/js/category.js"></script>
+    <script src="../assets/js/citys.js"></script>-->
+
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/system.js"></script>
+    <!--注册  登录-->
+    <!--<script src="../assets/js/login.js"></script>-->
+    <link rel="stylesheet" href="../assets/swiper/css/swiper.min.css">
+    <script src="../assets/swiper/js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/swiper.css"/>
+</head>
+
+<body>
+<style type="text/css">
+	.header .content .nav > ul > li > a:after{
+		background: #FFFFFF;
+	}
+</style>
+<div class="header fixed" id="home-header"></div>
+
+<!--待删除-->
+<!--//End header--> 
+<div class="filter_search filter_search_fixed">
+	
+    <div class="content">
+        <form class="form" action="http://diich.efeiyi.com/page/search.html">
+            <input class="ipt" type="text" id="keyword" name="keyword" value="" autocomplete="off">
+            <input type="hidden" id="area_code" name="area_code" value=""/>
+            <input type="hidden" id="gb_category_code" name="gb_category_code" value=""/>
+            <input type="hidden" id="type" name="type" value=""/>
+            <input class="submit" type="button" value="搜索" onclick="submit()">
+            <div class="suggest" style="display: none;">
+                <ul>
+
+                </ul>
+            </div>
+        </form>
+        <!--//End form-->
+
+        <div class="attr">
+            <span id="attr_text">所属类别</span>
+            <span id="area_text">全球</span>
+        </div>
+        <!--//End attribute-->
+
+        <div class="dropbox" id="drag">
+            <!--//ENd 全部-->
+
+            <div class="item" id="item_1">
+                <dl class="level">
+                    <dt>
+                        <div class="title">一级分类</div>
+                        <div class="subtitle">所有分类</div>
+                    </dt>
+                    <dd>
+                        <ul id="mainCategory">
+
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="level2">
+                    <dt>
+                        <div class="title">二级分类</div>
+                        <div class="subtitle">所有二级分类</div>
+                    </dt>
+                    <dd>
+                        <ul id="catecontent">
+
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!--//End 所属分类-->
+
+            <div class="item">
+                <dl class="level">
+                    <dt>
+                        <div class="title">位置</div>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>中国</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="level2">
+                    <dt>
+                        <div class="title">按照字母顺序</div>
+                    </dt>
+                    <dd>
+                        <ul id="citycontent">
+                            <li>安微</li>
+                            <li>澳门</li>
+                            <li>北京</li>
+                            <li>上海</li>
+                            <li>福建</li>
+                            <li>甘肃</li>
+                            <li>广东</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!--//End 位置-->
+
+        </div>
+        <!--//End attribute-->
+    </div>
+</div>
+<!--//End filter_search -->
+
+
+
+<div class="container">
+    <div class="home">
+        <!--<div class="slider">
+            <form class="form" action="">
+                <input class="ipt" type="text" value="京剧">
+                <input class="btn" type="submit">
+                <div class="text">
+                    <p style="display:block">
+                        京剧是十九世纪中期，融合了徽剧、和汉剧、，并吸收了秦腔、、昆曲、、梆子、弋阳腔、等艺术的优点，在北京形成的。京剧的腔调以西皮和二黄为主，主要用胡琴和锣鼓等伴奏，被视为中国国粹。
+                    </p>
+                    <p>2222京剧是十九世纪中期，融合了徽剧、和汉剧，并吸收了秦腔</p>
+                    <p>3333京剧是十九世纪中期，融合了徽剧、和汉剧，并吸收了秦腔</p>
+                    <p>4444京剧是十九世纪中期，融合了徽剧、和汉剧，并吸收了秦腔</p>
+                </div>
+                <div class="suggest" style="display: none;">
+                    <ul>
+                        <li><a href=""><span>苏州</span>传承人</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                    </ul>
+                </div>
+            </form>
+            <ul class="img">
+                <li class="bd" style="display: block;">
+                    <a href="#1"><img src="../assets/uploads/1000003.png" alt=""></a>
+                </li>
+                <li class="bd">
+                    <a href="#2"><img src="../assets/uploads/yoga@2x.png" alt=""></a>
+                </li>
+                <li class="bd">
+                    <a href="#3"><img src="../assets/uploads/sx.png" alt=""></a>
+                </li>
+                <li class="bd">
+                    <a href="#4"><img src="../assets/uploads/tango@2x.png" alt=""></a>
+                </li>
+            </ul>
+            &lt;!&ndash;//End img &ndash;&gt;
+            <ul class="num">
+                <li class="active">01</li>
+                <li>02</li>
+                <li>03</li>
+                <li>04</li>
+            </ul>
+        </div>-->
+
+
+
+
+        <!--大数据2.0 banner-->
+        <div class="banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-no-swiping">
+                        <div style="width: 100%">
+                            <p class="pp">you</p>
+                            <img src="../assets/uploads/1000003.png"/>
+                            <span>京剧是十九世纪中期，融合了徽剧、和汉剧、，并吸收了秦腔、、昆曲、、梆子、弋阳腔、等艺术的优点，在北京形成的。京剧的腔调以西皮和二黄为主，主要用胡琴和锣鼓等伴奏，被视为中国国粹</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-no-swiping">
+                        <div style="width: 100%;">
+                            <p class="pp">hell</p>
+                            <img src="../assets/uploads/yoga@2x.png"/>
+                            <span>屎壳郎的飞机上看见女克里斯蒂娜科技局法律思考的你尽快；三节课；了矢口抵赖就分手了；大姐夫可视对讲加烦了开始的受苦绝地反击屎壳郎的福克斯的受苦点击返回上看到荆防颗粒受苦打飞机拉克丝大姐夫</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-no-swiping">
+                        <div style="width: 100%;">
+                            <p class="pp">dom</p>
+                            <img src="../assets/uploads/sx.png"/>
+                            <span>收到就好开个会菲利克斯基督教老康女索达吉堪布几十块德累斯顿净空法师考虑到荆防颗粒时代峰峻喀什地方刷卡机大富豪拉伤快递劫匪克鲁塞德上看到加烦了三德科技福克斯的李开复了看到了方面是的索拉卡的方式</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-no-swiping">
+                        <div style="width: 100%;">
+                            <p class="pp">苏绣</p>
+                            <img src="../assets/uploads/tango@2x.png"/>
+                            <span>三德科技复活甲十点来开发纳斯达克sskldfmklsdnfksd.fn莱克斯顿放假吗克里斯蒂娜分手快乐地方喀什地方开始领导交付了开的四季分明了可是单反呢十点来开发及时考虑对方惊世毒妃困了就睡的李开复恐龙当家发过来快递费</span>
+                        </div>
+                    </div>
+                </div>
+                <!--分页-->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        
+        <script>
+            (function () {
+
+                $("#banner_input").focus(function () {
+                    $(".pp").css('display','none');
+                })
+                $("#banner_input").blur(function () {
+                    if($("#banner_input").val()){
+                        $(".pp").css('display','none')
+                    }else{
+                        $(".pp").css('display','block')
+                    }
+                })
+
+
+
+                //轮播图
+                var mySwiper = new Swiper('.swiper-container',{
+                    //设置轮播的方向为上下轮播默认为true左右轮播
+//	  			direction: 'vertical',
+                    //3D效果
+                    //立体效果
+//				effect : 'cube',
+
+                //淡入淡出效果
+                effect : 'fade', 
+
+                //3D折页效果
+//				effect : 'coverflow',
+//				slidesPerView: 2,
+//				centeredSlides: true,
+
+                //翻页效果
+                //			effect : 'flip',
+
+                //默认是左右的普通效果
+//				cube: {
+//				  slideShadows: true,
+//				  shadow: true,
+//				  shadowOffset: 100,
+//				  shadowScale: 0.6
+//				},
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                paginationBulletRender: function (swiper, index, className) {
+                    return '<span class="' + className + '">' +"0"+ (index + 1) + '</span>';
+                },
+
+                //循环轮播
+                loop: true,
+
+                //持续时间
+                speed:2000,
+
+                //循环播放
+                autoplay: 2000,
+
+                //触摸后轮播不停止(为false时,默认停止位true)
+                autoplayDisableOnInteraction : false
+
+                })
+
+
+
+            })()
+        </script>
+        <!--//End slider -->
+
+
+		<!--大数据2.0  list-->
+        <div class="cate">
+            <ul>
+                <li>
+                    <a href="">
+                        <i class="icon1"></i>
+                        <p class="zh">口头传说和表述</p>
+                        <p class="en">Oral traditions and expressions</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="icon2"></i>
+                        <p class="zh">表演艺术</p>
+                        <p class="en">Performing arts</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="icon3"></i>
+                        <p class="zh">社会风俗、礼仪、节庆</p>
+                        <p class="en">Social practices, rituals<br> and festive events</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="icon4"></i>
+                        <p class="zh">自然界、宇宙知识和实践</p>
+                        <p class="en">Knowledge and practices<br> concerning nature and the<br> universe</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="icon5"></i>
+                        <p class="zh">传统手工艺技能</p>
+                        <p class="en">Traditional craftsmanship</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!--//大数据2.0   project-->
+        <div class="bd_project">
+            <div class="home_title">
+                <h3>非遗项目</h3>
+            </div>
+            <div class="project_list">
+                <ul class="clear">
+                    <li>
+                        <span>一级分类</span>
+                        <p>口头传说与表述</p>
+                        <a href="javascript:;">
+                            <img src="../assets/images/Triangle Copy 2.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <span>二级分类</span>
+                        <p>语言</p>
+                        <a href="javascript:;">
+                            <img src="../assets/images/Triangle Copy 2.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <span>地区</span>
+                        <p>全球</p>
+                        <a href="javascript:;">
+                            <img src="../assets/images/Triangle Copy 2.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <img src="../assets/images/search-icon.png" alt="">
+                    </li>
+                </ul>
+            </div>
+            
+			<!--//大数据2.0 list banner-->
+            <div class="project_banner">
+                <div class="swiper-container-project">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-no-swiping">
+                        	<div>
+                        		<img src="../assets/images/B1.jpg"/>
+                        	</div>
+                            <div>
+                            	<p>表演艺术</p>
+                            	<p>中国昆曲</p>
+                            </div>
+                            <a href="javascript:;"></a>
+                        </div>
+                        <div class="swiper-slide swiper-no-swiping">
+                        	<div>
+                        		<img src="../assets/images/B2.jpg"/>
+                        	</div>
+                            <div>
+                            	<p>表演艺术</p>
+                            	<p>中国昆曲</p>
+                            </div>
+                            <a href="javascript:;"></a>
+                        </div>
+                        <div class="swiper-slide swiper-no-swiping">
+                        	<div>
+                        		<img src="../assets/images/B3.jpg"/>
+                        	</div>
+                            <div>
+                            	<p>表演艺术</p>
+                            	<p>中国昆曲</p>
+                            </div>
+                            <a href="javascript:;"></a>
+                        </div>
+                        <div class="swiper-slide swiper-no-swiping">
+                        	<div>
+                        		<img src="../assets/images/B4.jpg"/>
+                        	</div>
+                            <div>
+                            	<p>表演艺术</p>
+                            	<p>中国昆曲</p>
+                            </div>
+                            <a href="javascript:;"></a>
+                        </div>
+                       
+                    </div>
+                    <!--按钮-->
+                    <div class="swiper-button-prev swiper-button-black"></div>
+    				<div class="swiper-button-next swiper-button-black"></div>
+                </div>
+            </div>
+            <script type="text/javascript">
+            	
+            	(function(){
+            		var mySwiper = new Swiper('.swiper-container-project',{                   
+		                //默认是左右的普通效果
+						cube: {
+						  slideShadows: true,
+						  shadow: true,
+						  shadowOffset: 100,
+						  shadowScale: 0.6
+						},		 
+						prevButton:'.swiper-button-prev',
+						nextButton:'.swiper-button-next',
+						slidesPerView : 4,
+						slidesPerGroup : 4,
+						
+		
+		                //循环轮播
+		                loop: true,
+		
+		                //持续时间
+		                speed:2000,
+		
+		                //循环播放
+		                autoplay: 2000,
+		
+		                //触摸后轮播不停止(为false时,默认停止位true)
+		                autoplayDisableOnInteraction : false	
+	                })
+            	})()
+            </script>
+        </div>
+
+
+
+        <!--//End cate_icons -->
+
+        <div class="bd global">
+            <div class="home_title">
+                <h3>非遗在全球</h3>
+            </div>
+            <div class="bd text">
+                <span>截至2005年7月，世界上有170多个国家成为《保护世界文化和自然公约》的缔约国，已有788处遗产列入《世界遗产名录》，47个列入非物质遗产名录。点击地图，查看全球各地非遗名录。</span>
+            </div>
+            <div class="bd map">
+                <!--//TODO-->
+                <div class="dots" id="map">
+                    <div class="modal">
+                        <i class="icon"></i>
+                        <div class="title">
+                            <p class="zh"></p>
+                            <p class="en"></p>
+                            <p class="count">共计<span></span>项非遗项目</p>
+                        </div>
+                        <div class="content">
+                            <p class="name">具有代表性项目有：</p>
+                            <p class="txt"></p>
+                            <p class="more"></p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <img src="../assets/images/map2.png" alt="">
+            </div>
+        </div>
+        <!--//End global -->
+		
+		
+		<!--大数据2.0  非遗资讯-->
+        <div class="information">
+            <div class="home_title">
+                <h3>非遗资讯</h3>
+            </div>
+            <ul class="clear">
+                <li>
+                    <a href="">
+                        <div class="pic"><img src="../assets/images/1.jpg" alt=""></div>
+                        <div class="name">
+                            <p>联合国教科文组织国际非遗大数据库第一阶段成果会议</p>
+                            <!--<p>—《木卡姆印象》在京演出侧记</p>-->
+                            <p class="time">五月 18，2017</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="pic"><img src="../assets/images/2.jpg" alt=""></div>
+                        <div class="name">
+                            <p>【世界非物质文化遗产·端午节】纪念伟大诗人 传承民族精神</p>
+                            <!--<p>—《木卡姆印象》在京演出侧记</p>-->
+                            <p class="time">五月 29，2017 – 央视网</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="pic"><img src="../assets/images/3.jpg" alt=""></div>
+                        <div class="name">
+                            <p>非遗百匠|因刺绣而生，为刺绣而梦——朱寿珍</p>
+                            <!--<p>—《木卡姆印象》在京演出侧记</p>-->
+                            <p class="time">五月 24，2017</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--//End--非遗资讯-->
+        
+        
+        
+        
+        <!--大数据2.0 官方服务-->
+        <div class="information_service">
+            <div class="home_title">
+                <h3>官方服务</h3>
+            </div>
+            <ul class="clear">
+                <li>
+                    <a href="javascript:;">
+                        <div class="pic"><img src="../assets/images/index_3.png" alt=""></div>
+                        <p class="pic_h3">e飞蚁</p>
+                        <div class="name">
+                            <p>领先的非物质文化遗产</p>
+                            <p class="time">电商平台</p>
+                            <p>领先的非物质文化遗产</p>
+                            <p class="time">电商平台</p>
+                            <p>领先的非物质文化遗产</p>
+                            <p class="time">电商平台</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="pic"><img src="../assets/images/index_2.png" alt=""></div>
+                        <p class="pic_h3">诚品宝</p>
+                        <div class="name">
+                            <p>—《木卡姆印象》在京演出侧记</p>
+                            <p class="time">五月 29，2017 – 央视网</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="pic"><img src="../assets/images/index_1.png" alt=""></div>
+                        <p class="pic_h3">产品交易</p>
+                        <div class="name">
+                            <p>—《木卡姆印象》在京演出侧记</p>
+                            <p class="time">五月 24，2017</p>
+                        </div>
+                    </a>
+                </li>
+                 <li>
+                    <a href="javascript:;">
+                        <div class="pic"><img src="../assets/images/index_4.png" alt=""></div>
+                        <p class="pic_h3">市场合作</p>
+                        <div class="name">
+                            <p>—《木卡姆印象》在京演出侧记</p>
+                            <p class="time">五月 24，2017</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+		<!--//End 官方服务-->
+		
+		
+		
+		
+		<!--大数据2.0  授牌企业-->
+		<div class="rep_name">
+            <div class="home_title">
+                <h3>授牌企业</h3>
+            </div>
+            <div class="all_enterprise">
+            	<a href="javascript:;">查看全部100家官方授牌企业</a>
+            </div>
+			<!--//enterprise banner-->
+            <div class="enterprise_banner">
+                <div class="swiper-container-enterprise">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-no-swiping"> 
+                        	<a href="javascript:;">
+	                        	<div>
+	                        		<img src="../assets/images/ex1.jpg"/>
+	                        	</div>
+                            </a>       
+                        </div>
+                        <div class="swiper-slide swiper-no-swiping">
+                        	<a href="javascript:;">
+	                        	<div>
+	                        		 <img src="../assets/images/ex2.jpg"/>
+	                        	</div>
+                        	</a> 
+                        </div>
+                        <div class="swiper-slide swiper-no-swiping">
+                        	<a href="javascript:;">
+	                        	<div>
+	                        		<img src="../assets/images/ex3.jpg"/>
+	                        	</div>
+                        	</a> 
+                        </div>
+	                    <div class="swiper-slide swiper-no-swiping">    
+	                    	<a href="javascript:;">
+		                    	<div>
+		                    		<img src="../assets/images/ex1.jpg"/>
+		                    	</div>
+	                        </a>  
+	                    </div>
+	                    <div class="swiper-slide swiper-no-swiping">
+	                    	<a href="javascript:;">
+		                    	<div>
+		                    		 <img src="../assets/images/ex2.jpg"/>
+		                    	</div>
+	                    	</a> 
+	                    </div>
+	                    <div class="swiper-slide swiper-no-swiping">
+	                    	<a href="javascript:;">
+		                    	<div>
+		                    		<img src="../assets/images/ex3.jpg"/>
+		                    	</div>
+		                    </a> 
+	                    </div>
+                    </div>
+                    <!--按钮-->
+                    <div class="swiper-button-prev swiper-button-black"></div>
+    				<div class="swiper-button-next swiper-button-black"></div>
+                </div>
+            </div>
+            <script type="text/javascript">
+            	
+            	(function(){
+            		var mySwiper = new Swiper('.swiper-container-enterprise',{                   
+		                //默认是左右的普通效果
+						cube: {
+						  slideShadows: true,
+						  shadow: true,
+						  shadowOffset: 100,
+						  shadowScale: 0.6
+						},		 
+						prevButton:'.swiper-button-prev',
+						nextButton:'.swiper-button-next',
+						slidesPerView : 3,
+						slidesPerGroup : 3,
+						spaceBetween : 20,
+						
+		
+		                //循环轮播
+		                loop: true,
+		
+		                //持续时间
+		                speed:2000,
+		
+		                //循环播放
+		                autoplay: 2000,
+		
+		                //触摸后轮播不停止(为false时,默认停止位true)
+		                autoplayDisableOnInteraction : false	
+	                })
+            	})()
+            </script>
+        </div>
+		<!--//Esc授牌企业-->
+		
+		
+		<!--底部证书-->   
+        <div class="bd project">
+            <div class="content">
+                <div class="part">
+                    <a href="javascript:;" class="certificate" href="" title="证书"></a>
+                </div>
+                <div class="part">
+                    <div class="txt">
+                        数字对象识别码也称数字对象识别号、数字对象识别符、数字对象标识符、数字对象唯一标识符等。申报成功后，将获得有联合国教科文组织颁发的国际认证体系编码，编码为全球唯一编码，全球范围可查询。
+                    </div>
+                </div>
+                <div class="part">
+                    <a href="" class="declare">我要申報</a>
+                </div>
+            </div>
+        </div>
+        <!--//End 底部证书-->
+    </div>
+    <!--//End home -->
+</div>
+
+<div class="bd footer"></div>
+<!--//End--footer-->
+
+
+<!--登录-->
+<div class="box_layer" style="display: none;">
+    <div class="item login" style="display: block;">
+        <form class="form_area" action="">
+            <div class="title">登录<span class="close"></span></div>
+            <div class="group error">
+                <div class="name"><span>昵&nbsp;&nbsp;称</span></div>
+                <div class="area">
+                    <input class="ipt" name="loginName" type="text" placeholder="请输入昵称">
+                </div>
+            </div>
+            <div class="group error">
+                <div class="name"><span>密&nbsp;&nbsp;码</span></div>
+                <div class="area">
+                    <input class="ipt" type="text" name="password" placeholder="请输入密码">
+                    <a class="forget js-to-reset" href="javascript:;">忘记登录密码</a>
+                    <div class="error_txt">手机号或密码错误</div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="name">&nbsp;</div>
+                <div class="area">
+                    <input class="btn" type="button" value="登录" onclick="login()">
+                    <a class="arrow_right js-to-register" href="javascript:;">暂无账号，去注册</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    &lt;!&ndash;//End 登录&ndash;&gt;
+    <div class="item register" style="display: none;">
+        <form action="" class="form_area">
+            <div class="title">注册<span class="close"></span></div>
+            <div class="group error">
+                <div class="name"><span>用户名</span></div>
+                <div class="area">
+                    <input type="text" class="ipt" value="">
+                    <div class="error_txt">用户名错误</div>
+                </div>
+            </div>
+            <div class="group error">
+                <div class="name"><span>手机号</span></div>
+                <div class="area">
+                    <input type="text" class="ipt" value="">
+                    <div class="error_txt">手机号错误</div>
+                </div>
+            </div>
+            <div class="group error">
+                <div class="name"><span>验证码</span></div>
+                <div class="area">
+                    <input type="text" class="ipt" value="" maxlength="10">
+                    <div class="pages">
+                        <span>获取验证码</span>
+                    </div>
+                    <div class="error_txt">验证码错误或过期</div>
+                </div>
+            </div>
+            <div class="group error">
+                <div class="name"><span>密码</span></div>
+                <div class="area">
+                    <input type="password" class="ipt" value="">
+                    <div class="error_txt">密码长度2-20位，支持数字和大小写字母</div>
+                </div>
+            </div>
+
+            <div class="group policy">
+                <div class="name">&nbsp;</div>
+                <div class="area">
+                    <label for="policy"><input id="policy" type="checkbox">我已仔细阅读并同意《法律声明及隐私权政策》</label>
+                </div>
+            </div>
+            <div class="group" style="margin-bottom: 0">
+                <div class="name">&nbsp;</div>
+                <div class="area">
+                    <input class="btn" type="submit" value="注册">
+                    <a class="arrow_right js-to-login" href="javascript:;">已有账号，去登录</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    &lt;!&ndash;//End 注册&ndash;&gt;
+    <div class="item reset" style="display: none;">
+        <form action="" class="form_area">
+            <div class="title">重置密码<span class="close"></span></div>
+            <div class="group error">
+                <div class="name"><span>手机号</span></div>
+                <div class="area">
+                    <input type="text" class="ipt" value="">
+                    <div class="error_txt">手机号错误</div>
+                </div>
+            </div>
+            <div class="group error">
+                <div class="name"><span>验证码</span></div>
+                <div class="area ">
+                    <input type="text" class="ipt" value="" maxlength="10">
+                    <div class="pages">
+                        <span>获取验证码</span>
+                    </div>
+                    <div class="error_txt">验证码错误</div>
+                </div>
+            </div>
+            <div class="group error">
+                <div class="name"><span>新密码</span></div>
+                <div class="area">
+                    <input type="password" class="ipt" value="">
+                    <div class="error_txt">密码长度2-20位，支持数字和大小写字母</div>
+                </div>
+            </div>
+            <div class="group" style="margin-top:20px;margin-bottom: 0;">
+                <div class="name">&nbsp;</div>
+                <div class="area">
+                    <input class="btn" type="submit" value="确认">
+                    <a class="arrow_right js-to-login" href="javascript:;">去登录</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    &lt;!&ndash;//End 重置密码&ndash;&gt;
+    <div class="overbg0" style="z-index:11;"></div>
+</div>
+<!--End   登录-->
+<!--English  登录-->
+<div class="box_layer box_layer_en" style="display: none;">
+    <div class="item login" style="display: none;">
+        <form class="form_area" action="">
+            <div class="title">Sign in<span class="close"></span></div>
+            <div class="group">
+                <div class="name"><span style="font-size:16px;">Name</span></div>
+                <div class="area">
+                    <input class="ipt" name="loginName" id="loginName" type="text" placeholder="Please enter your nickname">
+                </div>
+            </div>
+            <div class="group">
+                <div class="name"><span style="font-size:16px;">Password</span></div>
+                <div class="area">
+                    <input class="ipt" type="text" name="password" placeholder="Please input a password">
+                    <a class="forget js-to-reset" href="javascript:;">Forgot login password</a>
+                </div>
+            </div>
+            <div class="group">
+                <div class="name">&nbsp;</div>
+                <div class="area">
+                    <input class="btn" type="button" value="Sign in" onclick="login()">
+                    <a class="arrow_right js-to-register" href="javascript:;">No account to register</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--//End 登录-->
+    <div class="item register" style="display: none;">
+        <form action="" class="form_area">
+            <div class="title">register<span class="close"></span></div>
+            <div class="group">
+                <div class="name"><span style="font-size:16px;">Name</span></div>
+                <div class="area">
+                    <input type="text" class="ipt" value="">
+                </div>
+            </div>
+            <div class="group">
+                <div class="name"><span style="font-size:16px;">Phone</span></div>
+                <div class="area">
+                    <input type="text" class="ipt" value="">
+                </div>
+            </div>
+            <div class="group">
+                <div class="name"><span style="font-size:16px;">Verification</span></div>
+                <div class="area">
+                    <input type="text" class="ipt" value="" maxlength="10" data-form-un="1498635699213.3672">
+                    <div class="code">
+                        <span style="font-size:16px;">Get validation code</span>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="name"><span style="font-size:16px;">Password</span></div>
+                <div class="area">
+                    <input type="password" class="ipt" value="" data-form-pw="1498635699213.3672">
+                </div>
+            </div>
+
+            <div class="group policy">
+                <div class="name">&nbsp;</div>
+                <div class="area">
+                    <label for="policy"><input id="policy" type="checkbox">I have read and agreed to the legal declaration and privacy policy</label>
+                </div>
+            </div>
+            <div class="group" style="margin-bottom: 0">
+                <div class="name">&nbsp;</div>
+                <div class="area">
+                    <input class="btn" type="submit" value="register" data-form-sbm="1498635699213.3672" style="pointer-events: auto;">
+                    <a class="arrow_right js-to-login" href="javascript:;" style="font-size:16px;">Have an account to log on</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--//End 注册-->
+    <div class="item reset" style="display: block;">
+        <form action="" class="form_area">
+            <div class="title">reset password<span class="close"></span></div>
+            <div class="group">
+                <div class="name"><span style="font-size:16px;">Phone</span></div>
+                <div class="area">
+                    <input type="text" class="ipt" value="">
+                </div>
+            </div>
+            <div class="group">
+                <div class="name"><span style="font-size:16px;">Verification</span></div>
+                <div class="area">
+                    <input type="text" class="ipt" value="" maxlength="10" data-form-un="1498635699213.5012">
+                    <div class="code">
+                        <span style="font-size:16px;">Get validation code</span>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="name"><span style="font-size:16px;">Password</span></div>
+                <div class="area">
+                    <input type="password" class="ipt" value="" data-form-pw="1498635699213.5012">
+                </div>
+            </div>
+            <div class="group" style="margin-bottom: 0;">
+                <div class="name" style="font-size:16px;">&nbsp;</div>
+                <div class="area">
+                    <input class="btn" type="submit" value="confirm" data-form-sbm="1498635699213.5012" style="pointer-events: auto;">
+                    <a class="arrow_right js-to-login" href="javascript:;">Log in</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--//End 重置密码-->
+
+
+    <div class="overbg0" style="z-index:11;"></div>
+</div>
+
+</body>
+<script>
+    $(function () {
+//        homePage.init();
+
+        //底部证书
+        $('.certificate').on('click', function () {
+            var str = '<div class="modal_video" style="display: none;">' +
+                '<div class="content">' +
+                '<div class="main"><img style="margin-left:-400px;margin-top:-342px;" src="http://diich-resource.oss-cn-beijing.aliyuncs.com/image/index/20170612.jpg" alt=""></div>' +
+                '</div>' +
+                '<div class="overbg0"></div>' +
+                '</div>';
+            var body = $('body');
+            body.append(str).css('overflow', 'hidden');
+            var modal = $('.modal_video');
+            modal.fadeIn(100);
+            body.on('click', '.overbg0', function () {
+                modal.fadeOut(200).remove();
+                body.css('overflow', '');
+            });
+            return false;
+        });
+
+
+//     setTimeout(function () {
+//         var $img = $('#detailTopic');
+//         var $content = $('#detailContent');
+//         var img = document.getElementById('detailTopic');
+//
+//         img.onload = function () {
+//             // 加载完成
+//             var imgW = parseInt($img.width());
+//             $img.css({width:imgW+'px','margin-left':-parseInt(imgW/2)+'px'});
+//             $content.css({width:imgW+'px'});
+//             $img.fadeIn(800);
+//         };
+//
+//
+//         var imgW = parseInt($img.width());
+//         $img.css({width:imgW+'px','margin-left':-parseInt(imgW/2)+'px'});
+//         $content.css({width:imgW+'px'});
+//         $img.fadeIn(800);
+//
+//
+//
+//     },2000);
+
+
+//      $('.logined').hover(function () {
+//          $(this).addClass('active');
+//      },function () {
+//          $(this).removeClass('active');
+//      });
+
+    })
+</script>
+</html>
